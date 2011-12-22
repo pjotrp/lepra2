@@ -1,4 +1,6 @@
 Lepra2::Application.routes.draw do
+  resources :reactions
+
   resources :staffs
 
   resources :clinics
