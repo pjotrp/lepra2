@@ -1,4 +1,10 @@
 Lepra2::Application.routes.draw do
+  resources :staffs
+
+  resources :clinics
+
+  resources :contacts
+
   resources :personal_histories
 
   resources :people
