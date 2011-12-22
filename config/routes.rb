@@ -1,4 +1,8 @@
 Lepra2::Application.routes.draw do
+  resources :locations
+
+  resources :addresses
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
