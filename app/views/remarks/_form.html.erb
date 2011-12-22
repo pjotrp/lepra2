@@ -1,0 +1,25 @@
+<%= form_for(@remark) do |f| %>
+  <% if @remark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@remark.errors.count, "error") %> prohibited this remark from being saved:</h2>
+
+      <ul>
+      <% @remark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reporter %><br />
+    <%= f.number_field :reporter %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br />
+    <%= f.text_area :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

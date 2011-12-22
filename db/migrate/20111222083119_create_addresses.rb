@@ -6,7 +6,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :postcode
       t.integer :location
       t.integer :district
-      t.text :remark
+      t.integer :remark
 
       t.timestamps
     end
