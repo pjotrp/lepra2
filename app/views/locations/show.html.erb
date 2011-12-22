@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Village:</b>
+  <%= @location.village %>
+</p>
+
+<p>
+  <b>District:</b>
+  <%= @location.district %>
+</p>
+
+<p>
+  <b>Union:</b>
+  <%= @location.union %>
+</p>
+
+<p>
+  <b>Upozilla:</b>
+  <%= @location.upozilla %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @location.phone %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @location.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
