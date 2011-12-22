@@ -1,4 +1,8 @@
 Lepra2::Application.routes.draw do
+  resources :personal_histories
+
+  resources :people
+
   resources :remarks
 
   resources :locations

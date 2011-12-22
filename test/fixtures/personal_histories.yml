@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  occupation: MyString
+  guardian: 1
+  address: 1
+  remark: 1
+
+two:
+  occupation: MyString
+  guardian: 1
+  address: 1
+  remark: 1

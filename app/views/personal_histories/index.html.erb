@@ -1,0 +1,29 @@
+<h1>Listing personal_histories</h1>
+
+<table>
+  <tr>
+    <th>Occupation</th>
+    <th>Guardian</th>
+    <th>Address</th>
+    <th>Remark</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @personal_histories.each do |personal_history| %>
+  <tr>
+    <td><%= personal_history.occupation %></td>
+    <td><%= personal_history.guardian %></td>
+    <td><%= personal_history.address %></td>
+    <td><%= personal_history.remark %></td>
+    <td><%= link_to 'Show', personal_history %></td>
+    <td><%= link_to 'Edit', edit_personal_history_path(personal_history) %></td>
+    <td><%= link_to 'Destroy', personal_history, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Personal history', new_personal_history_path %>
