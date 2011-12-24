@@ -5,7 +5,6 @@ class CreateLocations < ActiveRecord::Migration
       t.string :district
       t.string :union
       t.string :upozilla
-      t.string :phone
       t.string :latitude
       t.string :longitude
 
