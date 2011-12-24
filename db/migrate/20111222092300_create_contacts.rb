@@ -2,7 +2,8 @@ class CreateContacts < ActiveRecord::Migration
   def change
     create_table :contacts do |t|
       t.belongs_to :person
-      t.references :staff
+      t.belongs_to :clinic
+      t.belongs_to :staff
       t.date       :date
       t.string     :patient_type  # Type of patient (BT,BB,BL.LL.TT, I)
       t.string     :out           # (B=BANDS pts, transfered, N=Out of Control,D=Died)
@@ -20,13 +21,27 @@ class CreateContacts < ActiveRecord::Migration
       t.date       :smear_date
       t.date       :rft_date
 
+      # Properties
+      t.boolean    :bcg_scar
+      t.boolean    :trauma_operation
+      t.integer    :lesions
+      
+
 
 
       # General 
       t.date       :contact_planned  # next contact
       t.string     :detection     # V=Volunteer, S= Survey, R=Referred, C=Contact
       t.string     :referred      # detect==R than choices are doctor, village doctor, HealthWorker, local leader, other
+      t.integer    :health_worker
+      t.integer    :finder_lca
       t.string     :disability    # WHO disability grade (0..2)
+      t.string     :chronic_disability # DI=Diabetes,TB,Other (specify)
+      t.integer    :duration_years     # duration of Leprosy
+      t.integer    :duration_months    # duration of Leprosy
+      t.integer    :young_years   
+      t.integer    :young_months 
+
       t.timestamps
     end
   end

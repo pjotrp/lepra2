@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
   belongs_to :person
-  has_one    :clinic
-  has_one    :staff
+  belongs_to :clinic
+  belongs_to :staff
 end
