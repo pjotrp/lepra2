@@ -14,5 +14,6 @@ Address book:
 =end
 
 class Address < ActiveRecord::Base
-  # has_one :location
+  belongs_to :personal_history
+  has_one :location
 end

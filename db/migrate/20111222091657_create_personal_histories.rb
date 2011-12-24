@@ -1,11 +1,16 @@
 class CreatePersonalHistories < ActiveRecord::Migration
   def change
     create_table :personal_histories do |t|
-      t.string :occupation
-      t.string :education
-      t.integer :guardian
+      # This table contains non-medical personal details - for medical
+      # use the Contact table
+      t.belongs_to :person
+      t.date    :registration_date
+      t.integer :staff
+      t.string  :occupation # BE(ggar) D(ay labor) BU(ssiness) S (official) T(eacher) O(ther)
+      t.string  :education # class 1 to5= 1, Class 6 to ten=2, Class 11 to 14=3, >= class 15=4
+      t.string  :guardian
       t.integer :address
-      t.integer :members # house members
+      t.integer :members # number of household members
       t.integer :income  # household income
       t.integer :remark
 
