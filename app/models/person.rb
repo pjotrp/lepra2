@@ -2,6 +2,7 @@ class Person < ActiveRecord::Base
   has_many :addresses
   has_many :personal_histories
   has_many :contacts
+  has_many :assessments
   has_many :reactions
 
   # validates :year_of_birth, :length => { :in => 1950..Time.now.year }
