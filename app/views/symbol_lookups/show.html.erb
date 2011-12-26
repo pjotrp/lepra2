@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @symbol_lookup.name %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @symbol_lookup.value %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @symbol_lookup.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_symbol_lookup_path(@symbol_lookup) %> |
+<%= link_to 'Back', symbol_lookups_path %>

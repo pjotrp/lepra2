@@ -1,4 +1,6 @@
 Lepra2::Application.routes.draw do
+  resources :symbol_lookups
+
   resources :assessments
 
   resources :reactions

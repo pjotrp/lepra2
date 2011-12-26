@@ -1,0 +1,27 @@
+<h1>Listing symbol_lookups</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @symbol_lookups.each do |symbol_lookup| %>
+  <tr>
+    <td><%= symbol_lookup.name %></td>
+    <td><%= symbol_lookup.value %></td>
+    <td><%= symbol_lookup.description %></td>
+    <td><%= link_to 'Show', symbol_lookup %></td>
+    <td><%= link_to 'Edit', edit_symbol_lookup_path(symbol_lookup) %></td>
+    <td><%= link_to 'Destroy', symbol_lookup, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Symbol lookup', new_symbol_lookup_path %>
