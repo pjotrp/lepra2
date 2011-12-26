@@ -1,14 +1,18 @@
 
 =begin
 
-Location describes a village
+Location describes a location on the map - ideally closest village,
+and GPS coordinates are added
 
+      t.belongs_to :address
+      t.belongs_to :clinic
       t.string :village
       t.string :district
       t.string :union
       t.string :upozilla
       t.string :latitude
       t.string :longitude
+      t.text    :remark    
 
 =end
 

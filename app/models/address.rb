@@ -1,14 +1,23 @@
 
 =begin
-Address book:
+The Address book contains records referring to a location.
 
-      t.string  :road
-      t.string  :village
+A person can have 1 or more addresses, and a current address, 
+all part of the personal history.
+
+A clinic also has an address and location.
+
+      has_one :location
+
+      t.belongs_to :personal_history
+      t.belongs_to :clinic
+
+      t.string  :road,     :null => false
+      t.string  :village,  :null => false
       t.string  :postcode
       t.string  :phone
-      t.integer :location   # village/distict/gps
-      t.string  :latitude   # override location
-      t.string  :longitude  # override location
+      t.string  :latitude                   # override location
+      t.string  :longitude                  # override location
       t.text    :remark    
 
 =end

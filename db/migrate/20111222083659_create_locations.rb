@@ -3,6 +3,7 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.belongs_to :address
       t.belongs_to :clinic
+   
       t.string :village
       t.string :district
       t.string :union
