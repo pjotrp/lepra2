@@ -10,5 +10,7 @@ class CreatePeople < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :people, :registration
+    add_index :people, :name
   end
 end

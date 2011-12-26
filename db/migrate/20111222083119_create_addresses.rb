@@ -14,5 +14,6 @@ class CreateAddresses < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :addresses, [ :personal_history_id ]
   end
 end

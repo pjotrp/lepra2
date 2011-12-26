@@ -113,5 +113,6 @@ class CreateAssessments < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :assessments, :person_id
   end
 end

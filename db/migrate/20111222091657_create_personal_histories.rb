@@ -17,5 +17,6 @@ class CreatePersonalHistories < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :personal_histories, :person_id
   end
 end

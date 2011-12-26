@@ -28,6 +28,6 @@ class CreateReactions < ActiveRecord::Migration
       t.text   :remark
       t.timestamps
     end
-    add_index :reactions, [ :person_id, :contact_id ]
+    add_index :reactions, :person_id
   end
 end

@@ -5,5 +5,6 @@ class CreateClinics < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :clinics, :id
   end
 end
