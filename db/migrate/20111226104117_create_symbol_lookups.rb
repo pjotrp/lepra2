@@ -7,5 +7,6 @@ class CreateSymbolLookups < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :symbol_lookups, :name
   end
 end
