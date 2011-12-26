@@ -6,6 +6,7 @@ class CreatePeople < ActiveRecord::Migration
       t.integer :year_of_birth, :null => false
       t.boolean :male   # male (true) or female (false)  
       t.string  :fathers_name
+      t.text    :remark    
 
       t.timestamps
     end

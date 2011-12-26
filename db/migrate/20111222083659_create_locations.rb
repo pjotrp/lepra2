@@ -9,6 +9,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :upozilla
       t.string :latitude
       t.string :longitude
+      t.text    :remark    
 
       t.timestamps
     end

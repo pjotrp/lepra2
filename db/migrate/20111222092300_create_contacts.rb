@@ -54,6 +54,7 @@ class CreateContacts < ActiveRecord::Migration
       t.boolean    :breast_feeding   
       t.boolean    :surgical_rehab
       t.boolean    :social_rehab
+      t.text    :remark    
  
       t.timestamps
     end

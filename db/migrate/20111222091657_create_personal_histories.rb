@@ -12,7 +12,8 @@ class CreatePersonalHistories < ActiveRecord::Migration
       t.integer :address
       t.integer :members # number of household members
       t.integer :income  # household income
-      t.integer :remark
+      t.text    :remark    
+      # t.integer :remark
 
       t.timestamps
     end

@@ -109,6 +109,7 @@ class CreateAssessments < ActiveRecord::Migration
       t.integer :qmt_wrist_l                  # QMT Wrist extension Left
       t.integer :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
       t.integer :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
+      t.text :remark
 
       t.timestamps
     end
