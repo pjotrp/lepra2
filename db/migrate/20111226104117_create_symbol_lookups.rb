@@ -1,9 +1,10 @@
 class CreateSymbolLookups < ActiveRecord::Migration
   def change
     create_table :symbol_lookups do |t|
-      t.sting :name
+      t.string :name
       t.string :value
       t.string :description
+      t.integer :rank
 
       t.timestamps
     end

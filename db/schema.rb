@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111225084112) do
+ActiveRecord::Schema.define(:version => 20111226104117) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "personal_history_id"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20111225084112) do
     t.string   "village",             :null => false
     t.string   "postcode"
     t.string   "phone"
-    t.integer  "location",            :null => false
     t.string   "latitude"
     t.string   "longitude"
     t.text     "remark"
@@ -125,6 +124,52 @@ ActiveRecord::Schema.define(:version => 20111225084112) do
     t.integer  "qmt_wrist_l"
     t.integer  "qmt_dorsiflexion_foot_r"
     t.integer  "qmt_dorsiflexion_foot_l"
+    t.boolean  "shr01"
+    t.boolean  "shr02"
+    t.boolean  "shr03"
+    t.boolean  "shr04"
+    t.boolean  "shr05"
+    t.boolean  "shr06"
+    t.boolean  "shr07"
+    t.boolean  "shr08"
+    t.boolean  "shr09"
+    t.boolean  "shr10"
+    t.boolean  "shr11"
+    t.boolean  "shr12"
+    t.boolean  "shl01"
+    t.boolean  "shl02"
+    t.boolean  "shl03"
+    t.boolean  "shl04"
+    t.boolean  "shl05"
+    t.boolean  "shl06"
+    t.boolean  "shl07"
+    t.boolean  "shl08"
+    t.boolean  "shl09"
+    t.boolean  "shl10"
+    t.boolean  "shl11"
+    t.boolean  "shl12"
+    t.boolean  "sfr01"
+    t.boolean  "sfr02"
+    t.boolean  "sfr03"
+    t.boolean  "sfr04"
+    t.boolean  "sfr05"
+    t.boolean  "sfr06"
+    t.boolean  "sfr07"
+    t.boolean  "sfr08"
+    t.boolean  "sfr09"
+    t.boolean  "sfr10"
+    t.boolean  "sfr11"
+    t.boolean  "sfl01"
+    t.boolean  "sfl02"
+    t.boolean  "sfl03"
+    t.boolean  "sfl04"
+    t.boolean  "sfl05"
+    t.boolean  "sfl06"
+    t.boolean  "sfl07"
+    t.boolean  "sfl08"
+    t.boolean  "sfl09"
+    t.boolean  "sfl10"
+    t.boolean  "sfl11"
     t.text     "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -158,6 +203,14 @@ ActiveRecord::Schema.define(:version => 20111225084112) do
     t.date     "smear_date"
     t.date     "rft_date"
     t.boolean  "prednisolon"
+    t.boolean  "diy"
+    t.string   "diy_specify"
+    t.boolean  "hospital_admission"
+    t.boolean  "hospital_neuritis"
+    t.boolean  "hospital_plantar_alcer"
+    t.boolean  "hospital_eye_complication"
+    t.boolean  "hospital_other"
+    t.string   "hospital_specify"
     t.date     "contact_planned"
     t.string   "detection"
     t.string   "referred"
@@ -223,7 +276,7 @@ ActiveRecord::Schema.define(:version => 20111225084112) do
     t.string   "occupation"
     t.string   "education"
     t.string   "guardian"
-    t.integer  "address"
+    t.integer  "current_address_id"
     t.integer  "members"
     t.integer  "income"
     t.text     "remark"
@@ -278,5 +331,16 @@ ActiveRecord::Schema.define(:version => 20111225084112) do
   end
 
   add_index "staffs", ["name"], :name => "index_staffs_on_name"
+
+  create_table "symbol_lookups", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.string   "description"
+    t.integer  "rank"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "symbol_lookups", ["name"], :name => "index_symbol_lookups_on_name"
 
 end
