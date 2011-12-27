@@ -29,6 +29,14 @@ class CreateContacts < ActiveRecord::Migration
     
       # medication
       t.boolean    :prednisolon   # low dose
+      t.boolean    :diy
+      t.string     :diy_specify
+      t.boolean    :hospital_admission
+      t.boolean    :hospital_neuritis
+      t.boolean    :hospital_plantar_alcer
+      t.boolean    :hospital_eye_complication
+      t.boolean    :hospital_other
+      t.string     :hospital_specify
 
       # General 
       t.date       :contact_planned  # next contact

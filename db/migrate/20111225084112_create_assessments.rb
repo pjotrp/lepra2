@@ -109,6 +109,60 @@ class CreateAssessments < ActiveRecord::Migration
       t.integer :qmt_wrist_l                  # QMT Wrist extension Left
       t.integer :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
       t.integer :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
+
+      t.boolean :shr01
+      t.boolean :shr01
+      t.boolean :shr02
+      t.boolean :shr03
+      t.boolean :shr04
+      t.boolean :shr05
+      t.boolean :shr06
+      t.boolean :shr07
+      t.boolean :shr08
+      t.boolean :shr09
+      t.boolean :shr10
+      t.boolean :shr11
+      t.boolean :shr12
+      t.boolean :shl01
+      t.boolean :shl01
+      t.boolean :shl02
+      t.boolean :shl03
+      t.boolean :shl04
+      t.boolean :shl05
+      t.boolean :shl06
+      t.boolean :shl07
+      t.boolean :shl08
+      t.boolean :shl09
+      t.boolean :shl10
+      t.boolean :shl11
+      t.boolean :shl12
+
+      t.boolean :sfr01
+      t.boolean :sfr01
+      t.boolean :sfr02
+      t.boolean :sfr03
+      t.boolean :sfr04
+      t.boolean :sfr05
+      t.boolean :sfr06
+      t.boolean :sfr07
+      t.boolean :sfr08
+      t.boolean :sfr09
+      t.boolean :sfr10
+      t.boolean :sfr11
+
+      t.boolean :sfl01
+      t.boolean :sfl01
+      t.boolean :sfl02
+      t.boolean :sfl03
+      t.boolean :sfl04
+      t.boolean :sfl05
+      t.boolean :sfl06
+      t.boolean :sfl07
+      t.boolean :sfl08
+      t.boolean :sfl09
+      t.boolean :sfl10
+      t.boolean :sfl11
+
       t.text :remark
 
       t.timestamps
