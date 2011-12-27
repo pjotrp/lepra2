@@ -259,8 +259,9 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
     t.string   "registration",  :null => false
     t.string   "name",          :null => false
     t.integer  "year_of_birth", :null => false
-    t.boolean  "male"
+    t.boolean  "male",          :null => false
     t.string   "fathers_name"
+    t.string   "reg_study"
     t.text     "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
