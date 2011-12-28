@@ -10,7 +10,7 @@ At time of contact, the field worker/clinic is tracked.
 =end
 
 class Clinic < ActiveRecord::Base
-  has_one :address, :as => :addressable
+  has_many :addresses, :as => :addressable
   has_many :staffs
   has_many :contacts
 end
