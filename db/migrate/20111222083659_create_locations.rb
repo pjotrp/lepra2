@@ -2,7 +2,6 @@ class CreateLocations < ActiveRecord::Migration
   def change
     create_table :locations do |t|
       t.belongs_to :clinic
-      t.references :addressable, :polymorphic => true
    
       t.string :village
       t.string :district

@@ -181,8 +181,6 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   add_index "assessments", ["person_id"], :name => "index_assessments_on_person_id"
 
   create_table "clinics", :force => true do |t|
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
     t.text     "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -192,7 +190,6 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "person_id"
-    t.integer  "personal_history_id"
     t.date     "date"
     t.integer  "clinic_id"
     t.integer  "staff_id"
@@ -247,8 +244,6 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "locations", :force => true do |t|
     t.integer  "clinic_id"
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
     t.string   "village"
     t.string   "district"
     t.string   "union"
@@ -277,8 +272,6 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "personal_histories", :force => true do |t|
     t.integer  "person_id"
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
     t.date     "registration_date"
     t.integer  "staff_id"
     t.integer  "finder_id"
@@ -346,8 +339,6 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "staffs", :force => true do |t|
     t.string   "name"
     t.integer  "clinic_id"
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

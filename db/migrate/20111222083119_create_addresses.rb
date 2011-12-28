@@ -3,8 +3,9 @@ class CreateAddresses < ActiveRecord::Migration
     create_table :addresses do |t|
       t.belongs_to :personal_history
       t.belongs_to :location
-      t.integer :addressable_id
-      t.string  :addressable_type
+      t.references :addressable, :polymorphic => true
+      # t.integer :addressable_id
+      # t.string  :addressable_type
       t.string  :road,     :null => false
       t.string  :village,  :null => false
       t.string  :postcode

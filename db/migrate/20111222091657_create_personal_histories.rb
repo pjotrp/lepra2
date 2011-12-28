@@ -4,7 +4,6 @@ class CreatePersonalHistories < ActiveRecord::Migration
       # This table contains non-medical personal details - for medical
       # use the Contact table
       t.belongs_to :person
-      t.references :addressable, :polymorphic => true
       t.date    :registration_date
       t.integer :staff_id
       t.integer :finder_id

@@ -3,8 +3,6 @@ class CreateStaffs < ActiveRecord::Migration
     create_table :staffs do |t|
       t.string :name
       t.belongs_to :clinic
-      t.references :addressable, :polymorphic => true
-
       t.timestamps
     end
     add_index :staffs, :name
