@@ -7,22 +7,9 @@ all part of the personal history.
 
 A clinic also has an address and location.
 
-      has_one :location
-
-      t.belongs_to :personal_history
-      t.belongs_to :clinic
-
-      t.string  :road,     :null => false
-      t.string  :village,  :null => false
-      t.string  :postcode
-      t.string  :phone
-      t.string  :latitude                   # override location
-      t.string  :longitude                  # override location
-      t.text    :remark    
 
 =end
 class Address < ActiveRecord::Base
-  has_and_belongs_to_many :personal_history
-  has_one :location
   belongs_to :addressable, :polymorphic => true
+  belongs_to :location
 end

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "addresses", :force => true do |t|
     t.integer  "personal_history_id"
     t.integer  "addressable_id"
+    t.string   "addressable_type"
     t.string   "road",                :null => false
     t.string   "village",             :null => false
     t.string   "postcode"
@@ -180,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "clinics", :force => true do |t|
     t.integer  "addressable_id"
+    t.string   "addressable_type"
     t.text     "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -275,6 +277,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "personal_histories", :force => true do |t|
     t.integer  "person_id"
     t.integer  "addressable_id"
+    t.string   "addressable_type"
     t.date     "registration_date"
     t.integer  "staff_id"
     t.integer  "finder_id"
@@ -342,7 +345,8 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "staffs", :force => true do |t|
     t.string   "name"
     t.integer  "clinic_id"
-    t.integer  "address_id"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

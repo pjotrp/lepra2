@@ -2,6 +2,7 @@ class CreateAddresses < ActiveRecord::Migration
   def change
     create_table :addresses do |t|
       t.belongs_to :personal_history
+      t.belongs_to :location
       t.belongs_to :addressable
       t.string  :addressable_type
       t.string  :road,     :null => false
