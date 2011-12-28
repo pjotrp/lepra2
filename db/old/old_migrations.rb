@@ -77,24 +77,26 @@ end
 
 # Symbols
 SYMBOL = {
-  ctype: 'Ctype',
-  detection: 'Detect',
-  disability: 'Disab',
+  detect: 'detection',
+  disab:  'disability'
 }
 
 Lepra1Lookup.find(:all).each do | rec |
-#<Lepra1Lookup id: 239, LastUpdate: nil, CodeID: 161, Variable: "Status", Value: "6", Label: "RFC under care", ValueNum: 6>
-  if not SymbolLookup.exists?(rec.id)
-    lookup = SymbolLookup.new
-    lookup.id = rec.id
-    name = rec.Variable
-    lookup.name = name
-    lookup.name = SYMBOL[name].to_s if SYMBOL[name]
-    lookup.value = rec.Value
-    lookup.description = rec.Label
-    lookup.rank = rec.ValueNum
-    lookup.save
-  end
+  lookup = 
+    if not SymbolLookup.exists?(rec.id)
+      SymbolLookup.new
+    else
+      SymbolLookup.find(rec.id)
+    end
+  lookup.id = rec.id
+  name = rec.Variable.downcase
+  lookup.name = name
+  name1 = name.to_sym
+  lookup.name = SYMBOL[name1] if SYMBOL[name1]
+  lookup.value = rec.Value
+  lookup.description = rec.Label.capitalize if rec.Label
+  lookup.rank = rec.ValueNum
+  lookup.save
 end
 
 # Patients

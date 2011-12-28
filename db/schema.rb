@@ -338,7 +338,7 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
     t.string   "name"
     t.string   "value"
     t.string   "description"
-    t.integer  "rake"
+    t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
