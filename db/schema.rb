@@ -190,16 +190,16 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
     t.integer  "clinic_id"
     t.integer  "staff_id"
     t.date     "date"
-    t.string   "patient_type"
-    t.string   "out"
+    t.integer  "symbol_patient_type"
+    t.integer  "symbol_patient_status"
     t.boolean  "final_assessment"
-    t.integer  "status"
-    t.string   "treatment"
+    t.integer  "symbol_medication"
+    t.integer  "symbol_treatment"
     t.integer  "mdt_dose"
     t.date     "mdt_date"
-    t.integer  "smearf"
+    t.integer  "symbol_smearf"
     t.date     "smearf_date"
-    t.integer  "smear"
+    t.integer  "symbol_smear"
     t.date     "smear_date"
     t.date     "rft_date"
     t.boolean  "prednisolon"
@@ -212,12 +212,12 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
     t.boolean  "hospital_other"
     t.string   "hospital_specify"
     t.date     "contact_planned"
-    t.string   "detection"
-    t.string   "referred"
+    t.integer  "symbol_detection"
+    t.integer  "symbol_referred"
     t.integer  "health_worker"
     t.integer  "finder_lca"
-    t.string   "disability"
-    t.string   "chronic_disability"
+    t.integer  "symbol_disability"
+    t.integer  "symbol_chronic_disability"
     t.integer  "duration_years"
     t.integer  "duration_months"
     t.integer  "young_years"
@@ -256,10 +256,10 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
   add_index "locations", ["address_id"], :name => "index_locations_on_address_id"
 
   create_table "people", :force => true do |t|
-    t.string   "registration",  :null => false
-    t.string   "name",          :null => false
-    t.integer  "year_of_birth", :null => false
-    t.boolean  "male",          :null => false
+    t.string   "registration",                     :null => false
+    t.string   "name",                             :null => false
+    t.integer  "year_of_birth",                    :null => false
+    t.boolean  "male",          :default => false, :null => false
     t.string   "fathers_name"
     t.string   "reg_study"
     t.text     "remark"
@@ -274,6 +274,7 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
     t.integer  "person_id"
     t.date     "registration_date"
     t.integer  "staff"
+    t.integer  "finder"
     t.string   "occupation"
     t.string   "education"
     t.string   "guardian"
@@ -337,7 +338,7 @@ ActiveRecord::Schema.define(:version => 20111226104117) do
     t.string   "name"
     t.string   "value"
     t.string   "description"
-    t.integer  "rank"
+    t.integer  "rake"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -7,6 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string  :village,  :null => false
       t.string  :postcode
       t.string  :phone
+      # location contains district etc.
       t.string  :latitude                   # override location
       t.string  :longitude                  # override location
       t.text    :remark    

@@ -6,6 +6,7 @@ class CreatePersonalHistories < ActiveRecord::Migration
       t.belongs_to :person
       t.date    :registration_date
       t.integer :staff
+      t.integer :finder
       t.string  :occupation # BE(ggar) D(ay labor) BU(ssiness) S (official) T(eacher) O(ther)
       t.string  :education # class 1 to5= 1, Class 6 to ten=2, Class 11 to 14=3, >= class 15=4
       t.string  :guardian
