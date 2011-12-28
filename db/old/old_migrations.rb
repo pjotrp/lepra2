@@ -117,25 +117,23 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
     person.save
     # address
     p rec.VILLAGE
-    address_id = 
+    address = 
       if not Address.exists?(:village => rec.VILLAGE, :clinic_id => rec.CLINIC_NUM)
-        address = Address.new
-        address.village = rec.VILLAGE
-        address.clinic_id = rec.CLINIC_NUM
-        address.road = ''
-        address.save
-        address.id
+        addr = Address.new
+        addr.village = rec.VILLAGE
+        addr.clinic_id = rec.CLINIC_NUM
+        addr.road = ''
+        addr.save
+        addr
       else
-        address = Address.find_by_village_and_clinic_id(rec.VILLAGE,rec.CLINIC_NUM)
-        address.id
+        Address.find_by_village_and_clinic_id(rec.VILLAGE,rec.CLINIC_NUM)
       end  
     # location
-    location_id = 
+    location = 
       if not Location.exists?(:village => rec.VILLAGE, :district => rec.DIST, 
                               :upozilla => rec.REG_UPO)
         loc = Location.new
         loc.clinic_id = rec.CLINIC_NUM
-        loc.address_id = address_id
         loc.village = rec.VILLAGE
         loc.upozilla = rec.REG_UPO
         loc.clinic_id = rec.CLINIC_NUM
@@ -143,11 +141,13 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
         # loc.union = rec.UNION
         loc.upozilla = rec.REG_UPO.to_i.to_s if rec.REG_UPO
         loc.save
-        loc.id
+        loc
       else
         loc = Location.find_by_village_and_district(rec.VILLAGE, rec.DIST)
-        loc.id
+        loc
       end  
+    address.location_id = location.id
+    address.save
     # personal history
     if not PersonalHistory.exists?(:person_id => person.id)
       hist = PersonalHistory.new
@@ -165,7 +165,7 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
       hist.income = rec.HINCOME
       print "Adding ",person.id," ",person.name," to PersonalHistory\n"
       hist.save
-      address2 = Address.find(address_id)
+      address2 = Address.find(address.id)
       address2.personal_history_id = hist.id
       address2.save
     end

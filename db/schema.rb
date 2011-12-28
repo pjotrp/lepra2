@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "personal_history_id"
+    t.integer  "location_id"
     t.integer  "addressable_id"
     t.string   "addressable_type"
     t.string   "road",                :null => false
@@ -191,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "person_id"
+    t.integer  "personal_history_id"
     t.date     "date"
     t.integer  "clinic_id"
     t.integer  "staff_id"
@@ -244,8 +246,9 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   add_index "contacts", ["person_id"], :name => "index_contacts_on_person_id"
 
   create_table "locations", :force => true do |t|
-    t.integer  "address_id"
     t.integer  "clinic_id"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
     t.string   "village"
     t.string   "district"
     t.string   "union"
@@ -256,8 +259,6 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "locations", ["address_id"], :name => "index_locations_on_address_id"
 
   create_table "people", :force => true do |t|
     t.string   "registration",                     :null => false
