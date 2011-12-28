@@ -7,9 +7,9 @@ class CreateContacts < ActiveRecord::Migration
       #
       # See also the Assessment and Reaction tables for patient state.
       t.belongs_to :person
-      t.belongs_to :clinic
-      t.belongs_to :staff
       t.date       :date
+      t.integer    :clinic_id
+      t.integer    :staff_id
       t.integer    :symbol_patient_type    # Type of patient (BT,BB,BL.LL.TT, I)
       t.integer    :symbol_patient_status  # (B=BANDS pts, transfered, N=Out of Control,D=Died)
       t.boolean    :final_assessment

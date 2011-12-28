@@ -21,8 +21,8 @@ A clinic also has an address and location.
       t.text    :remark    
 
 =end
-
 class Address < ActiveRecord::Base
-  belongs_to :personal_history
+  has_and_belongs_to_many :personal_history
   has_one :location
+  belongs_to :addressable, :polymorphic => true
 end

@@ -15,11 +15,12 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "personal_history_id"
-    t.integer  "clinic_id"
+    t.integer  "addressable_id"
     t.string   "road",                :null => false
     t.string   "village",             :null => false
     t.string   "postcode"
     t.string   "phone"
+    t.integer  "clinic_id"
     t.string   "latitude"
     t.string   "longitude"
     t.text     "remark"
@@ -178,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   add_index "assessments", ["person_id"], :name => "index_assessments_on_person_id"
 
   create_table "clinics", :force => true do |t|
+    t.integer  "addressable_id"
     t.text     "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -187,9 +189,9 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "person_id"
+    t.date     "date"
     t.integer  "clinic_id"
     t.integer  "staff_id"
-    t.date     "date"
     t.integer  "symbol_patient_type"
     t.integer  "symbol_patient_status"
     t.boolean  "final_assessment"
@@ -272,13 +274,13 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "personal_histories", :force => true do |t|
     t.integer  "person_id"
+    t.integer  "addressable_id"
     t.date     "registration_date"
-    t.integer  "staff"
-    t.integer  "finder"
-    t.string   "occupation"
-    t.string   "education"
-    t.string   "guardian"
-    t.integer  "current_address_id"
+    t.integer  "staff_id"
+    t.integer  "finder_id"
+    t.integer  "symbol_occupation"
+    t.integer  "symbol_education"
+    t.integer  "symbol_guardian"
     t.integer  "members"
     t.integer  "income"
     t.text     "remark"

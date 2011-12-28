@@ -153,13 +153,14 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
       hist = PersonalHistory.new
       hist.id = person.id
       hist.person_id = person.id
+      hist.created_at = rec.REG_DATE
+      hist.updated_at = rec.CONTACTLST
       hist.registration_date = rec.REG_DATE
-      hist.staff = rec.HW_NUM  # staff who registered
-      hist.finder = rec.FINDER_LCA if rec.FINDER_LCA and rec.FINDER_LCA > 0
-      hist.occupation = rec.OCCUP
-      hist.education = rec.EDUCAT.to_i.to_s if rec.EDUCAT
+      hist.staff_id = rec.HW_NUM  # staff who registered
+      hist.finder_id = rec.FINDER_LCA if rec.FINDER_LCA and rec.FINDER_LCA > 0
+      hist.symbol_occupation = rec.OCCUP
+      hist.symbol_education = rec.EDUCAT.to_i if rec.EDUCAT
       # hist.guardian  FIXME
-      hist.current_address_id = address_id
       hist.members = rec.HMEMBER
       hist.income = rec.HINCOME
       print "Adding ",person.id," ",person.name," to PersonalHistory\n"
