@@ -46,6 +46,8 @@ end
 class SymbolLookup < ActiveRecord::Base 
 end
 
+Contact.delete_all
+
 print People.count," records in Lepra2:People\n"
 print PersonalHistory.count," records in Lepra2:PersonalHistory\n"
 print Contact.count," records in Lepra2:Contact\n"
@@ -76,9 +78,13 @@ class Lepra1Base < ActiveRecord::Base
     )
 end
 
-class Lepra0Lepra1 < Lepra0Base
+class Lepra0_1 < Lepra0Base
   set_table_name "lepra1"
 end
+class Lepra0_2 < Lepra0Base
+  set_table_name "lepra2"
+end
+
 
 class Lepra1PatientStart < Lepra1Base
   set_table_name "tpatient1_start"
@@ -94,6 +100,27 @@ SYMBOL = {
   detect: 'detection',
   disab:  'disability'
 }
+
+def walk hash, dest, src
+  hash.each do | k, v |
+    value = src.send(k.to_sym)
+    value = nil if value == ''
+    dest.send(v.to_s+'=',value)
+  end
+end
+
+def walk_i hash, dest, src
+    hash.each do | k, v |
+      dest.send(v.to_s+'=',src.send(k.to_sym).to_i)
+    end
+end
+
+def walk_b hash, dest, src
+    hash.each do | k, v |
+      value = src[k] == "\x01"
+      dest.send(v.to_s+'=',value)
+    end
+end
 
 PERSONALHISTORY_LEPRA0_1 = {
   'FINDER_LCA' => :finder_lca,
@@ -123,6 +150,16 @@ CONTACT_LEPRA0_1_BOOL = {
   'FINAL_ASS'  => :final_assessment,
 }
 
+CONTACT_LEPRA0_2 = {
+  'disease_s' => :symbol_disease_descr,
+}
+CONTACT_LEPRA0_2_INT = {
+}
+CONTACT_LEPRA0_2_BOOL = {
+  'trauma' => :trauma_operation,
+  'disease' => :disease,
+}
+
 Lepra1Lookup.find(:all).each do | rec |
   lookup = 
     if not SymbolLookup.exists?(rec.id)
@@ -142,7 +179,7 @@ Lepra1Lookup.find(:all).each do | rec |
 end
 
 # Patients
-Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
+Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
   # if not People.exists?(rec.id)
     person = People.find_or_initialize_by_id(rec.id)
     # person = People.new
@@ -157,7 +194,6 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
     person.male = rec['SEX'] != "F"
     person.fathers_name = nil
     # address
-    p rec.VILLAGE
     address = 
       if not Address.exists?(:village => rec.VILLAGE, :clinic_id => rec.CLINIC_NUM)
         addr = Address.new
@@ -189,6 +225,7 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
       end  
     address.location_id = location.id
     address.save
+
     # personal history
     hist = PersonalHistory.find_or_initialize_by_id(person.id)
     hist.id = person.id
@@ -203,31 +240,41 @@ Lepra0Lepra1.find(:all, :limit=>LIMIT).each do | rec |
     # hist.guardian  FIXME
     hist.members = rec.HMEMBER
     hist.income = rec.HINCOME
-    PERSONALHISTORY_LEPRA0_1.each do | k, v |
-      hist.send(v.to_s+'=',rec.send(k.to_sym))
-    end
+    walk(PERSONALHISTORY_LEPRA0_1,hist,rec)
     print "Updating ",person.id," ",person.name," to PersonalHistory\n"
     hist.save
     address2 = Address.find(address.id)
     address2.personal_history_id = hist.id
     address2.save
-    contact = Contact.find_or_initialize_by_id(person.id)
-    contact.id = person.id
+    # There is always one or more contacts, first create a contact
+    # from lepra0_1 rec
+    contact = Contact.new
     contact.updated_at = rec.CONTACTLST
     contact.date = rec.CONTACTLST
     contact.person_id = person.id
     contact.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
-    CONTACT_LEPRA0_1.each do | k, v |
-      contact.send(v.to_s+'=',rec.send(k.to_sym))
+    walk(CONTACT_LEPRA0_1,contact,rec)
+    walk_i(CONTACT_LEPRA0_1_INT,contact,rec)
+    walk_b(CONTACT_LEPRA0_1_BOOL,contact,rec)
+    # fill with the first lepra0_2 form
+    lepra2 = Lepra0_2.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s).first
+    if lepra2
+      print "- found Lepra2 form\n"
+      walk(CONTACT_LEPRA0_2,contact,lepra2)
+      walk_i(CONTACT_LEPRA0_2_INT,contact,lepra2)
+      walk_b(CONTACT_LEPRA0_2_BOOL,contact,lepra2)
     end
-    CONTACT_LEPRA0_1_INT.each do | k, v |
-      contact.send(v.to_s+'=',rec.send(k.to_sym).to_i)
-    end
-    CONTACT_LEPRA0_1_BOOL.each do | k, v |
-      value = rec[k] == "\x01"
-      contact.send(v.to_s+'=',value)
-    end
+    # save
+    print "- Adding ",person.id," to Contact\n"
     contact.save
+
+    # for every additional lepra0_2 rec, add a contact
+    if lepra2
+      Lepra0_2.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s)[1..-1].each do | lepra2 |
+        p lepra2.id
+        print "- Adding another ",person.id," to Contact\n"
+      end
+    end
     print "Updating ",person.id," ",person.name," to People\n"
     person.save
   # end  

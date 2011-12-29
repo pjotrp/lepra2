@@ -55,7 +55,7 @@ class CreateContacts < ActiveRecord::Migration
       t.boolean    :bcg_scar
       t.boolean    :trauma_operation  
       t.boolean    :disease
-      t.string     :disease_descr    
+      t.string     :symbol_disease_descr    
       t.integer    :lesions           # number of skin lesions
       t.boolean    :pregnant
       t.date       :pregnancy_date
