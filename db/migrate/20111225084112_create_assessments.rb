@@ -16,7 +16,7 @@ class CreateAssessments < ActiveRecord::Migration
       t.boolean :lesions_leg_r
       t.boolean :lesions_leg_l
       t.boolean :oed_hands
-      t.boolean :oed_feed
+      t.boolean :oed_feet
 
       # ulcers
       t.integer :ulcers  
