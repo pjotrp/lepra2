@@ -4,7 +4,10 @@ class CreateReactions < ActiveRecord::Migration
       t.belongs_to :person
       t.belongs_to :contact  # holds staff info
       t.date    :date   # recorded reaction date
-      t.date    :ped_date
+      t.date    :prednisolon_date
+      t.integer :bands_study
+      t.integer :mdt_dose
+      t.boolean :treatment
 
       t.integer :duration_months
       t.boolean :type1

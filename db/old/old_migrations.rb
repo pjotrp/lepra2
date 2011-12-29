@@ -85,6 +85,10 @@ end
 class Lepra0_2 < Lepra0Base
   set_table_name "lepra2"
 end
+class Lepra0_3 < Lepra0Base
+  set_table_name "lepra3"
+end
+
 
 
 class Lepra1PatientStart < Lepra1Base
@@ -354,6 +358,38 @@ ASSESSMENT_LEPRA0_2_BOOL = {
   'sfl11'   =>  :sensitivity_foot_l11,
 }
 
+REACTION_LEPRA0_3 = {
+  'DATE' =>     :date,   # recorded reaction date
+  'PED_DATE' =>   :prednisolon_date,
+}
+
+
+REACTION_LEPRA0_3_INT = {
+    'DOSE'      => :mdt_dose,        # MDT dose
+    'REG_STUDY' => :bands_study,
+    'REA_DUR'   => :duration_months,
+    'T1R_N'       =>   :type1_grade,
+    'T2R'       =>   :type2_grade,
+    'RNER_FAC_R'=>   :nerve_pain_score_facila_r,
+    'RNER_FAC_L'=>    :nerve_pain_score_facila_l,
+    'RNER_RAD_R'=>   :nerve_pain_score_radial_r,
+    'RNER_RAD_L'=>    :nerve_pain_score_radial_l,
+    'RNER_ULN_R'=>   :nerve_pain_score_ulnar_r,
+    'RNER_ULN_L'=>    :nerve_pain_score_ulnar_l,
+    'RNER_MED_R'=>   :nerve_pain_score_median_r,
+    'RNER_MED_L'=>    :nerve_pain_score_median_l,
+    'RNER_COM_R'=>   :nerve_pain_score_common_r,
+    'RNER_COM_L'=>    :nerve_pain_score_common_l,
+    'RNER_POS_R'=>   :nerve_pain_score_posterior_r,
+    'RNER_POS_L'=>    :nerve_pain_score_posterior_l,
+}              
+    
+REACTION_LEPRA0_3_BOOL = {
+   'TREATMENT' => :treatment,
+   'REA_T1'    =>  :type1,
+   'REA_TN'    =>  :type_neuritis,
+   'REA_T2'    =>  :type2,
+}
 
 def new_assessment(contact, lepra1, lepra2) 
   assess = Assessment.new
@@ -367,6 +403,16 @@ def new_assessment(contact, lepra1, lepra2)
   walk_b(ASSESSMENT_LEPRA0_2_BOOL,assess,lepra2)
   print "  - Adding ",assess.person_id," to Assessment\n"
   assess.save
+end
+
+def new_reaction(person_id,lepra3)
+  react = Reaction.new
+  react.person_id = person_id
+  walk(REACTION_LEPRA0_3,react,lepra3)
+  walk_i(REACTION_LEPRA0_3_INT,react,lepra3)
+  walk_b(REACTION_LEPRA0_3_BOOL,react,lepra3)
+  print "  - Adding ",person_id," to Reaction\n"
+  react.save
 end
 
 Lepra1Lookup.find(:all).each do | rec |
@@ -501,6 +547,9 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
         contact_n.save
         new_assessment(contact_n,rec,lepra2_n)
       end
+    end
+    Lepra0_3.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s).each do | lepra3 |
+      new_reaction(person.id,lepra3)
     end
     print "Updating ",person.id," ",person.name," to People\n"
     person.save
