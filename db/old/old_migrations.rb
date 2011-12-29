@@ -101,8 +101,16 @@ SYMBOL = {
   disab:  'disability'
 }
 
+def check_column obj, name
+  if !obj.class.columns_hash()[name]
+    p obj.class.columns
+    raise "Unknown #{obj.class}.#{name}"
+  end
+end
+
 def walk hash, dest, src
   hash.each do | k, v |
+    check_column(src,k)
     value = src.send(k.to_sym)
     value = nil if value == ''
     dest.send(v.to_s+'=',value)
@@ -110,44 +118,57 @@ def walk hash, dest, src
 end
 
 def walk_i hash, dest, src
-    hash.each do | k, v |
-      dest.send(v.to_s+'=',src.send(k.to_sym).to_i)
-    end
+  hash.each do | k, v |
+    check_column(src,k)
+    dest.send(v.to_s+'=',src.send(k.to_sym).to_i)
+  end
 end
 
 def walk_b hash, dest, src
-    hash.each do | k, v |
-      value = src[k] == "\x01"
-      dest.send(v.to_s+'=',value)
-    end
+  hash.each do | k, v |
+    check_column(src,k)
+    value = src[k] == "\x01"
+    dest.send(v.to_s+'=',value)
+  end
 end
 
 PERSONALHISTORY_LEPRA0_1 = {
   'FINDER_LCA' => :finder_lca,
   'OCCUP' => :symbol_occupation,
-  # 'EDUCAT' => :symbol_education,
   # '?' => :symbol_guardian,
 }
 CONTACT_LEPRA0_1 = {
   'CLINIC_NUM' => :clinic_id,
   'HW_NUM'     => :staff_id,
+  'DETECT'     => :symbol_detection,
+  'REFERRED'     => :symbol_referred,
   'TYPE'       => :symbol_patient_type,
   'OUT'        => :symbol_patient_status,
   'GROUP'      => :symbol_treatment,
   'MDTDATE'    => :mdt_date,
+  'CONTACTPLN' => :contact_planned,
   'SMEARFDATE'    => :smearf_date,
   'SMEARLDATE'    => :smear_date,
   'RFT_DATE'    => :rft_date,
+  'CHRONICDIS'   => :symbol_chronic_disability,
   # 'PRE_DATE'    => :rft_date, in LEPRA3
 }
 CONTACT_LEPRA0_1_INT = {
+  'DISAB'   => :symbol_who_disability,
   'DOSES'   => :mdt_dose,
   'SMEARF'   => :symbol_smearf,
   'SMEARL'   => :symbol_smear,
+  'HW_NUM' => :health_worker,
+  'DURATION_Y' => :duration_years,
+  'DURATION_M' => :duration_months,
+  'YOUNG_Y' => :young_years,
+  'YOUNG_M' => :young_months,
+  'LESIONS' => :lesions,
 }
 CONTACT_LEPRA0_1_BOOL = {
-  'PRE_DOSE'   => :prednisolon,
   'FINAL_ASS'  => :final_assessment,
+  'DEF_SURREH' => :surgical_rehab,
+  'DEF_SE_REH' => :social_rehab,
 }
 
 CONTACT_LEPRA0_2 = {
@@ -158,13 +179,18 @@ CONTACT_LEPRA0_2_INT = {
 }
 CONTACT_LEPRA0_2_BOOL = {
   'trauma' => :trauma_operation,
+  'BCG_SCAR' => :bcg_scar,
   'disease' => :disease,
   'diy' => :diy,
   'hosp' => :hospital_admission,
   'neuritus' => :hospital_neuritis,
   'plantar_ul' => :hospital_plantar_alcer,
   'eye_compl' => :hospital_eye_complication,
-  'h_other' => :hospital_other
+  'h_other' => :hospital_other,
+  'pre_dose'   => :prednisolon,
+  'pregnant'   => :pregnant,
+  'pregn_date' => :pregnancy_date,
+  'breastfeed' => :breast_feeding,   
 }
 
 Lepra1Lookup.find(:all).each do | rec |
