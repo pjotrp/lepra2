@@ -47,6 +47,7 @@ class SymbolLookup < ActiveRecord::Base
 end
 
 Contact.delete_all
+Assessment.delete_all
 
 print People.count," records in Lepra2:People\n"
 print PersonalHistory.count," records in Lepra2:PersonalHistory\n"
@@ -194,8 +195,178 @@ CONTACT_LEPRA0_2_BOOL = {
 }
 
 ASSESSMENT_LEPRA0_1 = {
+}
+ASSESSMENT_LEPRA0_1_INT = {
+}
+ASSESSMENT_LEPRA0_1_BOOL = {
+    'LES_INFLAM' => :lesions_inflam,
+    'LES_FACE'   => :lesions_face,
+    'LES_ARM_R'  => :lesions_arm_r,
+    'LES_ARM_L'  => :lesions_arm_l,
+    'LES_TRUNK'  => :lesions_trunk,
+    'LES_LEG_R'  => :lesions_leg_r,
+    'LES_LEG_L'  => :lesions_leg_l,
+    'OED_HANDS'  => :oed_hands,
+    'OED_FEET'   => :oed_feed,
+    'DEF_HAG_R'  =>        :deformity_hag_r,     # Lagophtalmos
+    'DEF_HAG_L'  =>        :deformity_hag_l,
+    'DEF_FAC_R'  =>        :deformity_facial_r,  # Facialpalsy 
+    'DEF_FAC_L'  =>        :deformity_facial_l , # Facialpalsy 
+    'DEF_CLA_HR'  =>        :deformity_claw_hand_r  , 
+    'DEF_CLA_HL'  =>        :deformity_claw_hand_l  ,
+    'DEF_APE_R'    =>        :deformity_ape_thumb_r ,
+    'DEF_APE_L'  =>        :deformity_ape_thumb_l   ,
+    'DEF_WRIS_R'  =>        :deformity_wrist_drop_r ,
+    'DEF_WRIS_L'  =>        :deformity_wrist_drop_l ,
+    'DEF_FOOT_R'  =>        :deformity_foot_drop_r  ,
+    'DEF_FOOT_L'  =>        :deformity_foot_drop_l  ,
+    'DEF_CLA_TR'  =>        :deformity_claw_toes_r     ,
+    'DEF_CLA_TL'   =>        :deformity_claw_toes_l    ,
+    'DEF_ABS_FR'  =>        :deformity_absent_finger_r ,
+    'DEF_ABS_FL'  =>        :deformity_absent_finger_l ,
+    'DEF_ABS_TR'  =>        :deformity_absent_toes_r,
+    'DEF_ABS_TL'  =>        :deformity_absent_toes_l,
+    'DEF_PA_L'  =>        :deformity_palmar_r, # Palmar Anaesthetic
+    'DEF_PA_R'  =>        :deformity_palmar_l,
+    'DEF_PLA_L'    =>        :deformity_planter_r, # Planter Anaesthetic
+    'DEF_PLA_R' =>       :deformity_planter_l,
+           
+            
+=begin
+      
+      :ulcers  
+      :ulcers_palm_simple_r
+      :ulcers_palm_simple_l
+      :ulcers_sole_simple_r
+      :ulcers_sole_simple_l
+      :ulcers_palm_complicated_r
+      :ulcers_palm_complicated_l
+      :ulcers_sole_complicated_r
+      :ulcers_sole_complicated_l
+      :ulcers_palm_malignant_r
+      :ulcers_palm_malignant_l
+      :ulcers_sole_malignant_r
+      :ulcers_sole_malignant_l
+      :ulcers_palm_infected_r
+      :ulcers_palm_infected_l
+      :ulcers_sole_infected_r
+      :ulcers_sole_infected_l
+
+      
+      :sensory_score_hand_r
+      :sensory_score_hand_l
+      :sensory_score_foot_r
+      :sensory_score_foot_l
+      :sensory_score_eye_r
+      :sensory_score_eye_l
+
+      mage
+      :num_nerve_damage_prev
+      :nerve_facial_enlarged_r
+      :nerve_facial_enlarged_l
+      :nerve_facial_tender_r
+      :nerve_facial_tender_l
+      :nerve_radial_enlarged_r # Enlarged radial
+      :nerve_radial_enlarged_l
+      :nerve_radial_tender_r  # Tender/pain radia 
+      :nerve_radial_tender_l
+      :nerve_ulcer_enlarged_r
+      :nerve_ulcer_enlarged_l
+      :nerve_ulcer_tender_r
+      :nerve_ulcer_tender_l
+      :nerve_median_enlarged_r
+      :nerve_median_enlarged_l
+      :nerve_median_tender_r
+      :nerve_median_tender_l
+      :nerve_common_enlarged_r
+      :nerve_common_enlarged_l
+      :nerve_common_tender_r
+      :nerve_common_tender_l
+      :nerve_posterior_enlarged_r
+      :nerve_posterior_enlarged_l
+      :nerve_posterior_tender_r
+      :nerve_posterior_tender_l
+
+      scle testing
+      :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
+      :qmt_eye_closure_strength_l   # QMT Light eye closure (strength) Left
+      :qmt_eye_closure_gap_r        # QMT Light eye closure (gap) Right
+      :qmt_eye_closure_gap_l        # QMT Light eye closure (gap) Left
+      :qmt_little_finger_r          # QMT Little finger abd(ADM) Right
+      :qmt_little_finger_l          # QMT Little finger abd(ADM) Left
+      :qmt_thumb_r                  # QMT Thumb abd(APB) Right
+      :qmt_thumb_l                  # QMT Thumb abd(APB) Left
+      :qmt_wrist_r                  # QMT Wrist extension Right
+      :qmt_wrist_l                  # QMT Wrist extension Left
+      :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
+      :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
+
+      :sensitivity_hand_r01
+      :sensitivity_hand_r01
+      :sensitivity_hand_r02
+      :sensitivity_hand_r03
+      :sensitivity_hand_r04
+      :sensitivity_hand_r05
+      :sensitivity_hand_r06
+      :sensitivity_hand_r07
+      :sensitivity_hand_r08
+      :sensitivity_hand_r09
+      :sensitivity_hand_r10
+      :sensitivity_hand_r11
+      :sensitivity_hand_r12
+      :sensitivity_hand_l01
+      :sensitivity_hand_l01
+      :sensitivity_hand_l02
+      :sensitivity_hand_l03
+      :sensitivity_hand_l04
+      :sensitivity_hand_l05
+      :sensitivity_hand_l06
+      :sensitivity_hand_l07
+      :sensitivity_hand_l08
+      :sensitivity_hand_l09
+      :sensitivity_hand_l10
+      :sensitivity_hand_l11
+      :sensitivity_hand_l12
+
+      :sensitivity_foot_r01
+      :sensitivity_foot_r01
+      :sensitivity_foot_r02
+      :sensitivity_foot_r03
+      :sensitivity_foot_r04
+      :sensitivity_foot_r05
+      :sensitivity_foot_r06
+      :sensitivity_foot_r07
+      :sensitivity_foot_r08
+      :sensitivity_foot_r09
+      :sensitivity_foot_r10
+      :sensitivity_foot_r11
+
+      :sensitivity_foot_l01
+      :sensitivity_foot_l01
+      :sensitivity_foot_l02
+      :sensitivity_foot_l03
+      :sensitivity_foot_l04
+      :sensitivity_foot_l05
+      :sensitivity_foot_l06
+      :sensitivity_foot_l07
+      :sensitivity_foot_l08
+      :sensitivity_foot_l09
+      :sensitivity_foot_l10
+      :sensitivity_foot_l11
+=end
 
 }
+
+def new_assessment(contact, lepra1, lepra2) 
+  assess = Assessment.new
+  assess.person_id = contact.person_id
+  assess.contact_id = contact.id
+  walk(ASSESSMENT_LEPRA0_1,assess,lepra1)
+  walk_i(ASSESSMENT_LEPRA0_1_INT,assess,lepra1)
+  walk_b(ASSESSMENT_LEPRA0_1_BOOL,assess,lepra1)
+  print "  - Adding ",assess.person_id," to Assessment\n"
+  assess.save
+end
 
 Lepra1Lookup.find(:all).each do | rec |
   lookup = 
@@ -285,7 +456,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     address2.save
     # There is always one or more contacts, first create a contact
     # from lepra0_1 rec
-    contact = Contact.new
+    contact = Contact.create
     contact.updated_at = rec.CONTACTLST
     contact.date = rec.CONTACTLST
     contact.person_id = person.id
@@ -300,6 +471,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
       walk(CONTACT_LEPRA0_2,contact,lepra2)
       walk_i(CONTACT_LEPRA0_2_INT,contact,lepra2)
       walk_b(CONTACT_LEPRA0_2_BOOL,contact,lepra2)
+      new_assessment(contact,rec,lepra2)
     end
     # save
     print "- Adding ",person.id," to Contact\n"
@@ -311,7 +483,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
       lepra2 = nil
       Lepra0_2.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s)[1..-1].each do | lepra2_n |
         p lepra2_n.id
-        contact_n = Contact.new
+        contact_n = Contact.create
         # date = lepra2_n.date
         date = rec.CONTACTLST 
         contact_n.date = date
@@ -326,6 +498,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
         walk_b(CONTACT_LEPRA0_2_BOOL,contact_n,lepra2_n)
         print "- Adding another ",person.id," to Contact\n"
         contact_n.save
+        new_assessment(contact_n,rec,lepra2_n)
       end
     end
     print "Updating ",person.id," ",person.name," to People\n"
