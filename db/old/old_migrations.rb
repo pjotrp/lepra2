@@ -267,12 +267,23 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     # save
     print "- Adding ",person.id," to Contact\n"
     contact.save
+    contact = nil
 
     # for every additional lepra0_2 rec, add a contact
     if lepra2
-      Lepra0_2.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s)[1..-1].each do | lepra2 |
-        p lepra2.id
+      lepra2 = nil
+      Lepra0_2.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s)[1..-1].each do | lepra2_n |
+        p lepra2_n.id
+        contact_n = Contact.new
+        contact_n.updated_at = rec.CONTACTLST
+        contact_n.date = rec.CONTACTLST
+        contact_n.person_id = person.id
+        contact_n.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
+        walk(CONTACT_LEPRA0_2,contact_n,lepra2_n)
+        walk_i(CONTACT_LEPRA0_2_INT,contact_n,lepra2_n)
+        walk_b(CONTACT_LEPRA0_2_BOOL,contact_n,lepra2_n)
         print "- Adding another ",person.id," to Contact\n"
+        contact_n.save
       end
     end
     print "Updating ",person.id," ",person.name," to People\n"
