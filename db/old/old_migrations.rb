@@ -179,7 +179,7 @@ CONTACT_LEPRA0_2_INT = {
 }
 CONTACT_LEPRA0_2_BOOL = {
   'trauma' => :trauma_operation,
-  'BCG_SCAR' => :bcg_scar,
+  'bcg_scar' => :bcg_scar,
   'disease' => :disease,
   'diy' => :diy,
   'hosp' => :hospital_admission,
