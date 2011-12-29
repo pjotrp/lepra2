@@ -305,55 +305,52 @@ ASSESSMENT_LEPRA0_2_BOOL = {
   'ulci_sol_r' =>     :ulcers_sole_infected_r,
   'ulci_sol_l' =>     :ulcers_sole_infected_l,
 
-=begin
-      
-  Shr01    :sensitivity_hand_r01
-  Shr02    :sensitivity_hand_r02
-  Shr03    :sensitivity_hand_r03
-  Shr04    :sensitivity_hand_r04
-  Shr05    :sensitivity_hand_r05
-  Shr06    :sensitivity_hand_r06
-  Shr07    :sensitivity_hand_r07
-  Shr08    :sensitivity_hand_r08
-  Shr09    :sensitivity_hand_r09
-  Shr10    :sensitivity_hand_r10
-  Shr11    :sensitivity_hand_r11
-  Shr12    :sensitivity_hand_r12
-  Shl01    :sensitivity_hand_l01
-  Shl02    :sensitivity_hand_l02
-  Shl03    :sensitivity_hand_l03
-  Shl04    :sensitivity_hand_l04
-  Shl05    :sensitivity_hand_l05
-  Shl06    :sensitivity_hand_l06
-  Shl07    :sensitivity_hand_l07
-  Shl08    :sensitivity_hand_l08
-  Shl09    :sensitivity_hand_l09
-  Shl10    :sensitivity_hand_l10
-  Shl11    :sensitivity_hand_l11
-  Shl12    :sensitivity_hand_l12
-  Sfr01    :sensitivity_foot_r01
-  Sfr02    :sensitivity_foot_r02
-  Sfr03    :sensitivity_foot_r03
-  Sfr04    :sensitivity_foot_r04
-  Sfr05    :sensitivity_foot_r05
-  Sfr06    :sensitivity_foot_r06
-  Sfr07    :sensitivity_foot_r07
-  Sfr08    :sensitivity_foot_r08
-  Sfr09    :sensitivity_foot_r09
-  Sfr10    :sensitivity_foot_r10
-  Sfr11    :sensitivity_foot_r11
-  Sfl01    :sensitivity_foot_l01
-  Sfl02    :sensitivity_foot_l02
-  Sfl03    :sensitivity_foot_l03
-  Sfl04    :sensitivity_foot_l04
-  Sfl05    :sensitivity_foot_l05
-  Sfl06    :sensitivity_foot_l06
-  Sfl07    :sensitivity_foot_l07
-  Sfl08    :sensitivity_foot_l08
-  Sfl09    :sensitivity_foot_l09
-  Sfl10    :sensitivity_foot_l10
-  Sfl11    :sensitivity_foot_l11
-=end
+  'shr01'   =>  sensitivity_hand_r01
+  'shr02'   =>  sensitivity_hand_r02
+  'shr03'   =>  sensitivity_hand_r03
+  'shr04'   =>  sensitivity_hand_r04
+  'shr05'   =>  sensitivity_hand_r05
+  'shr06'   =>  sensitivity_hand_r06
+  'shr07'   =>  sensitivity_hand_r07
+  'shr08'   =>  sensitivity_hand_r08
+  'shr09'   =>  sensitivity_hand_r09
+  'shr10'   =>  sensitivity_hand_r10
+  'shr11'   =>  sensitivity_hand_r11
+  'shr12'   =>  sensitivity_hand_r12
+  'shl01'   =>  sensitivity_hand_l01
+  'shl02'   =>  sensitivity_hand_l02
+  'shl03'   =>  sensitivity_hand_l03
+  'shl04'   =>  sensitivity_hand_l04
+  'shl05'   =>  sensitivity_hand_l05
+  'shl06'   =>  sensitivity_hand_l06
+  'shl07'   =>  sensitivity_hand_l07
+  'shl08'   =>  sensitivity_hand_l08
+  'shl09'   =>  sensitivity_hand_l09
+  'shl10'   =>  sensitivity_hand_l10
+  'shl11'   =>  sensitivity_hand_l11
+  'shl12'   =>  sensitivity_hand_l12
+  'sfr01'   =>  sensitivity_foot_r01
+  'sfr02'   =>  sensitivity_foot_r02
+  'sfr03'   =>  sensitivity_foot_r03
+  'sfr04'   =>  sensitivity_foot_r04
+  'sfr05'   =>  sensitivity_foot_r05
+  'sfr06'   =>  sensitivity_foot_r06
+  'sfr07'   =>  sensitivity_foot_r07
+  'sfr08'   =>  sensitivity_foot_r08
+  'sfr09'   =>  sensitivity_foot_r09
+  'sfr10'   =>  sensitivity_foot_r10
+  'sfr11'   =>  sensitivity_foot_r11
+  'sfl01'   =>  sensitivity_foot_l01
+  'sfl02'   =>  sensitivity_foot_l02
+  'sfl03'   =>  sensitivity_foot_l03
+  'sfl04'   =>  sensitivity_foot_l04
+  'sfl05'   =>  sensitivity_foot_l05
+  'sfl06'   =>  sensitivity_foot_l06
+  'sfl07'   =>  sensitivity_foot_l07
+  'sfl08'   =>  sensitivity_foot_l08
+  'sfl09'   =>  sensitivity_foot_l09
+  'sfl10'   =>  sensitivity_foot_l10
+  'sfl11'   =>  sensitivity_foot_l11
 }
 
 
