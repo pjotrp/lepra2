@@ -197,6 +197,7 @@ CONTACT_LEPRA0_2_BOOL = {
 ASSESSMENT_LEPRA0_1 = {
 }
 ASSESSMENT_LEPRA0_1_INT = {
+  'PREV_NER_D' =>     :num_nerve_damage_prev,
 }
 ASSESSMENT_LEPRA0_1_BOOL = {
     'LES_INFLAM' => :lesions_inflam,
@@ -212,16 +213,16 @@ ASSESSMENT_LEPRA0_1_BOOL = {
     'DEF_HAG_L'  =>        :deformity_hag_l,
     'DEF_FAC_R'  =>        :deformity_facial_r,  # Facialpalsy 
     'DEF_FAC_L'  =>        :deformity_facial_l , # Facialpalsy 
-    'DEF_CLA_HR'  =>        :deformity_claw_hand_r  , 
-    'DEF_CLA_HL'  =>        :deformity_claw_hand_l  ,
+    'DEF_CLA_HR'  =>        :deformity_claw_hand_r, 
+    'DEF_CLA_HL'  =>        :deformity_claw_hand_l, 
     'DEF_APE_R'    =>        :deformity_ape_thumb_r ,
-    'DEF_APE_L'  =>        :deformity_ape_thumb_l   ,
+    'DEF_APE_L'  =>        :deformity_ape_thumb_l,  
     'DEF_WRIS_R'  =>        :deformity_wrist_drop_r ,
     'DEF_WRIS_L'  =>        :deformity_wrist_drop_l ,
-    'DEF_FOOT_R'  =>        :deformity_foot_drop_r  ,
-    'DEF_FOOT_L'  =>        :deformity_foot_drop_l  ,
-    'DEF_CLA_TR'  =>        :deformity_claw_toes_r     ,
-    'DEF_CLA_TL'   =>        :deformity_claw_toes_l    ,
+    'DEF_FOOT_R'  =>        :deformity_foot_drop_r,
+    'DEF_FOOT_L'  =>        :deformity_foot_drop_l ,
+    'DEF_CLA_TR'  =>        :deformity_claw_toes_r   ,
+    'DEF_CLA_TL'   =>        :deformity_claw_toes_l   ,
     'DEF_ABS_FR'  =>        :deformity_absent_finger_r ,
     'DEF_ABS_FL'  =>        :deformity_absent_finger_l ,
     'DEF_ABS_TR'  =>        :deformity_absent_toes_r,
@@ -231,7 +232,6 @@ ASSESSMENT_LEPRA0_1_BOOL = {
     'DEF_PLA_L'    =>        :deformity_planter_r, # Planter Anaesthetic
     'DEF_PLA_R' =>       :deformity_planter_l,
           
-  'PREV_NER_D' =>     :num_nerve_damage_prev,
   'NER_FAC_ER' =>      :nerve_facial_enlarged_r,
   'NER_FAC_EL' =>     :nerve_facial_enlarged_l,
   'NER_FAC_TR' =>     :nerve_facial_tender_r,
@@ -257,104 +257,105 @@ ASSESSMENT_LEPRA0_1_BOOL = {
   'NER_POS_TR' =>     :nerve_posterior_tender_r,
   'NER_POS_TL' =>     :nerve_posterior_tender_l,
 
-            
+}
+
+           
+ASSESSMENT_LEPRA0_2 = {
+}
+
+ASSESSMENT_LEPRA0_2_INT = {
+  'ulcs_num' =>  :ulcers ,
+ 'st_hand_r' =>     :sensory_score_hand_r,
+ 'st_hand_l' =>     :sensory_score_hand_l,
+ 'st_foot_r' =>     :sensory_score_foot_r,
+ 'st_foot_l' =>     :sensory_score_foot_l,
+ 'st_eye_r' =>      :sensory_score_eye_r,
+ 'st_eye_l' =>      :sensory_score_eye_l,
+  'qmt_ey_sr' =>     :qmt_eye_closure_strength_r, # 'qmt_Light eye closure (strength) Right
+  'qmt_ey_sl' =>     :qmt_eye_closure_strength_l,  # 'qmt_Light eye closure (strength) Left
+  'qmt_ey_gr' =>     :qmt_eye_closure_gap_r,      # 'qmt_Light eye closure (gap) Right
+  'qmt_ey_gl' =>     :qmt_eye_closure_gap_l,       # 'qmt_Light eye closure (gap) Left
+  'qmt_lf_ar' =>     :qmt_little_finger_r,        # 'qmt_Little finger abd(ADM) Right
+  'qmt_lf_al' =>     :qmt_little_finger_l,         # 'qmt_Little finger abd(ADM) Left
+  'qmt_th_ar' =>     :qmt_thumb_r,                # 'qmt_Thumb abd(APB) Right
+  'qmt_th_al' =>     :qmt_thumb_l,                 # 'qmt_Thumb abd(APB) Left
+  'qmt_wr_er' =>     :qmt_wrist_r,                # 'qmt_Wrist extension Right
+  'qmt_wr_el' =>     :qmt_wrist_l,                 # 'qmt_Wrist extension Left
+  'qmt_do_r' =>      :qmt_dorsiflexion_foot_r,    # 'qmt_Dorsiflexion Right foot
+  'qmt_do_l' =>      :qmt_dorsiflexion_foot_l,     # 'qmt_Dorsiflexion Left foot
+}
+
+ASSESSMENT_LEPRA0_2_BOOL = {
+  
+
+  'ulcs_pal_r' =>     :ulcers_palm_simple_r,
+  'ulcs_pal_l' =>     :ulcers_palm_simple_l,
+  'ulcs_sol_r' =>     :ulcers_sole_simple_r,
+  'ulcs_sol_l' =>     :ulcers_sole_simple_l,
+  'ulcc_pal_r' =>     :ulcers_palm_complicated_r,
+  'ulcc_pal_l' =>     :ulcers_palm_complicated_l,
+  'ulcc_sol_r' =>     :ulcers_sole_complicated_r,
+  'ulcc_sol_l' =>     :ulcers_sole_complicated_l,
+  'ulcm_pal_r' =>     :ulcers_palm_malignant_r,
+  'ulcm_pal_l' =>     :ulcers_palm_malignant_l,
+  'ulcm_sol_r' =>     :ulcers_sole_malignant_r,
+  'ulcm_sol_l' =>     :ulcers_sole_malignant_l,
+  'ulci_pal_r' =>     :ulcers_palm_infected_r,
+  'ulci_pal_l' =>     :ulcers_palm_infected_l,
+  'ulci_sol_r' =>     :ulcers_sole_infected_r,
+  'ulci_sol_l' =>     :ulcers_sole_infected_l,
+
 =begin
       
-      :ulcers  
-      :ulcers_palm_simple_r,
-      :ulcers_palm_simple_l,
-      :ulcers_sole_simple_r,
-      :ulcers_sole_simple_l,
-      :ulcers_palm_complicated_r,
-      :ulcers_palm_complicated_l,
-      :ulcers_sole_complicated_r,
-      :ulcers_sole_complicated_l,
-      :ulcers_palm_malignant_r,
-      :ulcers_palm_malignant_l,
-      :ulcers_sole_malignant_r,
-      :ulcers_sole_malignant_l,
-      :ulcers_palm_infected_r,
-      :ulcers_palm_infected_l,
-      :ulcers_sole_infected_r,
-      :ulcers_sole_infected_l,
-
-      
-      :sensory_score_hand_r,
-      :sensory_score_hand_l,
-      :sensory_score_foot_r,
-      :sensory_score_foot_l,
-      :sensory_score_eye_r,
-      :sensory_score_eye_l,
-
-      scle testing
-      :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
-      :qmt_eye_closure_strength_l   # QMT Light eye closure (strength) Left
-      :qmt_eye_closure_gap_r        # QMT Light eye closure (gap) Right
-      :qmt_eye_closure_gap_l        # QMT Light eye closure (gap) Left
-      :qmt_little_finger_r          # QMT Little finger abd(ADM) Right
-      :qmt_little_finger_l          # QMT Little finger abd(ADM) Left
-      :qmt_thumb_r                  # QMT Thumb abd(APB) Right
-      :qmt_thumb_l                  # QMT Thumb abd(APB) Left
-      :qmt_wrist_r                  # QMT Wrist extension Right
-      :qmt_wrist_l                  # QMT Wrist extension Left
-      :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
-      :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
-
-      :sensitivity_hand_r01
-      :sensitivity_hand_r01
-      :sensitivity_hand_r02
-      :sensitivity_hand_r03
-      :sensitivity_hand_r04
-      :sensitivity_hand_r05
-      :sensitivity_hand_r06
-      :sensitivity_hand_r07
-      :sensitivity_hand_r08
-      :sensitivity_hand_r09
-      :sensitivity_hand_r10
-      :sensitivity_hand_r11
-      :sensitivity_hand_r12
-      :sensitivity_hand_l01
-      :sensitivity_hand_l01
-      :sensitivity_hand_l02
-      :sensitivity_hand_l03
-      :sensitivity_hand_l04
-      :sensitivity_hand_l05
-      :sensitivity_hand_l06
-      :sensitivity_hand_l07
-      :sensitivity_hand_l08
-      :sensitivity_hand_l09
-      :sensitivity_hand_l10
-      :sensitivity_hand_l11
-      :sensitivity_hand_l12
-
-      :sensitivity_foot_r01
-      :sensitivity_foot_r01
-      :sensitivity_foot_r02
-      :sensitivity_foot_r03
-      :sensitivity_foot_r04
-      :sensitivity_foot_r05
-      :sensitivity_foot_r06
-      :sensitivity_foot_r07
-      :sensitivity_foot_r08
-      :sensitivity_foot_r09
-      :sensitivity_foot_r10
-      :sensitivity_foot_r11
-
-      :sensitivity_foot_l01
-      :sensitivity_foot_l01
-      :sensitivity_foot_l02
-      :sensitivity_foot_l03
-      :sensitivity_foot_l04
-      :sensitivity_foot_l05
-      :sensitivity_foot_l06
-      :sensitivity_foot_l07
-      :sensitivity_foot_l08
-      :sensitivity_foot_l09
-      :sensitivity_foot_l10
-      :sensitivity_foot_l11
+  Shr01    :sensitivity_hand_r01
+  Shr02    :sensitivity_hand_r02
+  Shr03    :sensitivity_hand_r03
+  Shr04    :sensitivity_hand_r04
+  Shr05    :sensitivity_hand_r05
+  Shr06    :sensitivity_hand_r06
+  Shr07    :sensitivity_hand_r07
+  Shr08    :sensitivity_hand_r08
+  Shr09    :sensitivity_hand_r09
+  Shr10    :sensitivity_hand_r10
+  Shr11    :sensitivity_hand_r11
+  Shr12    :sensitivity_hand_r12
+  Shl01    :sensitivity_hand_l01
+  Shl02    :sensitivity_hand_l02
+  Shl03    :sensitivity_hand_l03
+  Shl04    :sensitivity_hand_l04
+  Shl05    :sensitivity_hand_l05
+  Shl06    :sensitivity_hand_l06
+  Shl07    :sensitivity_hand_l07
+  Shl08    :sensitivity_hand_l08
+  Shl09    :sensitivity_hand_l09
+  Shl10    :sensitivity_hand_l10
+  Shl11    :sensitivity_hand_l11
+  Shl12    :sensitivity_hand_l12
+  Sfr01    :sensitivity_foot_r01
+  Sfr02    :sensitivity_foot_r02
+  Sfr03    :sensitivity_foot_r03
+  Sfr04    :sensitivity_foot_r04
+  Sfr05    :sensitivity_foot_r05
+  Sfr06    :sensitivity_foot_r06
+  Sfr07    :sensitivity_foot_r07
+  Sfr08    :sensitivity_foot_r08
+  Sfr09    :sensitivity_foot_r09
+  Sfr10    :sensitivity_foot_r10
+  Sfr11    :sensitivity_foot_r11
+  Sfl01    :sensitivity_foot_l01
+  Sfl02    :sensitivity_foot_l02
+  Sfl03    :sensitivity_foot_l03
+  Sfl04    :sensitivity_foot_l04
+  Sfl05    :sensitivity_foot_l05
+  Sfl06    :sensitivity_foot_l06
+  Sfl07    :sensitivity_foot_l07
+  Sfl08    :sensitivity_foot_l08
+  Sfl09    :sensitivity_foot_l09
+  Sfl10    :sensitivity_foot_l10
+  Sfl11    :sensitivity_foot_l11
 =end
-
 }
+
 
 def new_assessment(contact, lepra1, lepra2) 
   assess = Assessment.new
@@ -363,6 +364,9 @@ def new_assessment(contact, lepra1, lepra2)
   walk(ASSESSMENT_LEPRA0_1,assess,lepra1)
   walk_i(ASSESSMENT_LEPRA0_1_INT,assess,lepra1)
   walk_b(ASSESSMENT_LEPRA0_1_BOOL,assess,lepra1)
+  walk(ASSESSMENT_LEPRA0_2,assess,lepra2)
+  walk_i(ASSESSMENT_LEPRA0_2_INT,assess,lepra2)
+  walk_b(ASSESSMENT_LEPRA0_2_BOOL,assess,lepra2)
   print "  - Adding ",assess.person_id," to Assessment\n"
   assess.save
 end
