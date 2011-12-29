@@ -30,7 +30,7 @@ class CreateContacts < ActiveRecord::Migration
       # medication
       t.boolean    :prednisolon   # low dose
       t.boolean    :diy
-      t.string     :diy_specify
+      t.string     :diy_specify   # new field
       t.boolean    :hospital_admission
       t.boolean    :hospital_neuritis
       t.boolean    :hospital_plantar_alcer

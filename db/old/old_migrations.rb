@@ -152,12 +152,19 @@ CONTACT_LEPRA0_1_BOOL = {
 
 CONTACT_LEPRA0_2 = {
   'disease_s' => :symbol_disease_descr,
+  'h_otherstr' => :hospital_specify
 }
 CONTACT_LEPRA0_2_INT = {
 }
 CONTACT_LEPRA0_2_BOOL = {
   'trauma' => :trauma_operation,
   'disease' => :disease,
+  'diy' => :diy,
+  'hosp' => :hospital_admission,
+  'neuritus' => :hospital_neuritis,
+  'plantar_ul' => :hospital_plantar_alcer,
+  'eye_compl' => :hospital_eye_complication,
+  'h_other' => :hospital_other
 }
 
 Lepra1Lookup.find(:all).each do | rec |
