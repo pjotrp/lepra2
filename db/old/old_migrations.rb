@@ -193,6 +193,10 @@ CONTACT_LEPRA0_2_BOOL = {
   'breastfeed' => :breast_feeding,   
 }
 
+ASSESSMENT_LEPRA0_1 = {
+
+}
+
 Lepra1Lookup.find(:all).each do | rec |
   lookup = 
     if not SymbolLookup.exists?(rec.id)
