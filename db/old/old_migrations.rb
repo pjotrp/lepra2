@@ -48,6 +48,7 @@ end
 
 Contact.delete_all
 Assessment.delete_all
+Reaction.delete_all
 
 print People.count," records in Lepra2:People\n"
 print PersonalHistory.count," records in Lepra2:PersonalHistory\n"
@@ -156,6 +157,7 @@ CONTACT_LEPRA0_1 = {
   'SMEARLDATE'    => :smear_date,
   'RFT_DATE'    => :rft_date,
   'CHRONICDIS'   => :symbol_chronic_disability,
+  'FINAL_DATE' => :final_date,
   # 'PRE_DATE'    => :rft_date, in LEPRA3
 }
 CONTACT_LEPRA0_1_INT = {
@@ -170,6 +172,8 @@ CONTACT_LEPRA0_1_INT = {
   'YOUNG_M' => :young_months,
   'LESIONS' => :lesions,
   'BCG_SCAR' => :bcg_scar,
+  'FDISAB' => :final_disability,
+  'FDEF_WHO_G' => :symbol_final_who_disability,
 }
 CONTACT_LEPRA0_1_BOOL = {
   'FINAL_ASS'  => :final_assessment,
@@ -179,7 +183,7 @@ CONTACT_LEPRA0_1_BOOL = {
 
 CONTACT_LEPRA0_2 = {
   'disease_s' => :symbol_disease_descr,
-  'h_otherstr' => :hospital_specify
+  'h_otherstr' => :hospital_specify,
 }
 CONTACT_LEPRA0_2_INT = {
 }

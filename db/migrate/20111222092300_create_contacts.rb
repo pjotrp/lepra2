@@ -62,6 +62,10 @@ class CreateContacts < ActiveRecord::Migration
       t.boolean    :breast_feeding   
       t.boolean    :surgical_rehab
       t.boolean    :social_rehab
+      t.integer    :symbol_final_who_disability    # WHO disability grade (0..2)
+      t.integer    :final_disability
+      t.date       :final_date
+
       t.text    :remark    
  
       t.timestamps
