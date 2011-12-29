@@ -230,62 +230,61 @@ ASSESSMENT_LEPRA0_1_BOOL = {
     'DEF_PA_R'  =>        :deformity_palmar_l,
     'DEF_PLA_L'    =>        :deformity_planter_r, # Planter Anaesthetic
     'DEF_PLA_R' =>       :deformity_planter_l,
-           
+          
+  'PREV_NER_D' =>     :num_nerve_damage_prev,
+  'NER_FAC_ER' =>      :nerve_facial_enlarged_r,
+  'NER_FAC_EL' =>     :nerve_facial_enlarged_l,
+  'NER_FAC_TR' =>     :nerve_facial_tender_r,
+  'NER_FAC_TL' =>     :nerve_facial_tender_l,
+  'NER_RAD_ER' =>      :nerve_radial_enlarged_r, # Enlarged radial
+  'NER_RAD_EL' =>     :nerve_radial_enlarged_l,
+  'NER_RAD_TR' =>     :nerve_radial_tender_r,  # Tender/pain radia 
+  'NER_RAD_TL' =>     :nerve_radial_tender_l,
+  'NER_ULN_ER' =>      :nerve_ulcer_enlarged_r,
+  'NER_ULN_EL' =>     :nerve_ulcer_enlarged_l,
+  'NER_ULN_TR' =>     :nerve_ulcer_tender_r,
+  'NER_ULN_TL' =>     :nerve_ulcer_tender_l,
+  'NER_MED_ER' =>      :nerve_median_enlarged_r,
+  'NER_MED_EL' =>     :nerve_median_enlarged_l,
+  'NER_MED_TR' =>     :nerve_median_tender_r,
+  'NER_MED_TL' =>     :nerve_median_tender_l,
+  'NER_COM_ER' =>      :nerve_common_enlarged_r,
+  'NER_COM_EL' =>     :nerve_common_enlarged_l,
+  'NER_COM_TR' =>     :nerve_common_tender_r,
+  'NER_COM_TL' =>     :nerve_common_tender_l,
+  'NER_POS_ER' =>      :nerve_posterior_enlarged_r,
+  'NER_POS_EL' =>     :nerve_posterior_enlarged_l,
+  'NER_POS_TR' =>     :nerve_posterior_tender_r,
+  'NER_POS_TL' =>     :nerve_posterior_tender_l,
+
             
 =begin
       
       :ulcers  
-      :ulcers_palm_simple_r
-      :ulcers_palm_simple_l
-      :ulcers_sole_simple_r
-      :ulcers_sole_simple_l
-      :ulcers_palm_complicated_r
-      :ulcers_palm_complicated_l
-      :ulcers_sole_complicated_r
-      :ulcers_sole_complicated_l
-      :ulcers_palm_malignant_r
-      :ulcers_palm_malignant_l
-      :ulcers_sole_malignant_r
-      :ulcers_sole_malignant_l
-      :ulcers_palm_infected_r
-      :ulcers_palm_infected_l
-      :ulcers_sole_infected_r
-      :ulcers_sole_infected_l
+      :ulcers_palm_simple_r,
+      :ulcers_palm_simple_l,
+      :ulcers_sole_simple_r,
+      :ulcers_sole_simple_l,
+      :ulcers_palm_complicated_r,
+      :ulcers_palm_complicated_l,
+      :ulcers_sole_complicated_r,
+      :ulcers_sole_complicated_l,
+      :ulcers_palm_malignant_r,
+      :ulcers_palm_malignant_l,
+      :ulcers_sole_malignant_r,
+      :ulcers_sole_malignant_l,
+      :ulcers_palm_infected_r,
+      :ulcers_palm_infected_l,
+      :ulcers_sole_infected_r,
+      :ulcers_sole_infected_l,
 
       
-      :sensory_score_hand_r
-      :sensory_score_hand_l
-      :sensory_score_foot_r
-      :sensory_score_foot_l
-      :sensory_score_eye_r
-      :sensory_score_eye_l
-
-      mage
-      :num_nerve_damage_prev
-      :nerve_facial_enlarged_r
-      :nerve_facial_enlarged_l
-      :nerve_facial_tender_r
-      :nerve_facial_tender_l
-      :nerve_radial_enlarged_r # Enlarged radial
-      :nerve_radial_enlarged_l
-      :nerve_radial_tender_r  # Tender/pain radia 
-      :nerve_radial_tender_l
-      :nerve_ulcer_enlarged_r
-      :nerve_ulcer_enlarged_l
-      :nerve_ulcer_tender_r
-      :nerve_ulcer_tender_l
-      :nerve_median_enlarged_r
-      :nerve_median_enlarged_l
-      :nerve_median_tender_r
-      :nerve_median_tender_l
-      :nerve_common_enlarged_r
-      :nerve_common_enlarged_l
-      :nerve_common_tender_r
-      :nerve_common_tender_l
-      :nerve_posterior_enlarged_r
-      :nerve_posterior_enlarged_l
-      :nerve_posterior_tender_r
-      :nerve_posterior_tender_l
+      :sensory_score_hand_r,
+      :sensory_score_hand_l,
+      :sensory_score_foot_r,
+      :sensory_score_foot_l,
+      :sensory_score_eye_r,
+      :sensory_score_eye_l,
 
       scle testing
       :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
