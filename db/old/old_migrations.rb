@@ -275,10 +275,15 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
       Lepra0_2.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s)[1..-1].each do | lepra2_n |
         p lepra2_n.id
         contact_n = Contact.new
-        contact_n.updated_at = rec.CONTACTLST
-        contact_n.date = rec.CONTACTLST
+        # date = lepra2_n.date
+        date = rec.CONTACTLST 
+        contact_n.date = date
+        contact_n.updated_at = date
         contact_n.person_id = person.id
         contact_n.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
+        walk(CONTACT_LEPRA0_1,contact_n,rec)
+        walk_i(CONTACT_LEPRA0_1_INT,contact_n,rec)
+        walk_b(CONTACT_LEPRA0_1_BOOL,contact_n,rec)
         walk(CONTACT_LEPRA0_2,contact_n,lepra2_n)
         walk_i(CONTACT_LEPRA0_2_INT,contact_n,lepra2_n)
         walk_b(CONTACT_LEPRA0_2_BOOL,contact_n,lepra2_n)
