@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "assessments", :force => true do |t|
     t.integer  "person_id"
     t.integer  "contact_id"
+    t.string   "registration"
     t.integer  "lesions"
     t.boolean  "lesions_inflam"
     t.boolean  "lesions_face"
@@ -190,6 +191,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "person_id"
+    t.string   "registration"
     t.date     "date"
     t.integer  "clinic_id"
     t.integer  "staff_id"
@@ -274,6 +276,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "personal_histories", :force => true do |t|
     t.integer  "person_id"
+    t.string   "registration"
     t.date     "registration_date"
     t.integer  "staff_id"
     t.integer  "finder_lca"
@@ -305,6 +308,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "reactions", :force => true do |t|
     t.integer  "person_id"
     t.integer  "contact_id"
+    t.string   "registration"
     t.date     "date"
     t.date     "prednisolon_date"
     t.integer  "bands_study"
@@ -344,6 +348,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "staffs", :force => true do |t|
     t.string   "name"
+    t.string   "registration"
     t.integer  "clinic_id"
     t.datetime "created_at"
     t.datetime "updated_at"

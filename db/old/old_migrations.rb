@@ -53,6 +53,8 @@ Reaction.delete_all
 print People.count," records in Lepra2:People\n"
 print PersonalHistory.count," records in Lepra2:PersonalHistory\n"
 print Contact.count," records in Lepra2:Contact\n"
+print Assessment.count," records in Lepra2:Assessment\n"
+print Reaction.count," records in Lepra2:Reaction\n"
 print Address.count," records in Lepra2:Address\n"
 print Location.count," records in Lepra2:Location\n"
 print SymbolLookup.count," records in Lepra2:SymbolLookup\n"
@@ -398,6 +400,7 @@ REACTION_LEPRA0_3_BOOL = {
 def new_assessment(contact, lepra1, lepra2) 
   assess = Assessment.new
   assess.person_id = contact.person_id
+  assess.registration = contact.registration
   assess.contact_id = contact.id
   walk(ASSESSMENT_LEPRA0_1,assess,lepra1)
   walk_i(ASSESSMENT_LEPRA0_1_INT,assess,lepra1)
@@ -409,9 +412,10 @@ def new_assessment(contact, lepra1, lepra2)
   assess.save
 end
 
-def new_reaction(person_id,lepra3)
+def new_reaction(person_id, registration,lepra3)
   react = Reaction.new
   react.person_id = person_id
+  react.registration = registration
   walk(REACTION_LEPRA0_3,react,lepra3)
   walk_i(REACTION_LEPRA0_3_INT,react,lepra3)
   walk_b(REACTION_LEPRA0_3_BOOL,react,lepra3)
@@ -456,7 +460,9 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     address = 
       if not Address.exists?(:village => rec.VILLAGE, :clinic_id => rec.CLINIC_NUM)
         addr = Address.new
-        addr.village = rec.VILLAGE
+        village = rec.VILLAGE
+        village = 'unknown' if village == nil
+        addr.village = village
         addr.clinic_id = rec.CLINIC_NUM
         addr.road = ''
         addr.save
@@ -488,6 +494,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     # personal history
     hist = PersonalHistory.find_or_initialize_by_id(person.id)
     hist.id = person.id
+    hist.registration = person.registration
     hist.person_id = person.id
     hist.created_at = rec.REG_DATE
     hist.updated_at = rec.CONTACTLST
@@ -511,6 +518,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     contact.updated_at = rec.CONTACTLST
     contact.date = rec.CONTACTLST
     contact.person_id = person.id
+    contact.registration = person.registration
     contact.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
     walk(CONTACT_LEPRA0_1,contact,rec)
     walk_i(CONTACT_LEPRA0_1_INT,contact,rec)
@@ -540,6 +548,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
         contact_n.date = date
         contact_n.updated_at = date
         contact_n.person_id = person.id
+        contact.registration = person.registration
         contact_n.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
         walk(CONTACT_LEPRA0_1,contact_n,rec)
         walk_i(CONTACT_LEPRA0_1_INT,contact_n,rec)
@@ -553,8 +562,9 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
       end
     end
     Lepra0_3.where('REG_MAIN = '+rec.REG_MAIN.to_i.to_s).each do | lepra3 |
-      new_reaction(person.id,lepra3)
+      new_reaction(person.id,person.registration,lepra3)
     end
+    person.name = 'unknown' if !person.name
     print "Updating ",person.id," ",person.name," to People\n"
     person.save
   # end  

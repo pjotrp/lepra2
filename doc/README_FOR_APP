@@ -1,6 +1,15 @@
 LEPRA2
 
-The schema layout is as follows:
+== Registration number ==
+
+Every Person has a unique registration number. This number is a
+string, and can be of any format. The registration number appears on
+all records, related to a Person. The database itself relies on a
+person.id, which is not the same as the registration number. This
+implies the registration number can easily be changed.
+
+
+The database schema layout is as follows:
 
 == Person ==
 
@@ -11,9 +20,9 @@ turn refer to Assessment and Reaction forms.
 
 == PersonalHistory ==
 
-The personal history records non-medical mutable data, such as address, phone and
-family layout. One person can have any number of personal history
-mutations.
+The personal history records non-medical mutable data, such as
+address, phone and family layout. One person can have any number of
+personal history mutations.
 
 == Contact ==
 
@@ -52,8 +61,3 @@ Location contains the map coordinates. This is used for geographical
 study. Addresses can share a Location - as it will usually be at a
 somewhat higher level than the road/village.
 
-
-
-
-
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.

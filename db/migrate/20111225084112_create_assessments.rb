@@ -6,6 +6,7 @@ class CreateAssessments < ActiveRecord::Migration
       t.belongs_to :person
       t.belongs_to :contact   # refers to date, clinic, staff
 
+      t.string :registration # for reference
       # lesions
       t.integer :lesions
       t.boolean :lesions_inflam

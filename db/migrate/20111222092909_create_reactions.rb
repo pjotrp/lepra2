@@ -3,6 +3,7 @@ class CreateReactions < ActiveRecord::Migration
     create_table :reactions do |t|
       t.belongs_to :person
       t.belongs_to :contact  # holds staff info
+      t.string  :registration
       t.date    :date   # recorded reaction date
       t.date    :prednisolon_date
       t.integer :bands_study

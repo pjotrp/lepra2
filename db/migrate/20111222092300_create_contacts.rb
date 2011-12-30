@@ -7,6 +7,7 @@ class CreateContacts < ActiveRecord::Migration
       #
       # See also the Assessment and Reaction tables for patient state.
       t.belongs_to :person
+      t.string     :registration # read-only
       t.date       :date
       t.integer    :clinic_id
       t.integer    :staff_id
