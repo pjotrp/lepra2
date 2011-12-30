@@ -17,8 +17,8 @@ class Person < ActiveRecord::Base
   has_many :personal_histories  # address is part of personal history
   has_many :addresses, :through => :personal_histories
   has_many :contacts
-  has_many :assessments, :through => :contacts
-  has_many :reactions, :through => :contacts
+  has_many :assessments
+  has_many :reactions
 
   # validates :year_of_birth, :length => { :in => 1950..Time.now.year }
   validates_numericality_of :year_of_birth, :only_integer => true, :message => "can only be whole number."
