@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Lepra2
+    = stylesheet_link_tag "application"
+    // <%= javascript_include_tag "application" %>
+    // <%= csrf_meta_tags %>
+  %body{ :class => controller.controller_name }
+    .banner
+      .maintitle
+        = @page_title || "Lepra2 database"
+      .logo
+        = image_tag("Lepra_2003.png", :width => 300)
+
+    .main
+      = yield
