@@ -1,4 +1,11 @@
 %pre
+  =raw File.read(File.dirname(__FILE__)+'/../../../README').split(/\n\n/)[0]
+%pre
+  For more information and the source code see the source repository at    
+  %a{:href => "https://github.com/pjotrp/lepra2"}
+    https://github.com/pjotrp/lepra2
+  (currently not public)
+%pre
   =raw File.read(File.dirname(__FILE__)+'/../../../doc/README_FOR_APP')
 %p 
-  DBLM (c) 2012
+  Copyright (C) 2011 Pjotr Prins &lt;pjotr.prins@thebird.nl&gt;

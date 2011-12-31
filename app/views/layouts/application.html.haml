@@ -6,11 +6,21 @@
     // <%= javascript_include_tag "application" %>
     // <%= csrf_meta_tags %>
   %body{ :class => controller.controller_name }
+    .logo
+      = image_tag("Lepra_2003.png", :width => "30%", :align => "right")
     .banner
       .maintitle
         = @page_title || "Lepra2 database"
-      .logo
-        = image_tag("Lepra_2003.png", :width => 300)
-
+      .tabs
+        %span
+          |
+          = link_to "Home", '/'
+          |
+          = link_to "Search", '/search'
+          |
+          = link_to "Admin", '/admin'
+          |
+          = link_to "Help", '/help'
+          |
     .main
       = yield

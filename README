@@ -1,6 +1,4 @@
-= Lepra
-
-Lepra is the second generation database for tracking patients with
+Lepra2 is the second generation database for tracking patients with
 leprosy. Lepra2 is designed for Ruby on Rails 3.1. The production SQL
 server is MySQL.
 
