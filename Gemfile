@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 gem 'mysql2'
 gem 'devise'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'haml'
 
 # Gems used only for assets and not required
 # in production environments by default.

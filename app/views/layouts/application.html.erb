@@ -6,9 +6,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<% controller.controller_name %>">
+<div class="banner">
+  <div class="maintitle">
+  <%= @page_title || "Lepra2 database"%>
+  </div>
+  <div class="logo">
+    <%= image_tag("Lepra_2003.png", :width => 300) %>
+  </div>
+</div>
 
+<div id="main">
 <%= yield %>
+</div>
 
 </body>
 </html>

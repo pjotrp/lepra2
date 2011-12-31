@@ -8,7 +8,6 @@ all records, related to a Person. The database itself relies on a
 person.id, which is not the same as the registration number. This
 implies the registration number can easily be changed.
 
-
 The database schema layout is as follows:
 
 == Person ==
