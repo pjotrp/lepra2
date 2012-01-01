@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.integer  "person_id"
     t.integer  "contact_id"
     t.string   "registration"
+    t.date     "date"
     t.integer  "lesions"
     t.boolean  "lesions_inflam"
     t.boolean  "lesions_face"
@@ -262,6 +263,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "people", :force => true do |t|
     t.string   "registration",                     :null => false
     t.string   "name",                             :null => false
+    t.string   "nickname"
     t.integer  "year_of_birth",                    :null => false
     t.boolean  "male",          :default => false, :null => false
     t.string   "fathers_name"
