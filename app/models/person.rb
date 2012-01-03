@@ -33,9 +33,13 @@ class Person < ActiveRecord::Base
     ret
   end
 
-  def self.search(search)
+  def self.search(search, is_anywhere = true)
     if search
-      find(:all, :conditions => ['registration=? or name LIKE ? OR nickname LIKE ?', search, "%#{search}%", "#{search}%"], :limit => 100)
+      if not is_anywhere
+        find(:all, :conditions => ['registration=? or name LIKE ? OR nickname=?', search, "#{search}%", search], :limit => 100)
+      else
+        find(:all, :conditions => ['registration=? or name LIKE ? OR nickname LIKE ?', search, "%#{search}%", "#{search}%"], :limit => 100)
+      end
     else
       find(:all, :limit => 100)
     end

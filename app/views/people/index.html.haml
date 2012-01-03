@@ -3,6 +3,9 @@
     %p
       = text_field_tag :search, params[:search] 
       = submit_tag "Search", :name => nil
+    %p
+      = check_box_tag :is_anywhere, true, params[:is_anywhere]
+      = label_tag :is_anywhere, "match anywhere in name"
   = @people.size
   matches
   

@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.search(params[:search])
+    @people = Person.search(params[:search], params[:is_anywhere])
   end
 
   def index2
