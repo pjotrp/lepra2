@@ -32,4 +32,14 @@ class Person < ActiveRecord::Base
     ret += ' ('+nickname+')' if nickname
     ret
   end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"], :limit => 100)
+    else
+      find(:all, :limit => 100)
+    end
+  end
+
+
 end

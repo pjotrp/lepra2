@@ -2,6 +2,10 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
+    @people = Person.search(params[:search])
+  end
+
+  def index2
     @people = Person.all
 
     respond_to do |format|
