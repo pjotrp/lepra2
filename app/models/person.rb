@@ -33,6 +33,20 @@ class Person < ActiveRecord::Base
     ret
   end
 
+  def clinic
+    if contacts.size > 0
+      return contacts.last.clinic_id
+    end
+    '?'
+  end
+ 
+  def village
+    if addresses.size > 0
+      return addresses.last.village
+    end
+    '-'
+  end
+ 
   def self.search(search, is_anywhere = true)
     if search
       if not is_anywhere

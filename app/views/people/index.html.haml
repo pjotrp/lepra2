@@ -16,6 +16,8 @@
       %th{ :align => :left} Name
       %th Born
       %th Gender
+      %th Village
+      %th Clinic
     - @people.each do |person|
       %tr
         %td 
@@ -23,10 +25,14 @@
         %td 
           = link_to person.show_name, person
         %td 
-        %td 
           = person.year_of_birth
         %td 
           = (person.male ? '' : 'F')
+        %td
+          = person.village
+        %td
+          = person.clinic
+
         // <td><%= link_to 'Edit', edit_person_path(person) %></td>
         // <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
 
