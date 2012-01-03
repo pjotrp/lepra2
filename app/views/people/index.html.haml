@@ -1,12 +1,11 @@
-%h1 
-  Search
-
 %p
   = form_tag people_path, :method => 'get' do
     %p
       = text_field_tag :search, params[:search] 
-      = submit_tag "Search", :name => nil 
-
+      = submit_tag "Search", :name => nil
+  = @people.size
+  matches
+  
 %p
   %table
     %tr
@@ -28,3 +27,5 @@
         // <td><%= link_to 'Edit', edit_person_path(person) %></td>
         // <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
 
+%p
+  Adjust search for more results (max. 100 results shown)
