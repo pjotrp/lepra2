@@ -25,4 +25,11 @@ class Person < ActiveRecord::Base
   YEAR = Time.now.year
   YEAR1 = YEAR - 105
   validates_inclusion_of :year_of_birth, :in => YEAR1..YEAR, :message => "can only be between #{YEAR1} and #{YEAR}."
+
+  def show_name
+    ret = name
+    ret = 'unknown' if ret == nil
+    ret += ' ('+nickname+')' if nickname
+    ret
+  end
 end
