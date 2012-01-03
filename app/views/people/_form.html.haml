@@ -1,7 +1,6 @@
-  <%= semantic_form_for @person do |f| %>
-    <%= f.inputs %>
-    <%= f.buttons :commit %>
-    <%= f.input :created_at, :as => :string, :input_html => { :readonly => true } %>
-    <%= f.input :updated_at, :as => :string, :input_html => { :readonly => true } %>
-  <% end %>
+- semantic_form_for @person do |f|
+  = f.inputs
+  = f.buttons :commit
+  = f.input :created_at, :as => :string, :input_html => { :readonly => true } 
+  = f.input :updated_at, :as => :string, :input_html => { :readonly => true } 
 

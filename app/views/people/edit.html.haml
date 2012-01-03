@@ -1,6 +1,8 @@
-<h1>Editing person</h1>
+%h1
+  Edit
 
-<%= render 'form' %>
+%p
+  = render 'form'
 
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+  = link_to 'Show', @person
+  = link_to 'Back', people_path
