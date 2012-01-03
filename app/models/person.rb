@@ -35,7 +35,7 @@ class Person < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"], :limit => 100)
+      find(:all, :conditions => ['name LIKE ? OR nickname LIKE ?', "%#{search}%", "%#{search}%"], :limit => 100)
     else
       find(:all, :limit => 100)
     end
