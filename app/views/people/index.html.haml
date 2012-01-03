@@ -6,6 +6,9 @@
     %p
       = check_box_tag :is_anywhere, true, params[:is_anywhere]
       = label_tag :is_anywhere, "match anywhere in name"
+    // %p
+    //  = label_tag :clinic_id, "Clinic"
+    //  = text_field_tag :clinic_id, params[:clinic_id]
   = @people.size
   matches
   
@@ -37,4 +40,6 @@
         // <td><%= link_to 'Destroy', person, confirm: 'Are you sure?', method: :delete %></td>
 
 %p
-  Adjust search for more results (max. 100 results shown)
+  Adjust search for more results
+  = "(max. 100 results shown)" if @people.size > 70
+
