@@ -21,19 +21,56 @@ Publications of interest:
 
 == Install and run
 
-Requirements (Debian Sid):
+Install MySQL, on Debian
 
-  apt-get install libmysqlclient-dev libopenssl apache2 coffeescript nodejs
+  apt-get mysql-server-5.1 mysql-client-5.1
+
+and setup a user with an appropriate password
+
+  mysql -p -u root
+  CREATE DATABASE lepra2_development;
+  GRANT ALL PRIVILEGES ON lepra2_development.* TO 'lepra'@'localhost'
+    identified by 'pwd';
+  CREATE DATABASE lepra2_test;
+  GRANT ALL PRIVILEGES ON lepra2_test.* TO 'lepra'@'localhost'
+    identified by 'pwd';
+  CREATE DATABASE lepra2_production;
+  GRANT ALL PRIVILEGES ON lepra2_production.* TO 'lepra'@'localhost'
+    identified by 'pwd';
+  show databases;
+  exit;
+
+Ruby on Rails requirements (Debian Sid):
+
+  apt-get install libmysqlclient-dev libopenssl apache2 nodejs 
+
+or, on Debian stable
+
+  apt-get install  libmysqlclient-dev libopenssl-ruby1.9.1 apache2 
   
-Ruby 1.9.2 gems:
-
-  gem install mysql2
-  gem install rails
-
 Run (you probably want to use rvm)
 
+  rvm install ruby-1.9.2-p290
   rvm use 1.9.2
-  rails server
+
+Check the versions match
+
+  gem env    
+
+Checkout the source tree using git
+ 
+  apt-get install git-core
+  git clone https://github.com/pjotrp/lepra2.git
+
+Install Ruby gems:
+
+  gem install bundler
+  bundle
+  gem list
+
+Start the webserver
+
+  bundle exec rails server
  
 == LICENSE
 

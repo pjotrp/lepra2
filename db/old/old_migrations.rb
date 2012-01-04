@@ -548,7 +548,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
         contact_n.date = date
         contact_n.updated_at = date
         contact_n.person_id = person.id
-        contact.registration = person.registration
+        contact_n.registration = person.registration
         contact_n.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
         walk(CONTACT_LEPRA0_1,contact_n,rec)
         walk_i(CONTACT_LEPRA0_1_INT,contact_n,rec)
