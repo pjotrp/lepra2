@@ -4,6 +4,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string  :registration, :null => false, :unique => true  # clinic/num/YYYY
       t.string  :name, :null => false
       t.string  :nickname
+      t.string  :national_id
       t.integer :year_of_birth, :null => false
       t.boolean :male, :default => false, :null => false   # male (true) or female (false)  
       t.string  :fathers_name
