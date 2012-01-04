@@ -5,7 +5,8 @@ class CreatePersonalHistories < ActiveRecord::Migration
       # use the Contact table
       t.belongs_to :person
       t.string  :registration # read-only
-      t.date    :registration_date
+      t.date    :registration_date # read_only
+      t.date    :date
       t.integer :staff_id
       t.integer :finder_lca
       t.string  :symbol_occupation # BE(ggar) D(ay labor) BU(ssiness) S (official) T(eacher) O(ther)
@@ -13,6 +14,9 @@ class CreatePersonalHistories < ActiveRecord::Migration
       t.string  :symbol_guardian
       t.integer :members # number of household members
       t.integer :income  # household income
+      t.boolean :rft # released from treatment
+      t.boolean :died
+
       t.text    :remark    
       # t.integer :remark
 

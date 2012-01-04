@@ -8,6 +8,7 @@ class CreateAssessments < ActiveRecord::Migration
 
       t.string  :registration # for reference
       t.date    :date
+      t.boolean :relapse
       # lesions
       t.integer :lesions
       t.boolean :lesions_inflam
