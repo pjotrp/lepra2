@@ -40,7 +40,11 @@ class Person < ActiveRecord::Base
     end
     '?'
   end
- 
+
+  def gender
+    (male ? 'M' : 'F')
+  end
+
   def village
     if addresses.size > 0
       return addresses.last.village

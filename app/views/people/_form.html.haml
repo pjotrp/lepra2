@@ -1,38 +1,43 @@
 
 #form
   = form_for(@person) do |f|
+    .error
+      - if @person.errors.any?
+        %h2 ERROR!
+        %ul
+          - @person.errors.full_messages.each do |msg|
+            %li
+              = msg
+
     .required
       = f.label :name
       = f.text_field :name
       = f.label :nickname
-      = f.text_field :nickname
+      = f.text_field :nickname, size: 16
       = f.label :reg
       = f.text_field :registration
     .readonly
-      = f.label :clinic
-      = f.text_field :clinic, :value => @person.clinic
+      = 'Clinic: '+@person.clinic.to_s
+    %div
+      = f.label :year_of_birth
+      = f.text_field :year_of_birth, :size => 4
+    = f.label :male
+    = f.check_box :male
+    = f.label :fathers_name
+    = f.text_field :fathers_name
+    = f.label :reg_study
+    = f.text_field :reg_study
+    %div
+      = f.label :remark
+    %div
+      = f.text_area :remark, :size => "80x4"
+    %div
+    .info
+      The patient card contains unique information about a person that exists once only in the database
+    = f.submit "Update"
+    %hr
+    .readonly
+      = @person.created_at.strftime("Created on %Y/%m/%d")
+      = @person.updated_at.strftime(" and updated on %Y/%m/%d")
 
-
-%p
-  - if false
-    = semantic_form_for @person do |f|
-      .required
-        = f.input :name
-      = f.input :nickname
-      .required
-        = f.input :registration
-      .readonly
-        = f.input :clinic, :value => @person.clinic, :as => :string, :input_html => { :readonly => true } 
-      .required
-        = f.input :year_of_birth
-      = f.input :male
-      = f.input :fathers_name
-      = f.input :reg_study
-      = f.input :remark
-      %hr
-      // = f.inputs
-      = f.buttons :commit
-      .readonly
-        = f.input :created_at, :as => :string, :input_html => { :readonly => true } 
-        = f.input :updated_at, :as => :string, :input_html => { :readonly => true } 
 

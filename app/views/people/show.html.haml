@@ -1,11 +1,35 @@
 %h1 
   = @person.show_name
+
 %table
   %tr
-    %td 
-      Registration
+    %td reg#
     %td
       = @person.registration
+  %tr
+    %td name
+    %td 
+      = @person.show_name
+  %tr
+    %td born
+    %td 
+      = @person.year_of_birth
+
+  %tr
+    %td gender
+    %td 
+      = @person.gender
+
+  %tr
+    %td village
+    %td 
+      = @person.village
+
+  %tr
+    %td clinic
+    %td 
+      = @person.clinic
+
 
 %p
   = link_to 'Edit', edit_person_path(@person)
