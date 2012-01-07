@@ -498,6 +498,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     hist.person_id = person.id
     hist.created_at = rec.REG_DATE
     hist.updated_at = rec.CONTACTLST
+    hist.date = rec.REG_DATE
     hist.registration_date = rec.REG_DATE
     hist.staff_id = rec.HW_NUM  # staff who registered
     # hist.finder_id = rec.FINDER_LCA if rec.FINDER_LCA and rec.FINDER_LCA > 0

@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @personal_history %> |
-<%= link_to 'Back', personal_histories_path %>
+<%= link_to 'Back', person_path(@personal_history.person) %>

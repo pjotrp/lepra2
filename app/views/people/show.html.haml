@@ -39,11 +39,12 @@
   %ul
     - @person.personal_histories.each do |hist|
       %li
-        = link_to hist.date.to_s, edit_personal_history_path(hist)
+        = link_to hist.date.to_s, personal_history_path(hist)
         %nbsp (
         = hist.id
         )
-  = link_to 'Create', new_personal_history_path
+    %li
+      = link_to 'Add new personal history form', new_personal_history_path
 %hr
 %p
   Addresses

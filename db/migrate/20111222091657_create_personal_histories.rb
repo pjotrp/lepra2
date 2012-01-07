@@ -4,10 +4,10 @@ class CreatePersonalHistories < ActiveRecord::Migration
       # This table contains non-medical personal details - for medical
       # use the Contact table
       t.belongs_to :person
-      t.string  :registration # read-only
-      t.date    :registration_date # read_only
-      t.date    :date # drop?
-      t.integer :staff_id
+      t.string  :registration, :null => false # read-only
+      t.date    :registration_date, :null => false # read_only
+      t.date    :date, :null => false # maybe superfluous, but can differ from other dates
+      t.integer :staff_id, :null => false
       t.integer :finder_lca
       t.string  :symbol_occupation # BE(ggar) D(ay labor) BU(ssiness) S (official) T(eacher) O(ther)
       t.string  :symbol_education # class 1 to5= 1, Class 6 to ten=2, Class 11 to 14=3, >= class 15=4
