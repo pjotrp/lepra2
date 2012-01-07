@@ -1,6 +1,38 @@
-= semantic_form_for @person do |f|
-  = f.inputs
-  = f.buttons :commit
-  = f.input :created_at, :as => :string, :input_html => { :readonly => true } 
-  = f.input :updated_at, :as => :string, :input_html => { :readonly => true } 
+
+#form
+  = form_for(@person) do |f|
+    .required
+      = f.label :name
+      = f.text_field :name
+      = f.label :nickname
+      = f.text_field :nickname
+      = f.label :reg
+      = f.text_field :registration
+    .readonly
+      = f.label :clinic
+      = f.text_field :clinic, :value => @person.clinic
+
+
+%p
+  - if false
+    = semantic_form_for @person do |f|
+      .required
+        = f.input :name
+      = f.input :nickname
+      .required
+        = f.input :registration
+      .readonly
+        = f.input :clinic, :value => @person.clinic, :as => :string, :input_html => { :readonly => true } 
+      .required
+        = f.input :year_of_birth
+      = f.input :male
+      = f.input :fathers_name
+      = f.input :reg_study
+      = f.input :remark
+      %hr
+      // = f.inputs
+      = f.buttons :commit
+      .readonly
+        = f.input :created_at, :as => :string, :input_html => { :readonly => true } 
+        = f.input :updated_at, :as => :string, :input_html => { :readonly => true } 
 

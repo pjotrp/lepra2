@@ -1,4 +1,4 @@
-# /usr/bin/env ruby
+#! /usr/bin/env ruby
 #
 # Read the legacy database tables into the new schema
 #

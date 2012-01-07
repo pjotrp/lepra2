@@ -266,6 +266,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.string   "registration",                     :null => false
     t.string   "name",                             :null => false
     t.string   "nickname"
+    t.string   "national_id"
     t.integer  "year_of_birth",                    :null => false
     t.boolean  "male",          :default => false, :null => false
     t.string   "fathers_name"
@@ -290,6 +291,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.string   "symbol_guardian"
     t.integer  "members"
     t.integer  "income"
+    t.boolean  "latrine_access"
     t.boolean  "rft"
     t.boolean  "died"
     t.text     "remark"

@@ -14,6 +14,7 @@ class CreatePersonalHistories < ActiveRecord::Migration
       t.string  :symbol_guardian
       t.integer :members # number of household members
       t.integer :income  # household income
+      t.boolean :latrine_access 
       t.boolean :rft # released from treatment
       t.boolean :died
 
