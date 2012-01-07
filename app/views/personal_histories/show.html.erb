@@ -1,25 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Occupation:</b>
-  <%= @personal_history.occupation %>
-</p>
-
-<p>
-  <b>Guardian:</b>
-  <%= @personal_history.guardian %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @personal_history.address %>
-</p>
-
-<p>
-  <b>Remark:</b>
-  <%= @personal_history.remark %>
-</p>
-
 
 <%= link_to 'Edit', edit_personal_history_path(@personal_history) %> |
 <%= link_to 'Back', personal_histories_path %>

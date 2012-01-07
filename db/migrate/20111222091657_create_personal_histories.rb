@@ -6,7 +6,7 @@ class CreatePersonalHistories < ActiveRecord::Migration
       t.belongs_to :person
       t.string  :registration # read-only
       t.date    :registration_date # read_only
-      t.date    :date
+      t.date    :date # drop?
       t.integer :staff_id
       t.integer :finder_lca
       t.string  :symbol_occupation # BE(ggar) D(ay labor) BU(ssiness) S (official) T(eacher) O(ther)

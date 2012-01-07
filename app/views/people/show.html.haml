@@ -29,11 +29,22 @@
     %td clinic
     %td 
       = @person.clinic
-
 %p
-  Personal histories
+  = link_to 'Edit', edit_person_path(@person)
   |
-  Create
+  = link_to 'Back', people_path
+%hr
+%h3
+  Personal history
+  %ul
+    - @person.personal_histories.each do |hist|
+      %li
+        = link_to hist.date.to_s, edit_personal_history_path(hist)
+        %nbsp (
+        = hist.id
+        )
+  = link_to 'Create', new_personal_history_path
+%hr
 %p
   Addresses
   |
@@ -51,7 +62,4 @@
   |
   Create
 
-%p
-  = link_to 'Edit', edit_person_path(@person)
-  |
-  = link_to 'Back', people_path
+
