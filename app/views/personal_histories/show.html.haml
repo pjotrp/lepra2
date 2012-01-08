@@ -1,4 +1,9 @@
 
+%table
+  = render(partial: "attribute", collection: @personal_history.attributes.to_a )
+
+%hr
+
 = link_to 'Edit', edit_personal_history_path(@personal_history) 
 |
 = link_to 'Back', person_path(@personal_history.person)
