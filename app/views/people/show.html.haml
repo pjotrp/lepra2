@@ -44,7 +44,9 @@
         = hist.id
         )
     %li
-      = link_to 'Add new personal history form', new_personal_history_path
+      // = link_to 'Add new personal history form', new_personal_history_path, person_id = Person.id
+      = link_to 'Add new personal history form', new_personal_history_path( copy_id: @person.personal_histories.last.id )
+
 %hr
 %p
   Addresses

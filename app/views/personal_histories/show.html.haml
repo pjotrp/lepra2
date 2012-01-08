@@ -1,6 +1,9 @@
 
+%h1
+  = @personal_history.person.name if @personal_history.person
+
 %table
-  = render(partial: "attribute", collection: @personal_history.attributes.to_a )
+  = render(partial: "shared/attribute", locals: { :rec => @personal_history }, collection: @personal_history.fields )
 
 %hr
 

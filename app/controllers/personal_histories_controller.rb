@@ -24,7 +24,19 @@ class PersonalHistoriesController < ApplicationController
   # GET /personal_histories/new
   # GET /personal_histories/new.json
   def new
-    @personal_history = PersonalHistory.new
+    @personal_history = PersonalHistory.create
+    if params[:copy_id]
+      new_id = @personal_history.id
+
+      hist = PersonalHistory.find(params[:copy_id])
+      if hist
+        @personal_history = hist.clone
+        @personal_history.id = new_id
+
+        @personal_history.date = Time.now
+        @personal_history.remark = 'YES'
+      end
+    end
 
     respond_to do |format|
       format.html # new.html.erb

@@ -14,7 +14,7 @@ Person contains unique information that does not mutate. See PersonalHistory and
 =end
 
 class Person < ActiveRecord::Base
-  has_many :personal_histories  # address is part of personal history
+  has_many :personal_histories, :order => 'date'  # address is part of personal history
   has_many :addresses, :through => :personal_histories
   has_many :contacts
   has_many :assessments
