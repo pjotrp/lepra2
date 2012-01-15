@@ -14,6 +14,20 @@ EOP
     html
   end
 
+  def tr_symbol f, field, *opts
+    label = field.to_s.sub(/symbol_/,'').to_sym
+    html = <<EOP
+      <tr>
+        <td>
+          #{f.label label}
+        </td>
+        <td>
+          #{f.text_field field, *opts}
+        </td>
+      </tr>
+EOP
+  end
+
   def tr_number f, field, *opts
     html = <<EOP
       <tr>
