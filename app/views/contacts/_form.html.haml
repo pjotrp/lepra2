@@ -25,22 +25,14 @@
       %tr
         %td
           = f.hidden_field :registration
-      %tr
-        %td
-          = f.label :date
-        %td
-          = f.text_field :date, :readonly => 'true'
-          - [ :clinic_id, :staff_id ].each do |field|
-            != f_number(f,field)
-          - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
-            != f_text(f,field)
-          - [ :final_assessment ].each do |field|
-            %tr
-              %td
-                = f.label field
-              %td
-                = f.check_box field
-          != f_number f, :mdt_dose
+      != tr_date(f,:date, :readonly => true)
+      - [ :clinic_id, :staff_id ].each do |field| 
+        != tr_number(f,field) 
+      - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
+        != tr_text(f,field)
+      - [ :final_assessment ].each do |field|
+        != tr_check_box f,field
+      != tr_number f, :mdt_dose
     %tr
       %td{ :colspan => "2" }
         %div
