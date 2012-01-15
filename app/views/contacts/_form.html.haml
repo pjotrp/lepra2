@@ -1,0 +1,57 @@
+#form
+  = form_for(@contact) do |f|
+    %div
+      .info
+        The personal history contains personal details that are non-medical
+    .error
+      - if @contact.errors.any?
+        %h2 ERROR!
+        %ul
+          - @contact.errors.full_messages.each do |msg|
+            %li
+              = msg
+
+    %table
+      %tr
+        %td
+          = @contact.id
+          = ":"  
+          = @contact.person.show_name
+          = @contact.person_id
+          = f.hidden_field :person_id
+        %td
+          reg 
+          = @contact.registration
+      %tr
+        %td
+          = f.hidden_field :registration
+      %tr
+        %td
+          = f.label :date
+        %td
+          = f.text_field :date, :readonly => 'true'
+          - [ :clinic_id, :staff_id ].each do |field|
+            != f_number(f,field)
+          - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
+            != f_text(f,field)
+          - [ :final_assessment ].each do |field|
+            %tr
+              %td
+                = f.label field
+              %td
+                = f.check_box field
+          != f_number f, :mdt_dose
+    %tr
+      %td{ :colspan => "2" }
+        %div
+          = f.label :remark
+        %div
+          = f.text_area :remark, :size => "80x4"
+    %div
+    = f.submit "Update"
+    %hr
+    .readonly
+      = @contact.created_at.strftime("Created on %Y/%m/%d")
+      = @contact.updated_at.strftime(" and updated on %Y/%m/%d")
+
+

@@ -1,0 +1,17 @@
+
+%h1
+  = @contact.person.name if @contact.person
+
+%p
+  = link_to 'Edit', edit_contact_path(@contact) 
+  |
+  = link_to 'Back', person_path(@contact.person)
+
+%table
+  = render(partial: "shared/attribute", locals: { :rec => @contact }, collection: @contact.fields )
+
+%hr
+
+= link_to 'Edit', edit_contact_path(@contact) 
+|
+= link_to 'Back', person_path(@contact.person)
