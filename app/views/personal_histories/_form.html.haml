@@ -1,5 +1,8 @@
 #form
   = form_for(@personal_history) do |f|
+    %div
+      .info
+        The personal history contains personal details that are non-medical
     .error
       - if @personal_history.errors.any?
         %h2 ERROR!
@@ -8,24 +11,52 @@
             %li
               = msg
 
-    = @personal_history.id
-    = ":"  
-    = @personal_history.person.show_name
-    = @personal_history.person_id
-    = f.hidden_field :person_id
-    | reg 
-    = @personal_history.registration
-    = f.hidden_field :registration
+    %table
+      %tr
+        %td
+          = @personal_history.id
+          = ":"  
+          = @personal_history.person.show_name
+          = @personal_history.person_id
+          = f.hidden_field :person_id
+        %td
+          reg 
+          = @personal_history.registration
+      %tr
+        %td
+          = f.hidden_field :registration
+          = f.hidden_field :registration_date
+          = @personal_history.registration_date.strftime("Created on %Y/%m/%d") if @personal_history.registration_date
+      %tr
+        %td
+          = f.label :date
+        %td
+          = f.text_field :date, :readonly => 'true'
+          - [ :staff_id, :finder_lca, :members, :income ].each do |field|
+            %tr
+              %td
+                = f.label field
+              %td
+                = f.number_field field
+          - [ :symbol_occupation, :symbol_education, :symbol_guardian ].each do |field|
+            %tr
+              %td
+                = f.label field
+              %td
+                = f.text_field field
+          - [ :latrine_access, :rft, :died ].each do |field|
+            %tr
+              %td
+                = f.label field
+              %td
+                = f.check_box field
+    %tr
+      %td{ :colspan => "2" }
+        %div
+          = f.label :remark
+        %div
+          = f.text_area :remark, :size => "80x4"
     %div
-      = f.label :date
-      = f.text_field :date, :readonly => 'true'
-    %div
-      = f.label :remark
-    %div
-      = f.text_area :remark, :size => "80x4"
-    %div
-    .info
-      The personal history contains personal details that are non-medical
     = f.submit "Update"
     %hr
     .readonly

@@ -5,7 +5,7 @@ class CreatePersonalHistories < ActiveRecord::Migration
       # use the Contact table
       t.belongs_to :person
       t.string  :registration, :null => false # read-only
-      t.date    :registration_date, :null => false # read_only
+      t.date    :registration_date, :null => false # copy of first person registration date
       t.date    :date, :null => false # maybe superfluous, but can differ from other dates
       t.integer :staff_id, :null => false
       t.integer :finder_lca
