@@ -34,7 +34,7 @@ class PersonalHistoriesController < ApplicationController
         @personal_history.id = new_id
 
         @personal_history.date = Time.now
-        @personal_history.remark = 'YES'
+        @personal_history.remark = 'copied from previous form'
       end
     end
 

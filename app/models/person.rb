@@ -1,18 +1,3 @@
-=begin
-
-Person contains unique information that does not mutate. See PersonalHistory and Contact for mutating records.
-
-      t.string  :registration, :null => false, :unique => true  # clinic/num/YYYY
-      t.string  :name, :null => false
-      t.integer :year_of_birth, :null => false
-      t.boolean :male   # male (true) or female (false)  
-      t.string  :fathers_name
-      t.text    :remark    
-
-      t.timestamps
-
-=end
-
 class Person < ActiveRecord::Base
   has_many :personal_histories, :order => 'date'  # address is part of personal history
   has_many :addresses, :through => :personal_histories
