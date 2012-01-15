@@ -47,22 +47,34 @@
       // = link_to 'Add new personal history form', new_personal_history_path, person_id = Person.id
       = link_to 'Add new personal history form', new_personal_history_path( copy_id: @person.personal_histories.last.id )
 
+%h3
+  Contacts
+  %ul
+    - @person.contacts.each do |c|
+      %li
+        = link_to c.date.to_s, contact_path(c)
+        %nbsp (
+        = c.id
+        )
+    %li
+      // = link_to 'Add new personal history form', new_personal_history_path, person_id = Person.id
+      = link_to 'Add new contact form', new_contact_path( copy_id: @person.contacts.last.id )
+
 %hr
 %p
-  Addresses
+  Assessments (examinations)
   |
   Create
-%p
-  Contacts
-  |
-  Create
-%p
-  Assessments
-  |
-  Create
+  (nyi)
 %p
   Reactions
   |
   Create
+  (nyi)
+%p
+  Addresses
+  |
+  Create
+  (nyi)
 
 
