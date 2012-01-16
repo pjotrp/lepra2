@@ -1,17 +1,14 @@
 module ApplicationHelper
 
   def tr_text f, field, *opts
-    html = <<EOP
-      <tr>
-        <td>
-          #{f.label field}
-        </td>
-        <td>
-          #{f.text_field field, *opts}
-        </td>
-      </tr>
+    haml = <<EOP
+%tr
+  %td
+    #{f.label field}
+  %td
+    #{f.text_field field, *opts}
 EOP
-    html
+    Haml::Engine.new(haml).render
   end
 
   def tr_symbol f, field, *opts
