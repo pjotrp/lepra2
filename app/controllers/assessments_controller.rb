@@ -24,7 +24,20 @@ class AssessmentsController < ApplicationController
   # GET /assessments/new
   # GET /assessments/new.json
   def new
-    @assessment = Assessment.new
+    @assessment = Assessment.create
+
+    if params[:copy_id]
+      new_id = @assessment.id
+
+      last = Assessment.find(params[:copy_id])
+      if last
+        @assessment = last.clone
+        @assessment.id = new_id
+
+        @assessment.date = Time.now
+        @assessment.remark = 'copied from previous form'
+      end
+    end
 
     respond_to do |format|
       format.html # new.html.erb

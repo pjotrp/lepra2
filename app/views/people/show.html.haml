@@ -60,17 +60,24 @@
       // = link_to 'Add new personal history form', new_personal_history_path, person_id = Person.id
       = link_to 'Add new contact form', new_contact_path( copy_id: @person.contacts.last.id )
 
-%hr
-%p
+%h3
   Assessments (examinations)
-  |
-  Create
-  (nyi)
-%p
+  %ul
+    - @person.assessments.each do |a|
+      %li
+        = link_to a.date.to_s, assessment_path(a)
+        %nbsp (
+        = a.id if a
+        )
+    %li
+      = link_to 'Add new assessment form', new_assessment_path( copy_id: @person.assessments.last.id ) if @person.assessments.last
+
+%h3
   Reactions
   |
   Create
   (nyi)
+%hr
 %p
   Addresses
   |

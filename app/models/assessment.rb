@@ -13,4 +13,8 @@ A contact (i.e. meeting with field worker) can have 1 assessment.
 class Assessment < ActiveRecord::Base
   belongs_to :person
   belongs_to :contact
+  def fields
+    a = attributes.keys.to_a
+    a.delete_if { | e | e =~ /id$/ }
+  end
 end
