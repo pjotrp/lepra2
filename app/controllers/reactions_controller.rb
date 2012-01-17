@@ -24,7 +24,22 @@ class ReactionsController < ApplicationController
   # GET /reactions/new
   # GET /reactions/new.json
   def new
-    @reaction = Reaction.new
+    if params[:copy_id]
+      @reaction = Reaction.create
+      new_id = @reaction.id
+
+      last = Reaction.find(params[:copy_id])
+      if last
+        @reaction = last.clone
+        @reaction.id = new_id
+
+        @reaction.date = Time.now
+        @reaction.remark = 'copied from previous form'
+      end
+    else
+      @reaction = Reaction.create(person_id: params[:person_id])
+    end
+
 
     respond_to do |format|
       format.html # new.html.erb
