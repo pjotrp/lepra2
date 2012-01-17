@@ -44,8 +44,11 @@
         = hist.id
         )
     %li
-      // = link_to 'Add new personal history form', new_personal_history_path, person_id = Person.id
-      = link_to 'Add new personal history form', new_personal_history_path( copy_id: @person.personal_histories.last.id )
+      - if @person.personal_histories.size > 0
+        = link_to 'Add new personal history form', new_personal_history_path( copy_id: @person.personal_histories.last.id )
+      - else
+        = link_to 'First personal history form', new_personal_history_path( person_id: @person.id )
+
 
 %h3
   Contacts
@@ -57,8 +60,10 @@
         = c.id
         )
     %li
-      // = link_to 'Add new personal history form', new_personal_history_path, person_id = Person.id
-      = link_to 'Add new contact form', new_contact_path( copy_id: @person.contacts.last.id )
+      - if @person.contacts.size > 0
+        = link_to 'Add new contact form', new_contact_path( copy_id: @person.contacts.last.id )
+      - else
+        = link_to 'Add first contact form', new_contact_path( person_id: @person.id )
 
 %h3
   Assessments (examinations)
