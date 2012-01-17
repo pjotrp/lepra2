@@ -14,4 +14,9 @@ class Address < ActiveRecord::Base
   # belongs_to :addressable, :polymorphic => true
   belongs_to :person
   belongs_to :location
+  def fields
+    a = attributes.keys.to_a
+    a.delete_if { | e | e =~ /id$/ }
+  end
+
 end

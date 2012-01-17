@@ -22,6 +22,15 @@
       //   !=!= tr_symbol(f,field)
       // - [ :final_address ].each do |field|
       //   !=!= tr_check_box f,field
+      != tr_check_box f, :current_address
+      != tr_text f,  :road  
+      != tr_text f,  :village
+      != tr_text f,  :postcode
+      != tr_text f,  :phone
+      != tr_number f, :clinic_id   # keep clinic ID here for imports
+      != tr_text f,  :latitude                   # override location
+      != tr_text f,  :longitude                  # override location
+
     %tr
       %td{ :colspan => "2" }
         %div

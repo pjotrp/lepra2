@@ -7,6 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       # t.integer :addressable_id
       # t.string  :addressable_type
       # t.references :addressable, :polymorphic => true
+      t.boolean :current_address
       t.string  :road,     :null => false
       t.string  :village,  :null => false
       t.string  :postcode
