@@ -1,0 +1,201 @@
+#form
+  = form_for(@assessment) do |f|
+    %div
+      .info
+        The assessment form contains details of an examination
+    .error
+      - if @assessment.errors.any?
+        %h2 ERROR!
+        %ul
+          - @assessment.errors.full_messages.each do |msg|
+            %li
+              = msg
+
+    %table
+      %tr
+        %td
+          = @assessment.id
+          = ":"  
+          = @assessment.person.show_name
+          = @assessment.person_id
+          = f.hidden_field :person_id
+        %td
+          reg 
+          = @assessment.registration
+      %tr
+        %td
+          = f.hidden_field :registration
+      != tr_date(f,:date, :readonly => true)
+      // - [ :clinic_id, :staff_id ].each do |field| 
+      //   !=!= tr_number(f,field) 
+      // - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
+      //   !=!= tr_symbol(f,field)
+      // - [ :final_assessment ].each do |field|
+      //   !=!= tr_check_box f,field
+      != tr_date f,    :date
+      != tr_check_box f, :relapse
+      != tr_number f, :lesions
+      != tr_check_box f, :lesions_inflam
+      != tr_check_box f, :lesions_face
+      != tr_check_box f, :lesions_arm_r
+      != tr_check_box f, :lesions_arm_l
+      != tr_check_box f, :lesions_trunk
+      != tr_check_box f, :lesions_leg_r
+      != tr_check_box f, :lesions_leg_l
+      != tr_check_box f, :oed_hands
+      != tr_check_box f, :oed_feet
+
+      != tr_number f, :ulcers  
+      != tr_check_box f, :ulcers_palm_simple_r
+      != tr_check_box f, :ulcers_palm_simple_l
+      != tr_check_box f, :ulcers_sole_simple_r
+      != tr_check_box f, :ulcers_sole_simple_l
+      != tr_check_box f, :ulcers_palm_complicated_r
+      != tr_check_box f, :ulcers_palm_complicated_l
+      != tr_check_box f, :ulcers_sole_complicated_r
+      != tr_check_box f, :ulcers_sole_complicated_l
+      != tr_check_box f, :ulcers_palm_malignant_r
+      != tr_check_box f, :ulcers_palm_malignant_l
+      != tr_check_box f, :ulcers_sole_malignant_r
+      != tr_check_box f, :ulcers_sole_malignant_l
+      != tr_check_box f, :ulcers_palm_infected_r
+      != tr_check_box f, :ulcers_palm_infected_l
+      != tr_check_box f, :ulcers_sole_infected_r
+      != tr_check_box f, :ulcers_sole_infected_l
+
+      != tr_number f, :sensory_score_hand_r
+      != tr_number f, :sensory_score_hand_l
+      != tr_number f, :sensory_score_foot_r
+      != tr_number f, :sensory_score_foot_l
+      != tr_number f, :sensory_score_eye_r
+      != tr_number f, :sensory_score_eye_l
+
+      != tr_check_box f, :deformity_hag_r     # Lagophtalmos
+      != tr_check_box f, :deformity_hag_l
+      != tr_check_box f, :deformity_facial_r  # Facialpalsy 
+      != tr_check_box f, :deformity_facial_l  # Facialpalsy 
+      != tr_check_box f, :deformity_claw_hand_r 
+      != tr_check_box f, :deformity_claw_hand_l 
+      != tr_check_box f, :deformity_ape_thumb_r
+      != tr_check_box f, :deformity_ape_thumb_l
+      != tr_check_box f, :deformity_wrist_drop_r
+      != tr_check_box f, :deformity_wrist_drop_l
+      != tr_check_box f, :deformity_foot_drop_r
+      != tr_check_box f, :deformity_foot_drop_l
+      != tr_check_box f, :deformity_claw_toes_r
+      != tr_check_box f, :deformity_claw_toes_l
+      != tr_check_box f, :deformity_absent_finger_r
+      != tr_check_box f, :deformity_absent_finger_l
+      != tr_check_box f, :deformity_absent_toes_r
+      != tr_check_box f, :deformity_absent_toes_l
+      != tr_check_box f, :deformity_palmar_r # Palmar Anaesthetic
+      != tr_check_box f, :deformity_palmar_l
+      != tr_check_box f, :deformity_planter_r # Planter Anaesthetic
+      != tr_check_box f, :deformity_planter_l
+
+      != tr_number f, :num_nerve_damage_prev
+      != tr_check_box f, :nerve_facial_enlarged_r
+      != tr_check_box f, :nerve_facial_enlarged_l
+      != tr_check_box f, :nerve_facial_tender_r
+      != tr_check_box f, :nerve_facial_tender_l
+      != tr_check_box f, :nerve_radial_enlarged_r # Enlarged radial
+      != tr_check_box f, :nerve_radial_enlarged_l
+      != tr_check_box f, :nerve_radial_tender_r  # Tender/pain radia 
+      != tr_check_box f, :nerve_radial_tender_l
+      != tr_check_box f, :nerve_ulcer_enlarged_r
+      != tr_check_box f, :nerve_ulcer_enlarged_l
+      != tr_check_box f, :nerve_ulcer_tender_r
+      != tr_check_box f, :nerve_ulcer_tender_l
+      != tr_check_box f, :nerve_median_enlarged_r
+      != tr_check_box f, :nerve_median_enlarged_l
+      != tr_check_box f, :nerve_median_tender_r
+      != tr_check_box f, :nerve_median_tender_l
+      != tr_check_box f, :nerve_common_enlarged_r
+      != tr_check_box f, :nerve_common_enlarged_l
+      != tr_check_box f, :nerve_common_tender_r
+      != tr_check_box f, :nerve_common_tender_l
+      != tr_check_box f, :nerve_posterior_enlarged_r
+      != tr_check_box f, :nerve_posterior_enlarged_l
+      != tr_check_box f, :nerve_posterior_tender_r
+      != tr_check_box f, :nerve_posterior_tender_l
+
+      != tr_number f, :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
+      != tr_number f, :qmt_eye_closure_strength_l   # QMT Light eye closure (strength) Left
+      != tr_number f, :qmt_eye_closure_gap_r        # QMT Light eye closure (gap) Right
+      != tr_number f, :qmt_eye_closure_gap_l        # QMT Light eye closure (gap) Left
+      != tr_number f, :qmt_little_finger_r          # QMT Little finger abd(ADM) Right
+      != tr_number f, :qmt_little_finger_l          # QMT Little finger abd(ADM) Left
+      != tr_number f, :qmt_thumb_r                  # QMT Thumb abd(APB) Right
+      != tr_number f, :qmt_thumb_l                  # QMT Thumb abd(APB) Left
+      != tr_number f, :qmt_wrist_r                  # QMT Wrist extension Right
+      != tr_number f, :qmt_wrist_l                  # QMT Wrist extension Left
+      != tr_number f, :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
+      != tr_number f, :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
+
+      != tr_check_box f, :sensitivity_hand_r01
+      != tr_check_box f, :sensitivity_hand_r01
+      != tr_check_box f, :sensitivity_hand_r02
+      != tr_check_box f, :sensitivity_hand_r03
+      != tr_check_box f, :sensitivity_hand_r04
+      != tr_check_box f, :sensitivity_hand_r05
+      != tr_check_box f, :sensitivity_hand_r06
+      != tr_check_box f, :sensitivity_hand_r07
+      != tr_check_box f, :sensitivity_hand_r08
+      != tr_check_box f, :sensitivity_hand_r09
+      != tr_check_box f, :sensitivity_hand_r10
+      != tr_check_box f, :sensitivity_hand_r11
+      != tr_check_box f, :sensitivity_hand_r12
+      != tr_check_box f, :sensitivity_hand_l01
+      != tr_check_box f, :sensitivity_hand_l01
+      != tr_check_box f, :sensitivity_hand_l02
+      != tr_check_box f, :sensitivity_hand_l03
+      != tr_check_box f, :sensitivity_hand_l04
+      != tr_check_box f, :sensitivity_hand_l05
+      != tr_check_box f, :sensitivity_hand_l06
+      != tr_check_box f, :sensitivity_hand_l07
+      != tr_check_box f, :sensitivity_hand_l08
+      != tr_check_box f, :sensitivity_hand_l09
+      != tr_check_box f, :sensitivity_hand_l10
+      != tr_check_box f, :sensitivity_hand_l11
+      != tr_check_box f, :sensitivity_hand_l12
+
+      != tr_check_box f, :sensitivity_foot_r01
+      != tr_check_box f, :sensitivity_foot_r01
+      != tr_check_box f, :sensitivity_foot_r02
+      != tr_check_box f, :sensitivity_foot_r03
+      != tr_check_box f, :sensitivity_foot_r04
+      != tr_check_box f, :sensitivity_foot_r05
+      != tr_check_box f, :sensitivity_foot_r06
+      != tr_check_box f, :sensitivity_foot_r07
+      != tr_check_box f, :sensitivity_foot_r08
+      != tr_check_box f, :sensitivity_foot_r09
+      != tr_check_box f, :sensitivity_foot_r10
+      != tr_check_box f, :sensitivity_foot_r11
+
+      != tr_check_box f, :sensitivity_foot_l01
+      != tr_check_box f, :sensitivity_foot_l01
+      != tr_check_box f, :sensitivity_foot_l02
+      != tr_check_box f, :sensitivity_foot_l03
+      != tr_check_box f, :sensitivity_foot_l04
+      != tr_check_box f, :sensitivity_foot_l05
+      != tr_check_box f, :sensitivity_foot_l06
+      != tr_check_box f, :sensitivity_foot_l07
+      != tr_check_box f, :sensitivity_foot_l08
+      != tr_check_box f, :sensitivity_foot_l09
+      != tr_check_box f, :sensitivity_foot_l10
+      != tr_check_box f, :sensitivity_foot_l11
+
+    %tr
+      %td{ :colspan => "2" }
+        %div
+          = f.label :remark
+        %div
+          = f.text_area :remark, :size => "80x4"
+    %div
+    = f.submit "Update"
+    %hr
+    .readonly
+      = @assessment.created_at.strftime("Created on %Y/%m/%d")
+      = @assessment.updated_at.strftime(" and updated on %Y/%m/%d")
+
+
