@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
   create_table "addresses", :force => true do |t|
     t.integer  "location_id"
     t.integer  "person_id"
-    t.string   "road",        :null => false
-    t.string   "village",     :null => false
+    t.boolean  "current_address"
+    t.string   "road"
+    t.string   "village"
     t.string   "postcode"
     t.string   "phone"
     t.integer  "clinic_id"

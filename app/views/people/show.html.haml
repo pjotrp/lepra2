@@ -42,9 +42,9 @@
         = link_to hist.date.to_s + " (" + hist.id.to_s + ')', personal_history_path(hist)
     %li
       - if @person.personal_histories.size > 0
-        = link_to 'Add new personal history form', new_personal_history_path( copy_id: @person.personal_histories.last.id )
+        = link_to 'Add new personal history', new_personal_history_path( copy_id: @person.personal_histories.last.id )
       - else
-        = link_to 'First personal history form', new_personal_history_path( person_id: @person.id )
+        = link_to 'First personal history', new_personal_history_path( person_id: @person.id )
 
 
 %h3
@@ -55,9 +55,9 @@
         = link_to c.date.to_s + ' (' + c.id.to_s + ')', contact_path(c)
     %li
       - if @person.contacts.size > 0
-        = link_to 'Add new contact form', new_contact_path( copy_id: @person.contacts.last.id )
+        = link_to 'Add new contact', new_contact_path( copy_id: @person.contacts.last.id )
       - else
-        = link_to 'First contact form', new_contact_path( person_id: @person.id )
+        = link_to 'First contact', new_contact_path( person_id: @person.id )
 
 %h3
   Assessments (examinations)
@@ -67,9 +67,9 @@
         = link_to a.date.to_s + ' (' + a.id.to_s + ')', assessment_path(a)
     %li
       - if @person.assessments.size > 0
-        = link_to 'Add new assessment form', new_assessment_path( copy_id: @person.assessments.last.id )
+        = link_to 'Add new assessment', new_assessment_path( copy_id: @person.assessments.last.id )
       - else
-        = link_to 'First assessment form', new_assessment_path( person_id: @person.id )
+        = link_to 'First assessment', new_assessment_path( person_id: @person.id )
 
 %h3
   Reactions
@@ -79,17 +79,17 @@
         = link_to a.date.to_s + ' (' + a.id.to_s + ')', reaction_path(a)
     %li
       - if @person.reactions.size > 0
-        = link_to 'Add new reaction form', new_reaction_path( copy_id: @person.reactions.last.id )
+        = link_to 'Add new reaction', new_reaction_path( copy_id: @person.reactions.last.id )
       - else
-        = link_to 'First reaction form', new_reaction_path( person_id: @person.id )
+        = link_to 'First reaction', new_reaction_path( person_id: @person.id )
 
 %h3
   Addresses
   %ul
     - @person.addresses.each do |a|
       %li
-        = link_to a.road + ', ' + a.village + ' (' + a.id.to_s + ')', address_path(a)
+        = link_to '(' + a.id.to_s + ')', address_path(a)
     %li
-      = link_to 'Add new address', new_address_path
+      = link_to 'Add new address', new_address_path( person_id: @person.id )
 
 

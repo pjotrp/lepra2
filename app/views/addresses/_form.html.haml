@@ -2,7 +2,7 @@
   = form_for(@address) do |f|
     %div
       .info
-        The address form contains details of an examination
+        Address form
     .error
       - if @address.errors.any?
         %h2 ERROR!
@@ -16,12 +16,9 @@
         %td
           = @address.id
           = ":"  
-      // - [ :clinic_id, :staff_id ].each do |field| 
-      //   !=!= tr_number(f,field) 
-      // - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
-      //   !=!= tr_symbol(f,field)
-      // - [ :final_address ].each do |field|
-      //   !=!= tr_check_box f,field
+          = @address.person.show_name
+          = @address.person_id
+          = f.hidden_field :person_id
       != tr_check_box f, :current_address
       != tr_text f,  :road  
       != tr_text f,  :village

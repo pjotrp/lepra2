@@ -8,8 +8,8 @@ class CreateAddresses < ActiveRecord::Migration
       # t.string  :addressable_type
       # t.references :addressable, :polymorphic => true
       t.boolean :current_address
-      t.string  :road,     :null => false
-      t.string  :village,  :null => false
+      t.string  :road
+      t.string  :village
       t.string  :postcode
       t.string  :phone
       t.integer :clinic_id   # keep clinic ID here for imports

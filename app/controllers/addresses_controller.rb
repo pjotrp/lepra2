@@ -24,7 +24,22 @@ class AddressesController < ApplicationController
   # GET /addresses/new
   # GET /addresses/new.json
   def new
-    @address = Address.new
+    if params[:copy_id]
+      @address = Address.create
+      new_id = @address.id
+
+      last = address.find(params[:copy_id])
+      if last
+        @address = last.clone
+        @address.id = new_id
+
+        @address.date = Time.now
+        @address.remark = 'copied from previous form'
+      end
+    else
+      @address = Address.create(person_id: params[:person_id])
+    end
+
 
     respond_to do |format|
       format.html # new.html.erb

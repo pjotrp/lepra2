@@ -1,4 +1,5 @@
 cd ../..
 rake db:drop ; rake db:create ; rake db:migrate 
-ruby db/old/old_migrations.rb
+cd db/old
+ruby old_migrations.rb
 rake db_seed
