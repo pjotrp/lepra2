@@ -82,11 +82,14 @@
         = link_to 'Add new reaction form', new_reaction_path( copy_id: @person.reactions.last.id )
       - else
         = link_to 'First reaction form', new_reaction_path( person_id: @person.id )
-%hr
-%p
+
+%h3
   Addresses
-  |
-  Create
-  (nyi)
+  %ul
+    - @person.addresses.each do |a|
+      %li
+        = link_to a.date.to_s + ' (' + a.id.to_s + ')', address_path(a)
+    %li
+      = link_to 'Add new address form', new_address_path
 
 

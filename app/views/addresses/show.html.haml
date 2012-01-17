@@ -1,17 +1,17 @@
 
 %h1
-  = @assessment.person.name if @assessment.person
+  = @address.person.name if @address.person
 
 %p
-  = link_to 'Edit', edit_assessment_path(@assessment) 
+  = link_to 'Edit', edit_address_path(@address) 
   |
-  = link_to 'Back', person_path(@assessment.person)
+  = link_to 'Back', person_path(@address.person)
 
 %table
-  = render(partial: "shared/attribute", locals: { :rec => @assessment }, collection: @assessment.fields )
+  = render(partial: "shared/attribute", locals: { :rec => @address }, collection: @address.fields )
 
 %hr
 
-= link_to 'Edit', edit_assessment_path(@assessment) 
+= link_to 'Edit', edit_address_path(@address) 
 |
-= link_to 'Back', person_path(@assessment.person)
+= link_to 'Back', person_path(@address.person)
