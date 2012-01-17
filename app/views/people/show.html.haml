@@ -39,10 +39,7 @@
   %ul
     - @person.personal_histories.each do |hist|
       %li
-        = link_to hist.date.to_s, personal_history_path(hist)
-        %nbsp (
-        = hist.id
-        )
+        = link_to hist.date.to_s + " (" + hist.id.to_s + ')', personal_history_path(hist)
     %li
       - if @person.personal_histories.size > 0
         = link_to 'Add new personal history form', new_personal_history_path( copy_id: @person.personal_histories.last.id )
@@ -55,30 +52,24 @@
   %ul
     - @person.contacts.each do |c|
       %li
-        = link_to c.date.to_s, contact_path(c)
-        %nbsp (
-        = c.id
-        )
+        = link_to c.date.to_s + ' (' + c.id.to_s + ')', contact_path(c)
     %li
       - if @person.contacts.size > 0
         = link_to 'Add new contact form', new_contact_path( copy_id: @person.contacts.last.id )
       - else
-        = link_to 'Add first contact form', new_contact_path( person_id: @person.id )
+        = link_to 'First contact form', new_contact_path( person_id: @person.id )
 
 %h3
   Assessments (examinations)
   %ul
     - @person.assessments.each do |a|
       %li
-        = link_to a.date.to_s, assessment_path(a)
-        %nbsp (
-        = a.id if a
-        )
+        = link_to a.date.to_s + ' (' + a.id.to_s + ')', assessment_path(a)
     %li
       - if @person.assessments.size > 0
         = link_to 'Add new assessment form', new_assessment_path( copy_id: @person.assessments.last.id )
       - else
-        = link_to 'Add new assessment form', new_assessment_path( person_id: @person.id )
+        = link_to 'First assessment form', new_assessment_path( person_id: @person.id )
 
 %h3
   Reactions
