@@ -1,10 +1,10 @@
 class Person < ActiveRecord::Base
-  has_many :personal_histories, :order => 'date'  # address is part of personal history
+  has_many :personal_histories, :order => 'date'  
   has_many :contacts
   has_many :assessments
   has_many :reactions
-  has_many :addresses, :as => :addressable
-  has_many :locations, :through => addresses
+  has_many :addresses
+  # has_many :locations, :through => addresses
 
   validates :name, :registration, :presence => true
   validates :name, :length => { :minimum => 4 }

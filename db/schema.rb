@@ -14,12 +14,10 @@
 ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "addresses", :force => true do |t|
-    t.integer  "personal_history_id"
     t.integer  "location_id"
-    t.integer  "addressable_id"
-    t.string   "addressable_type"
-    t.string   "road",                :null => false
-    t.string   "village",             :null => false
+    t.integer  "person_id"
+    t.string   "road",        :null => false
+    t.string   "village",     :null => false
     t.string   "postcode"
     t.string   "phone"
     t.integer  "clinic_id"
@@ -30,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.datetime "updated_at"
   end
 
-  add_index "addresses", ["personal_history_id"], :name => "index_addresses_on_personal_history_id"
+  add_index "addresses", ["person_id"], :name => "index_addresses_on_person_id"
 
   create_table "assessments", :force => true do |t|
     t.integer  "person_id"
@@ -281,10 +279,10 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
 
   create_table "personal_histories", :force => true do |t|
     t.integer  "person_id"
-    t.string   "registration"
-    t.date     "registration_date"
-    t.date     "date"
-    t.integer  "staff_id"
+    t.string   "registration",      :null => false
+    t.date     "registration_date", :null => false
+    t.date     "date",              :null => false
+    t.integer  "staff_id",          :null => false
     t.integer  "finder_lca"
     t.string   "symbol_occupation"
     t.string   "symbol_education"

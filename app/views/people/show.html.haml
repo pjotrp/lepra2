@@ -88,7 +88,7 @@
   %ul
     - @person.addresses.each do |a|
       %li
-        = link_to a.date.to_s + ' (' + a.id.to_s + ')', address_path(a)
+        = link_to a.road + ', ' + a.village + ' (' + a.id.to_s + ')', address_path(a)
     %li
       = link_to 'Add new address form', new_address_path
 

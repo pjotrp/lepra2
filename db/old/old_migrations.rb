@@ -511,7 +511,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     print "Updating ",person.id," ",person.name," to PersonalHistory\n"
     hist.save
     address2 = Address.find(address.id)
-    address2.personal_history_id = hist.id
+    address2.person_id = person.id
     address2.save
     # There is always one or more contacts, first create a contact
     # from lepra0_1 rec
