@@ -1,0 +1,8 @@
+%h1 New assessment form
+
+.remark
+  = @assessment.remark
+
+= render 'form' 
+
+= link_to 'Back', person_path(@assessment.person) 
