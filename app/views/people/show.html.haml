@@ -70,7 +70,10 @@
         = a.id if a
         )
     %li
-      = link_to 'Add new assessment form', new_assessment_path( copy_id: @person.assessments.last.id ) if @person.assessments.last
+      - if @person.assessments.size > 0
+        = link_to 'Add new assessment form', new_assessment_path( copy_id: @person.assessments.last.id )
+      - else
+        = link_to 'Add new assessment form', new_assessment_path( person_id: @person.id )
 
 %h3
   Reactions

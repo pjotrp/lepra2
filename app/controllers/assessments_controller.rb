@@ -24,9 +24,9 @@ class AssessmentsController < ApplicationController
   # GET /assessments/new
   # GET /assessments/new.json
   def new
-    @assessment = Assessment.create
 
     if params[:copy_id]
+      @assessment = Assessment.create
       new_id = @assessment.id
 
       last = Assessment.find(params[:copy_id])
@@ -37,6 +37,8 @@ class AssessmentsController < ApplicationController
         @assessment.date = Time.now
         @assessment.remark = 'copied from previous form'
       end
+    else
+      @assessment = Assessment.create(person_id: params[:person_id])
     end
 
     respond_to do |format|
