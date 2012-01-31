@@ -1,0 +1,92 @@
+Feature: New cases report
+  In order to get a report
+  As an administrator
+  I want to generate a report on new leprosy cases by period, location, gender,
+    age group, type of leprosy, disability grade, reactions, duration of symptoms
+    at diagnosis, population density, and mode of detection 
+  Lepra supports this with the current model
+
+# E-mail Bob Bowers Mon, 9 Jan 2012 10:22:31
+#  All of the above need to have the ability to interlink with
+#  others...or to have ratios/percents (percent grade 2, percent child, MB/PB
+#  ration)...or to be reported against the population (per 10,000 or 100,000)
+#
+# This needs to include  the ability to link index cases and cases found
+#  from the index when doing contact surveys or extended contact survey, or
+#  the number of people checked in a survey resulting from a given index
+#  case).  It isn't really the index that is so important, but we want to
+#  know the number of index cases, the type of leprosy they have (MB/PB, or
+#  gender) and then look at how many people are checked and the number of
+#  cases (and type) found from those indexes
+
+Feature: Treatments report
+  In order to get a report
+  As an administrator
+  o   How many are under treatment at any given time
+  o   How many received medications (conversely, how many missed medications
+      in any given period and default cases)
+  x   Absentee cases (did not come for medications...by region/period)
+  x   Number not at home when visited to deliver the medication
+  x   Number of people receiving MDT and for how long (so if they receive
+      more than 1 month of MDT at a time...)
+  Lepra can support this with the current model, x's need to be added
+
+Feature: Reaction/Neuritis report
+   o   How many people were treated in a given period of time
+   o   How many people were treated in a year
+   o   How many had recurrent reaction or multiple treatments in a year (different)
+   o   How many completed treatment in a period of time
+   o   How many improved as a result of treatment
+   o   How many started treatment in a period of time
+   o   Prednisolone use by clinic
+  Lepra supports this with the current model
+
+Feature: Ulcer report
+   o   Known ulcer rate at a given time (this looks at the number with ulcers
+       out of those who have a grade 1 or 2 disability)
+   o   Number of people with ulcers in a period of time
+  Lepra supports this with the current model
+
+Feature: Disability report
+   o   Distribution of leprosy related problems (right vs left, hand vs foot
+       vs eye)  (reported as EHF score...might be best to have a simple grid with
+       Right/Left down the side and Eye/Hand/Foot across the top for each person)
+   o   Percent with WHO disability grade 1 or 2 at diagnosis or at RFT, or
+       who developed new disability after RFT
+   o   Change in disability over treatment (some improve/some get worse)
+  Lepra supports this with the current model
+
+Feature: Footwear report
+   o   How often are shoes given
+   o   Number of pairs of shoes given
+   o   Number of people receiving footwear in a year
+   o   Type of footwear given
+   o   Size of shoes (if 5000 pairs are given...how many are each size)
+   Lepra currently does not record this information
+
+Feature: Assistive Devices Report
+   o   How many sunglasses/crutches/artificial limbs were supplied
+   Lepra currently does not record this information
+
+Feature: Hospital Referals report
+   o   Number of referrals to DBLM or government
+   o   Cause of referrals
+   x   Did the patient agree with the referral (did they go?)
+   x   Amount of time a patient is in the hospital and whether they improved
+   o   Number of people needing reconstructive surgery
+   o   Number of people who receive reconstructive surgery in a period of time
+   x   Number of people who want/don't want reconstructive surgery
+  Lepra can support this with the current model, x's need to be added
+
+Feature: Drug use report
+   Being able to have a drug report for each clinic/project...based on the
+   drugs supplied to a clinic, and those known to have been used in treatment
+   (MDT/Prednisolone being the big ones) how many should they have in stock?
+   Lepra currently does not record drugs ordered 
+
+Feature: Activities report
+   Having a report of the types of IEC activities
+   (school/college/highschool/madrassa, etc programs done in a period of time
+   and the number of people estimated to have heard the programs
+   Lepra currently does not record activities
+
