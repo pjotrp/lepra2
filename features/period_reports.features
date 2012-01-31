@@ -27,7 +27,7 @@ Feature: Treatments report
       in any given period and default cases)
   x   Absentee cases (did not come for medications...by region/period)
   x   Number not at home when visited to deliver the medication
-  x   Number of people receiving MDT and for how long (so if they receive
+  x   Number of people receiving AMDT and for how long (so if they receive
       more than 1 month of MDT at a time...)
   Lepra can support this with the current model, x's need to be added
 
