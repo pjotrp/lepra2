@@ -12,7 +12,7 @@ gem 'haml'
 gem 'formtastic'
 gem 'execjs'
 gem 'therubyracer'
-
+gem 'libv8', '3.3.10.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
