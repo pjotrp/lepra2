@@ -1,5 +1,12 @@
 # TODO
 
+* Personal history add guardian_name
+* Contact -> Medical examiniation
+    Mdt
+    Smeartests
+* Assessment -> Physical examination
+    Further splitting of records
+* Symbol should have value
 * Patient card w. RFT dates and date died
 * load village names etc from mdb table
     mdb-export -I commondata.mdb tblUpazila
