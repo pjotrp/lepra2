@@ -36,13 +36,13 @@ and setup a user with an appropriate password
   mysql -p -u root
   CREATE DATABASE lepra2_development;
   GRANT ALL PRIVILEGES ON lepra2_development.* TO 'lepra'@'localhost'
-    identified by 'pwd';
+    identified by 'lepra2';
   CREATE DATABASE lepra2_test;
   GRANT ALL PRIVILEGES ON lepra2_test.* TO 'lepra'@'localhost'
-    identified by 'pwd';
+    identified by 'lepra2';
   CREATE DATABASE lepra2_production;
   GRANT ALL PRIVILEGES ON lepra2_production.* TO 'lepra'@'localhost'
-    identified by 'pwd';
+    identified by 'lepra2';
   show databases;
   exit;
 ```

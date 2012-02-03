@@ -10,7 +10,7 @@ gem 'devise'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'haml'
 gem 'formtastic'
-gem 'execjs'
+# gem 'execjs'
 # gem 'therubyracer'
 # gem 'libv8', '3.3.10.4'
 
