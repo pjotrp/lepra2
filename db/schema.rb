@@ -288,6 +288,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.string   "symbol_occupation"
     t.string   "symbol_education"
     t.string   "symbol_guardian"
+    t.string   "guardian_name"
     t.integer  "members"
     t.integer  "income"
     t.boolean  "latrine_access"
@@ -369,6 +370,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.string   "value"
     t.string   "description"
     t.integer  "rank"
+    t.integer  "codeid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

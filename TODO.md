@@ -1,12 +1,13 @@
 # TODO
 
-* Contact -> Medical examiniation
-    Mdt
+* Rename Contact -> Medical examiniation
+    Mdt 
     Smeartests
 * Assessment -> Physical examination
     Further splitting of records
 * Patient card w. RFT dates and date died
 * See archive/doc/data_entry for patient treatment card
+* Protect data
 
 # Later
 
