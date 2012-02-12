@@ -1,6 +1,12 @@
 #! /usr/bin/env ruby
 #
-# Read the legacy database tables into the new schema
+# Read the legacy database tables into the new schema. 
+#
+# The old LEPRA112 database is read from the Access to MySQL port. 
+# Table0_3, for example, is the third table (reactions).
+#
+# Some tables are migrated from the LEPRA1 database. (e.g. the lookup 
+# table, now named the symbol table).
 #
 # Copyright (C) 2011 Pjotr Prins <pjotr.prins@thebird.nl>
 
@@ -438,6 +444,7 @@ Lepra1Lookup.find(:all).each do | rec |
   lookup.value = rec.Value
   lookup.description = rec.Label if rec.Label
   lookup.rank = rec.ValueNum
+  lookup.codeid = rec.CodeID
   lookup.save
 end
 

@@ -4,7 +4,8 @@ class CreateSymbolLookups < ActiveRecord::Migration
       t.string  :name
       t.string  :value
       t.string  :description
-      t.integer :rank
+      t.integer :rank # doubles as valuenum
+      t.integer :codeid # possible ID for exports
 
       t.timestamps
     end
