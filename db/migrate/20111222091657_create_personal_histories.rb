@@ -17,7 +17,8 @@ class CreatePersonalHistories < ActiveRecord::Migration
       t.integer :income  # household income
       t.boolean :latrine_access 
       t.boolean :rft # released from treatment
-      t.boolean :died
+      t.boolean :died 
+      t.date    :date_died
 
       t.text    :remark    
       # t.integer :remark

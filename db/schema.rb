@@ -294,6 +294,7 @@ ActiveRecord::Schema.define(:version => 20111228092547) do
     t.boolean  "latrine_access"
     t.boolean  "rft"
     t.boolean  "died"
+    t.date     "date_died"
     t.text     "remark"
     t.datetime "created_at"
     t.datetime "updated_at"

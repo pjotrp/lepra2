@@ -1,7 +1,8 @@
 ## TODO
 
-* See archive/doc/data_entry for patient treatment card
+* See archive/doc/data_entry for patient treatment card?
 * Protect data
+* Symbol support
 * Test version live
 
 ## next
