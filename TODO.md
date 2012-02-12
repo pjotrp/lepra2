@@ -1,12 +1,13 @@
 ## TODO
 
 * See archive/doc/data_entry for patient treatment card?
-* Protect data
-* Symbol support
+* Protect data w. login
 * Test version live
 
 ## next
 
+* Symbol table support
+* Tests for main pages
 * Should Assessment/Physical examination be split further?
 * Should MDT treatment be in contact/medical?
 
