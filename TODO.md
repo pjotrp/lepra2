@@ -1,6 +1,5 @@
 # TODO
 
-* Personal history add guardian_name
 * Contact -> Medical examiniation
     Mdt
     Smeartests
