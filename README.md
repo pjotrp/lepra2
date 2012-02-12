@@ -10,8 +10,9 @@ The mission of LEPRA is to create allow anyone to create and maintain
 database records for patients. The software is free and open source
 under the liberal BSD license - for anyone to use.
 
-LEPRA is created by volunteers, initially for the DBLM hospital in
-Bangladesh. The project is actively supported from Erasmus Medical
+LEPRA is created by [volunteers](./CONTRIBUTORS), tested by DBLM
+hospital in Bangladesh.  The project is actively supported by Prof. JH
+Richardus, Infectious Diseases and Public Health , Erasmus Medical
 Center University, the Netherlands.
 
 # Install and run
