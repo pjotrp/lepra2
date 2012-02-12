@@ -3,17 +3,18 @@
 LEPRA is a second generation database for tracking patients treated
 for [leprosy](http://en.wikipedia.org/wiki/Leprosy). Lepra is designed
 for the latest [Ruby on Rails](http://rubyonrails.org/), and can run
-on all popular SQL database servers (we deploy the free MySQL, see
-install instructions below).
+on all popular SQL database servers.
 
-The mission of LEPRA is to create allow anyone to create and maintain
-database records for patients. The software is free and open source
-under the liberal BSD license - for anyone to use.
+LEPRA allows anyone to create and maintain database records for
+patients. The software is free and open source under the liberal BSD
+license - for anyone to use.
 
-LEPRA is created by [volunteers](./CONTRIBUTORS), tested by DBLM
-hospital in Bangladesh.  The project is actively supported by Prof. JH
-Richardus, Infectious Diseases and Public Health , Erasmus Medical
-Center University, the Netherlands.
+LEPRA is created by [volunteers](https://github.com/pjotrp/lepra2/CONTRIBUTORS.md), and tested by DBLM hospital in Bangladesh.
+The project is actively supported by Prof. JH Richardus, Infectious
+Diseases and Public Health, Erasmus Medical Center University, the
+Netherlands.
+For more information, see the source code
+[repository](https://github.com/pjotrp/lepra2).
 
 # Install and run
 

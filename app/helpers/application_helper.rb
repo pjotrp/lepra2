@@ -1,3 +1,4 @@
+
 module ApplicationHelper
 
   def tr_text f, field, *opts
@@ -64,5 +65,13 @@ EOP
       </tr>
 EOP
     html
+  end
+
+  # require 'bluecloth'
+  require 'maruku'
+
+  def parse_markdown buf
+    # BlueCloth.new(buf).to_html
+    Maruku.new(buf).to_html
   end
 end

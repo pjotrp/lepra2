@@ -1,9 +1,4 @@
-%pre
-  =raw File.read(File.dirname(__FILE__)+'/../../../README').split(/\n\n/)[0]
-%pre
-  For more information and the source code see the source repository at    
-  %a{:href => "https://github.com/pjotrp/lepra2"}
-    https://github.com/pjotrp/lepra2
-  (currently not public)
-%pre
-  =raw File.read(File.dirname(__FILE__)+'/../../../doc/README_FOR_APP')
+%p
+  =raw parse_markdown(File.read(File.dirname(__FILE__)+'/../../../README.md').split(/\n\n/)[0..3].join("\n\n"))
+%p
+  =raw parse_markwdown(File.read(File.dirname(__FILE__)+'/../../../doc/README_FOR_APP.md'))
