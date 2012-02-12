@@ -8,6 +8,13 @@ class CreateAssessments < ActiveRecord::Migration
 
       t.string  :registration # for reference
       t.date    :date
+      # Smear
+      t.integer    :symbol_smearf        # first time smear (0= smear negative,
+      t.date       :smearf_date
+      t.integer    :symbol_smear         # last time smear (0= smear negative,1
+      t.date       :smear_date
+
+      ###
       t.boolean :relapse
       # lesions
       t.integer :lesions

@@ -1,60 +1,71 @@
-The Lepra2 database has the following layout
+----
 
-== Registration number ==
+LEPRA has the following layout
+
+## Registration number
 
 Every Person has a unique registration number. This number is a
 string, and can be of any format. The registration number appears on
-all records, related to a Person. The database itself relies on a
+all records related to a Person. The database itself relies on a
 person.id, which is not the same as the registration number. This
-implies the registration number can easily be changed.
+implies format of the registration number can easily be changed.
 
 The database schema layout is as follows:
 
-== Person ==
+## Person 
 
-Person records the unique details, such as name, registration number,
-year of birth, and sex. One person has 0 or more PersonalHistory forms
-(which contains the address), and 0 or more Contact forms. These in
-turn refer to Assessment and Reaction forms.
+<i>Fixed data</i>
 
-== PersonalHistory ==
+Person records unique details that are fixed, such as name,
+registration number, father's name, year of birth, and sex. One person has one or
+more PersonalHistory forms (which contains the address), and one or
+more Contact/Medical forms.
 
-The personal history records non-medical mutable data, such as
+<!-- ' -->
+
+## Personal History
+
+<i>Mutable non-medical data</i>
+
+PersonalHistory records non-medical mutable data, such as
 address, phone and family layout. One person can have any number of
-personal history mutations.
+personal history forms.
 
-== Contact ==
+## Contact/Medical treatment
+
+<i>Mutable medical data</i>
 
 Contact records contacts with the patient. The contact form specifies
-the staff member, smear tests, hospital treatment, etc.  One person
-can have any number of contacts. Contact belongs to Person.
-Contact refers to Assessment and Reaction forms.
+the staff member, medical treatment, hospital treatment, etc.  One
+person can have any number of contacts. 
 
-== Assessment ==
+## Assessment/Physical Examination
 
-The assessment form contains mutable medical information, medication, and health
-assessment of a patient. One person can have any number of
-assessments.
+<i>Mutable pysical status</i>
 
-== Reaction ==
+Assessment contains mutable health assessments, including smear tests.
+One person can have any number of assessments.
+
+## Reaction
+
+<i>Recording reactions</i>
 
 Reaction contains information on a reaction (assessment). This could
 be part of the Assessment form.
 
-== Staff ==
+## Staff 
 
-A staff member is part of a Clinic.
+Staff member information
 
-== Clinic ==
+## Clinic
 
-A clinic has a Location.
+Clinic information
 
-== Address ==
+## Address
 
-Address is the address book attached to PersonalHistory. Every address
-has a Location.
+Track real addresses. A patient can have multiple (current) addresses.
 
-== Location ==
+## Location
 
 Location contains the map coordinates. This is used for geographical
 study. Addresses can share a Location - as it will usually be at a

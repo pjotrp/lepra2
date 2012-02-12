@@ -22,10 +22,6 @@ class CreateContacts < ActiveRecord::Migration
       t.string     :symbol_treatment     # M/MB= Multibacillary treatment, P/PB= Pacibacillary
       t.integer    :mdt_dose      # No.of doses (number of months of MDT)
       t.date       :mdt_date      # start date
-      t.integer    :symbol_smearf        # first time smear (0= smear negative,1,2,3,4,5,6 = smear positive, 9=no smear) This value does not change
-      t.date       :smearf_date
-      t.integer    :symbol_smear         # last time smear (0= smear negative,1,2,3,4,5,6 = smear positive, 9=no smear) 
-      t.date       :smear_date
       t.date       :rft_date
     
       # medication
