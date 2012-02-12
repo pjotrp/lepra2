@@ -34,10 +34,6 @@
         != tr_check_box f,field
       != tr_number f, :mdt_dose
       != tr_date f,        :mdt_date      # start date
-      != tr_number f,    :symbol_smearf        # first time smear (0= smear negative,1,2,3,4,5,6 = smear positive, 9=no smear) This value does not change
-      != tr_date f,        :smearf_date
-      != tr_number f,    :symbol_smear         # last time smear (0= smear negative,1,2,3,4,5,6 = smear positive, 9=no smear) 
-      != tr_date f,        :smear_date
       != tr_date f,        :rft_date
       != tr_check_box f,    :prednisolon   # low dose
       != tr_check_box f,    :diy
