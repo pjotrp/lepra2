@@ -25,7 +25,8 @@ Debian Linux:
   apt-get mysql-server-5.1 mysql-client-5.1
 ```sh
 
-and setup a user with an appropriate password
+and setup a user with an appropriate password and adapt that in the
+/etc/database.yml file (don't use 'lepra2' on a public instance!).
 
 ```SQL
   mysql -p -u root

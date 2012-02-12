@@ -1,9 +1,13 @@
 ## TODO
 
-* Assessment/Physical examination, perhaps needs further splitting of information
-* Patient card w. RFT dates and date died
 * See archive/doc/data_entry for patient treatment card
 * Protect data
+* Test version live
+
+## next
+
+* Should Assessment/Physical examination be split further?
+* Should MDT treatment be in contact/medical?
 
 ## Later
 
