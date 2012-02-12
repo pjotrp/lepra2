@@ -15,9 +15,10 @@
       %tr
         %td
           = @contact.id
-          = ":"  
-          = @contact.person.show_name
-          = @contact.person_id
+          = ":"
+          - if @contact.person
+            = @contact.person.show_name
+            = @contact.person_id
           = f.hidden_field :person_id
         %td
           reg 

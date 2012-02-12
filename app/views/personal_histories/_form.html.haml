@@ -16,8 +16,9 @@
         %td
           = @personal_history.id
           = ":"  
-          = @personal_history.person.show_name
-          = @personal_history.person_id
+          - if @personal_history.person
+            = @personal_history.person.show_name
+            = @personal_history.person_id
           = f.hidden_field :person_id
         %td
           reg 
@@ -70,7 +71,8 @@
     = f.submit "Update"
     %hr
     .readonly
-      = @personal_history.created_at.strftime("Created on %Y/%m/%d")
-      = @personal_history.updated_at.strftime(" and updated on %Y/%m/%d")
+      - if @personal_history.created_at
+        = @personal_history.created_at.strftime("Created on %Y/%m/%d")
+        = @personal_history.updated_at.strftime(" and updated on %Y/%m/%d")
 
 

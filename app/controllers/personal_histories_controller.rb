@@ -24,8 +24,9 @@ class PersonalHistoriesController < ApplicationController
   # GET /personal_histories/new
   # GET /personal_histories/new.json
   def new
-    @personal_history = PersonalHistory.create
+    @personal_history = PersonalHistory.new
     if params[:copy_id]
+      @personal_history = PersonalHistory.create
       new_id = @personal_history.id
 
       hist = PersonalHistory.find(params[:copy_id])

@@ -37,7 +37,8 @@
     = f.submit "Update"
     %hr
     .readonly
-      = @person.created_at.strftime("Created on %Y/%m/%d")
-      = @person.updated_at.strftime(" and updated on %Y/%m/%d")
+      - if @person.created_at
+        = @person.created_at.strftime("Created on %Y/%m/%d")
+        = @person.updated_at.strftime(" and updated on %Y/%m/%d")
 
 
