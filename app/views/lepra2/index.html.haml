@@ -1,4 +1,8 @@
 %p
   =raw parse_markdown(File.read(File.dirname(__FILE__)+'/../../../README.md').split(/\n\n/)[0..3].join("\n\n"))
 %p
+  =raw parse_markdown(File.read(File.dirname(__FILE__)+'/../../../TODO.md'))
+%p
+  =raw parse_markdown(File.read(File.dirname(__FILE__)+'/../../../RELEASE.md'))
+%p
   =raw parse_markdown(File.read(File.dirname(__FILE__)+'/../../../doc/README_FOR_APP.md'))

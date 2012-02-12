@@ -1,19 +1,15 @@
-# TODO
+## TODO
 
-* Rename Contact -> Medical examiniation
-    Mdt 
-    Smeartests
-* Assessment -> Physical examination
-    Further splitting of records
+* Assessment/Physical examination, perhaps needs further splitting of information
 * Patient card w. RFT dates and date died
 * See archive/doc/data_entry for patient treatment card
 * Protect data
 
-# Later
+## Later
 
-* load village names etc from mdb table
+* load village names etc from mdb table, e.g. 
     mdb-export -I commondata.mdb tblUpazila
-    http://nialldonegan.me/2007/03/10/converting-microsoft-access-mdb-into-csv-or-mysql-in-linux/
+    [link](http://nialldonegan.me/2007/03/10/converting-microsoft-access-mdb-into-csv-or-mysql-in-linux/)
 * hands & feet 
 
 

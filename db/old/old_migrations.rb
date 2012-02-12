@@ -161,8 +161,6 @@ CONTACT_LEPRA0_1 = {
   'GROUP'      => :symbol_treatment,
   'MDTDATE'    => :mdt_date,
   'CONTACTPLN' => :contact_planned,
-  'SMEARFDATE'    => :smearf_date,
-  'SMEARLDATE'    => :smear_date,
   'RFT_DATE'    => :rft_date,
   'CHRONICDIS'   => :symbol_chronic_disability,
   'FINAL_DATE' => :final_date,
@@ -171,8 +169,6 @@ CONTACT_LEPRA0_1 = {
 CONTACT_LEPRA0_1_INT = {
   'DISAB'   => :symbol_who_disability,
   'DOSES'   => :mdt_dose,
-  'SMEARF'   => :symbol_smearf,
-  'SMEARL'   => :symbol_smear,
   'HW_NUM' => :health_worker,
   'DURATION_Y' => :duration_years,
   'DURATION_M' => :duration_months,
@@ -211,10 +207,14 @@ CONTACT_LEPRA0_2_BOOL = {
 }
 
 ASSESSMENT_LEPRA0_1 = {
+  'SMEARFDATE'    => :smearf_date,
+  'SMEARLDATE'    => :smear_date,
 }
 ASSESSMENT_LEPRA0_1_INT = {
   'PREV_NER_D' =>     :num_nerve_damage_prev,
   'LESIONS' => :lesions,
+  'SMEARF'   => :symbol_smearf,
+  'SMEARL'   => :symbol_smear,
 }
 ASSESSMENT_LEPRA0_1_BOOL = {
     'LES_INFLAM' => :lesions_inflam,
