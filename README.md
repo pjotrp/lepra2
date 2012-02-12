@@ -1,30 +1,23 @@
-# Lepra2
+# LEPRA
 
-Lepra2 is a second generation database for tracking patients with
-leprosy. Lepra2 is designed for Ruby on Rails 3.1. The production SQL
-server is MySQL.
+LEPRA is a second generation database for tracking patients treated
+for [leprosy](http://en.wikipedia.org/wiki/Leprosy). Lepra is designed
+for the latest [Ruby on Rails](http://rubyonrails.org/), and can run
+on all popular SQL database servers (we deploy the free MySQL, see
+install instructions below).
 
-Publications of interest:
+The mission of LEPRA is to create allow anyone to create and maintain
+database records for patients. The software is free and open source
+under the liberal BSD license - for anyone to use.
 
-
-  The spatial distribution of leprosy cases during 15 years of a leprosy control program in Bangladesh: An observational study
-  EAJ Fischer, D Pahan, SK Chowdhury and JH Richardus
-  BMC Infectious Diseases 2008, 8:126 doi:10.1186/1471-2334-8-126
-  http://www.biomedcentral.com/1471-2334/8/126
-
-  A clinical prediction rule for nerve-function impairment in leprosy patients.
-  Croft RP, Nicholls PG, Steyerberg EW, Richardus JH, Cairns W, Smith S
-  Lancet. 2000 May 6;355(9215):1603-6.
-  http://www.ncbi.nlm.nih.gov/pubmed/10821364
-
-  Active surveillance in leprosy: how useful is it? 
-  Richard Croft
-  Lepr Rev. 1996 Jun;67(2):135-40.
-  http://www.ncbi.nlm.nih.gov/pubmed/8684254
+LEPRA is created by volunteers, initially for the DBLM hospital in
+Bangladesh. The project is actively supported from Erasmus Medical
+Center University, the Netherlands.
 
 # Install and run
 
-Install MySQL, on Debian
+LEPRA runs on Linux, OSX and Windows. These are instructions for
+Debian Linux:
 
 ```sh
   apt-get mysql-server-5.1 mysql-client-5.1
@@ -66,20 +59,20 @@ Run (you probably want to use rvm)
   rvm use 1.9.2
 ```
 
-Check the versions match
+Check whether the versions match
 
 ```sh
   gem env    
 ```
 
-Checkout the source tree using git
+Checkout the most recent source tree using git
 
 ```sh
   apt-get install git-core
   git clone https://github.com/pjotrp/lepra2.git
 ```
 
-Install Ruby gems:
+Install all 'bundled' Ruby gems:
 
 ```sh
   gem install bundler
@@ -87,14 +80,33 @@ Install Ruby gems:
   gem list
 ```
 
-Start the webserver
+Start the webserver on port 8080
 
 ```sh
-  bundle exec rails server
+  bundle exec rails server -p 8080
 ```
+
+# Literature
+
+Publications of interest:
+
+  The spatial distribution of leprosy cases during 15 years of a leprosy control program in Bangladesh: An observational study
+  EAJ Fischer, D Pahan, SK Chowdhury and JH Richardus
+  BMC Infectious Diseases 2008, 8:126 doi:10.1186/1471-2334-8-126
+  http://www.biomedcentral.com/1471-2334/8/126
+
+  A clinical prediction rule for nerve-function impairment in leprosy patients.
+  Croft RP, Nicholls PG, Steyerberg EW, Richardus JH, Cairns W, Smith S
+  Lancet. 2000 May 6;355(9215):1603-6.
+  http://www.ncbi.nlm.nih.gov/pubmed/10821364
+
+  Active surveillance in leprosy: how useful is it? 
+  Richard Croft
+  Lepr Rev. 1996 Jun;67(2):135-40.
+  http://www.ncbi.nlm.nih.gov/pubmed/8684254
 
 # LICENSE
 
-Lepra2 is distributed under the BSD License. See LICENSE.txt
+Lepra is distributed under the BSD License. See LICENSE.txt
 
 Copyright (C) 2012 Pjotr Prins <pjotr.prins@thebird.nl>
