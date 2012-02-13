@@ -9,7 +9,7 @@ LEPRA allows anyone to create and maintain database records for
 patients. The software is free and open source under the liberal BSD
 license - for anyone to use.
 
-LEPRA is created by [volunteers](https://github.com/pjotrp/lepra2/CONTRIBUTORS.md), and tested by DBLM hospital in Bangladesh.
+LEPRA is created by [volunteers](https://github.com/pjotrp/lepra2/blob/master/CONTRIBUTORS.md), and tested by DBLM hospital in Bangladesh.
 The project is actively supported by Prof. JH Richardus, Infectious
 Diseases and Public Health, Erasmus Medical Center University, the
 Netherlands.
