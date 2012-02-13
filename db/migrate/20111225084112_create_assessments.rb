@@ -14,6 +14,18 @@ class CreateAssessments < ActiveRecord::Migration
       t.integer    :symbol_smear         # last time smear (0= smear negative,1
       t.date       :smear_date
 
+      ### New fields
+      t.boolean    :skin_redness
+      t.boolean    :skin_raised
+      t.boolean    :patch_border_clear
+      t.boolean    :patch_itch
+      t.boolean    :patch_skin_thick
+      t.boolean    :nodule
+      t.integer    :num_patches
+      t.string     :symbol_patch_sensation   # present/partial/complete loss
+      t.string     :symbol_patch_pain        # present/partial/complete loss
+
+
       ###
       t.boolean :relapse
       # lesions
@@ -81,6 +93,10 @@ class CreateAssessments < ActiveRecord::Migration
 
       # Nerve damage
       t.integer :num_nerve_damage_prev
+      t.integer :nerve_ulnar_enlarged_r
+      t.integer :nerve_ulnar_enlarged_l
+      t.integer :nerve_ulnar_tender_r
+      t.integer :nerve_ulnar_tender_l
       t.boolean :nerve_facial_enlarged_r
       t.boolean :nerve_facial_enlarged_l
       t.boolean :nerve_facial_tender_r
