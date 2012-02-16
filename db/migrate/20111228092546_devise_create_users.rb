@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       t.database_authenticatable :null => false
-      t.recoverable
+      # t.recoverable
       t.rememberable
       t.trackable
 
@@ -10,7 +10,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.confirmable
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
       # t.token_authenticatable
-
 
       t.timestamps
     end

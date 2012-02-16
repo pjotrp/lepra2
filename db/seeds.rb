@@ -6,5 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(:email => 'pjotr.prins01@thebird.nl', :password => 'lepra2', :password_confirmation => 'lepra2', :first_name => 'Pjotr', :last_name => 'Prins')
-
+require "socket"
+if Socket.gethostname == 'bergamo'
+  # only do this on a local development machine
+  User.create(
+    :email => 'pjotr.public37@thebird.nl', 
+    :password => 'lepra2', 
+    :password_confirmation => 'lepra2', 
+    :first_name => 'Pjotr', 
+    :last_name => 'Prins'
+  )
+end

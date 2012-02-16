@@ -1,3 +1,8 @@
+- [:notice, :error, :success].each do |key|
+  - unless flash[key].blank?
+    %p{ :class => "flash #{key}" }
+      = flash[key] 
+
 %p
   =raw parse_markdown(File.read(File.dirname(__FILE__)+'/../../../README.md').split(/\n\n/)[0..3].join("\n\n"))
 %p
