@@ -1,7 +1,6 @@
 ## TODO
 
 * See archive/doc/data_entry for patient treatment card?
-* Protect data w. login
 * Test version live
 
 ## next
