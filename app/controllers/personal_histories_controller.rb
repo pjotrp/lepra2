@@ -28,17 +28,16 @@ class PersonalHistoriesController < ApplicationController
     if params[:copy_id]
       # find the previous history
       hist = PersonalHistory.find(params[:copy_id])
-      # make sure the display fields exist
-      @personal_history = 
-        PersonalHistory.create( 
+      # the history has to exist, otherwise we bomb out
+      if hist
+        @personal_history = hist.clone
+        # create a DB record
+        rec = PersonalHistory.create( 
           :registration => hist.registration, 
           :registration_date => hist.registration_date,
           :staff_id => hist.staff_id,
           :date => Time.now )
-      new_id = @personal_history.id
-      if hist
-        @personal_history = hist.clone
-        @personal_history.id = new_id
+        @personal_history.id = rec.id
 
         @personal_history.date = Time.now
         @personal_history.remark = 'copied from previous form'
