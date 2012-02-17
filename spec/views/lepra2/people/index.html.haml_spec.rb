@@ -1,8 +1,8 @@
 require 'spec_helper'
 describe "people/index.html.haml" do
 it "displays the front page" do
+  @people = []
   render
-  p rendered
-  rendered.should contain("LEPRA")
+  rendered.should contain("Clinic")
   end
 end
