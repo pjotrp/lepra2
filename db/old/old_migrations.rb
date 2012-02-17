@@ -11,7 +11,11 @@
 # Copyright (C) 2011 Pjotr Prins <pjotr.prins@thebird.nl>
 
 CREATE=false
-LIMIT=10
+if ARGV.size == 1
+  LIMIT = ARGV.shift.to_i
+else
+  LIMIT=nil
+end
 
 require 'active_record'
 require 'mysql2'
