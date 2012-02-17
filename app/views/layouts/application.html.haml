@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 %html
   %head
-    %title Lepra2
+    %title LEPRA Live
     = stylesheet_link_tag "application"
     // <%= javascript_include_tag "application" %>
     // <%= csrf_meta_tags %>
   %body{ :class => controller.controller_name }
     .banner
       .maintitle
-        = @page_title || "LEPRA (" + lepra_version + ")"
+        = link_to @page_title || "LEPRA (" + lepra_version + ")", people_path
       .tabs
         %span
           |
