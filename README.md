@@ -43,16 +43,22 @@ and setup a user with an appropriate password and adapt that in the
   exit;
 ```
 
-Ruby on Rails requirements (Debian Sid):
+Ruby on Rails requirements (Debian):
 
 ```sh
-  apt-get install libmysqlclient-dev libopenssl apache2 nodejs 
+  apt-get install libxml2-dev libxslt-dev libmysqlclient-dev apache2
+```
+
+Specific for Debian testing (sid)
+
+```sh
+  apt-get install libopenssl nodejs 
 ```
 
 or, on Debian stable
 
 ```sh
-  apt-get install  libmysqlclient-dev libopenssl-ruby1.9.1 apache2 
+  apt-get install libopenssl-ruby1.9.1
 ```
   
 Run (you probably want to use rvm)

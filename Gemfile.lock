@@ -63,6 +63,7 @@ GEM
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
+    diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.2.12)
       multi_json (~> 1.0)
@@ -89,6 +90,7 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     mysql2 (0.3.11)
+    nokogiri (1.5.0)
     orm_adapter (0.0.5)
     polyglot (0.3.3)
     rack (1.3.5)
@@ -122,6 +124,19 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.1)
+    rspec (2.8.0)
+      rspec-core (~> 2.8.0)
+      rspec-expectations (~> 2.8.0)
+      rspec-mocks (~> 2.8.0)
+    rspec-core (2.8.0)
+    rspec-expectations (2.8.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.8.0)
+    rspec-rails (2.8.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec (~> 2.8.0)
     sass (3.1.12)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
@@ -146,6 +161,10 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.1.0)
       rack (>= 1.0)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
 
 PLATFORMS
   ruby
@@ -160,6 +179,8 @@ DEPENDENCIES
   mysql2
   rails (= 3.1.3)
   rails_admin!
+  rspec-rails
   sass-rails (~> 3.1.5)
   turn (= 0.8.2)
   uglifier (>= 1.0.3)
+  webrat
