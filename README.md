@@ -16,6 +16,9 @@ Netherlands.
 For more information, see the source code
 [repository](https://github.com/pjotrp/lepra2).
 
+A gentle introduction can be found
+[here](https://github.com/pjotrp/lepra2/blob/master/doc/introduction.md).
+
 # Install and run
 
 LEPRA runs on Linux, OSX and Windows. These are instructions for

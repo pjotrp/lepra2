@@ -71,3 +71,5 @@ Location contains the map coordinates. This is used for geographical
 study. Addresses can share a Location - as it will usually be at a
 somewhat higher level than the road/village.
 
+To view the actual database schema, see the
+[repo](https://github.com/pjotrp/lepra2/blob/master/db/schema.rb).
