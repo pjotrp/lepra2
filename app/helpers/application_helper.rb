@@ -1,6 +1,10 @@
 
 module ApplicationHelper
 
+  def lepra_version
+    @_lepra_version ||= File.read('VERSION')
+  end
+
   def tr_text f, field, *opts
     haml = <<EOP
 %tr
