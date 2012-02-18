@@ -213,6 +213,7 @@ CONTACT_LEPRA0_2_BOOL = {
 ASSESSMENT_LEPRA0_1 = {
   'SMEARFDATE'    => :smearf_date,
   'SMEARLDATE'    => :smear_date,
+  'SMEARLDATE'    => :date,
 }
 ASSESSMENT_LEPRA0_1_INT = {
   'PREV_NER_D' =>     :num_nerve_damage_prev,
@@ -412,6 +413,8 @@ def new_assessment(contact, lepra1, lepra2)
   assess.person_id = contact.person_id
   assess.registration = contact.registration
   assess.contact_id = contact.id
+  assess.created_at = contact.created_at
+  assess.updated_at = contact.updated_at
   walk(ASSESSMENT_LEPRA0_1,assess,lepra1)
   walk_i(ASSESSMENT_LEPRA0_1_INT,assess,lepra1)
   walk_b(ASSESSMENT_LEPRA0_1_BOOL,assess,lepra1)
@@ -429,6 +432,8 @@ def new_reaction(person_id, registration,lepra3)
   walk(REACTION_LEPRA0_3,react,lepra3)
   walk_i(REACTION_LEPRA0_3_INT,react,lepra3)
   walk_b(REACTION_LEPRA0_3_BOOL,react,lepra3)
+  react.created_at = react.date
+  react.updated_at = react.date
   print "  - Adding ",person_id," to Reaction\n"
   react.save
 end
@@ -529,6 +534,8 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     contact = Contact.create
     contact.updated_at = rec.CONTACTLST
     contact.date = rec.CONTACTLST
+    contact.created_at = rec.REG_DATE
+    contact.updated_at = rec.CONTACTLST
     contact.person_id = person.id
     contact.registration = person.registration
     contact.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
