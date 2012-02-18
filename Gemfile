@@ -14,7 +14,7 @@ gem 'formtastic'
 gem 'maruku'
 # gem 'authlogic' # use devise for now
 # gem 'execjs'
-# gem 'therubyracer'
+gem 'therubyracer'
 # gem 'libv8', '3.3.10.4'
 
 # Gems used only for assets and not required
