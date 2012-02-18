@@ -58,7 +58,7 @@ Specific for Debian testing (sid)
   apt-get install libopenssl nodejs 
 ```
 
-or, on Debian stable
+or, on Debian stable (lenny)
 
 ```sh
   apt-get install libopenssl-ruby1.9.1
