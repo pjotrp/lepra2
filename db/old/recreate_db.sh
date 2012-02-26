@@ -1,3 +1,4 @@
+export RAILS_ENV=development
 cd ../..
 rake db:drop ; rake db:create ; rake db:migrate 
 cd db/old

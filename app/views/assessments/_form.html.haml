@@ -45,9 +45,9 @@
       != tr_check_box    f, :patch_itch
       != tr_check_box    f, :patch_skin_thick
       != tr_check_box    f, :nodule
-      != tr_integer    f, :num_patches
-      != tr_string     f, :symbol_patch_sensation   # present/partial/complete loss
-      != tr_string     f, :symbol_patch_pain        # present/partial/complete loss
+      != tr_number    f, :num_patches
+      != tr_text    f, :symbol_patch_sensation   # present/partial/complete loss
+      != tr_text    f, :symbol_patch_pain        # present/partial/complete loss
 
       != tr_number f, :lesions
       != tr_check_box f, :lesions_inflam
