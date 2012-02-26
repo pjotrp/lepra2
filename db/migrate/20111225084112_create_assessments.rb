@@ -25,7 +25,6 @@ class CreateAssessments < ActiveRecord::Migration
       t.string     :symbol_patch_sensation   # present/partial/complete loss
       t.string     :symbol_patch_pain        # present/partial/complete loss
 
-
       ###
       t.boolean :relapse
       # lesions
