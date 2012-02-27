@@ -18,6 +18,21 @@ Questions:
 * Should the current Assessment/Physical examination record be split further?
 * Should MDT treatment be in contact/medical?
 
+## Comments 
+
+   hag - should be lag, short for lagophthalmos
+   facila (reaction form) - should be facial
+   planter (assessment form) should be plantar
+   prednisolon should be prednisolone
+
+   Avoid the true/false 
+
+   Eye closure gap should have units ie. mm
+
+   Do not use 'common' or 'posterior'. These are abbreviations for 'common
+   peroneal nerve' and 'posterior tibial nerve'. Better, 'C peroneal nerve'
+   or 'Post tibial nerve' or even CP nerve and PT nerve
+
 ## Next
 
 We need to add 
