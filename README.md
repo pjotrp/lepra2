@@ -14,7 +14,8 @@ The project is actively supported by Prof. JH Richardus, Infectious
 Diseases and Public Health, Erasmus Medical Center University, the
 Netherlands.
 For more information, see the source code
-[repository](https://github.com/pjotrp/lepra2).
+[repository](https://github.com/pjotrp/lepra2) and the [issue
+tracker](https://github.com/pjotrp/lepra2/issues).
 
 A gentle introduction can be found
 [here](https://github.com/pjotrp/lepra2/blob/master/doc/introduction.md).
