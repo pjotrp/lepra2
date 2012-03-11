@@ -204,7 +204,7 @@ CONTACT_LEPRA0_2_BOOL = {
   'plantar_ul' => :hospital_plantar_alcer,
   'eye_compl' => :hospital_eye_complication,
   'h_other' => :hospital_other,
-  'pre_dose'   => :prednisolon,
+  'pre_dose'   => :prednisolone,
   'pregnant'   => :pregnant,
   'pregn_date' => :pregnancy_date,
   'breastfeed' => :breast_feeding,   
@@ -231,10 +231,10 @@ ASSESSMENT_LEPRA0_1_BOOL = {
     'LES_LEG_L'  => :lesions_leg_l,
     'OED_HANDS'  => :oed_hands,
     'OED_FEET'   => :oed_feet,
-    'DEF_HAG_R'  =>        :deformity_hag_r,     # Lagophtalmos
-    'DEF_HAG_L'  =>        :deformity_hag_l,
-    'DEF_FAC_R'  =>        :deformity_facial_r,  # Facialpalsy 
-    'DEF_FAC_L'  =>        :deformity_facial_l , # Facialpalsy 
+    'DEF_HAG_R'  =>        :deformity_lagophtalmos_r,     # Lagophtalmos
+    'DEF_HAG_L'  =>        :deformity_lagophtalmos_l,
+    'DEF_FAC_R'  =>        :deformity_facialpalsy_r,  # Facialpalsy 
+    'DEF_FAC_L'  =>        :deformity_facialpalsy_l , # Facialpalsy 
     'DEF_CLA_HR'  =>        :deformity_claw_hand_r, 
     'DEF_CLA_HL'  =>        :deformity_claw_hand_l, 
     'DEF_APE_R'    =>        :deformity_ape_thumb_r ,
@@ -251,8 +251,8 @@ ASSESSMENT_LEPRA0_1_BOOL = {
     'DEF_ABS_TL'  =>        :deformity_absent_toes_l,
     'DEF_PA_L'  =>        :deformity_palmar_r, # Palmar Anaesthetic
     'DEF_PA_R'  =>        :deformity_palmar_l,
-    'DEF_PLA_L'    =>        :deformity_planter_r, # Planter Anaesthetic
-    'DEF_PLA_R' =>       :deformity_planter_l,
+    'DEF_PLA_L'    =>        :deformity_plantar_r, # Planter Anaesthetic
+    'DEF_PLA_R' =>       :deformity_plantar_l,
           
   'NER_FAC_ER' =>      :nerve_facial_enlarged_r,
   'NER_FAC_EL' =>     :nerve_facial_enlarged_l,
@@ -262,22 +262,22 @@ ASSESSMENT_LEPRA0_1_BOOL = {
   'NER_RAD_EL' =>     :nerve_radial_enlarged_l,
   'NER_RAD_TR' =>     :nerve_radial_tender_r,  # Tender/pain radia 
   'NER_RAD_TL' =>     :nerve_radial_tender_l,
-  'NER_ULN_ER' =>      :nerve_ulcer_enlarged_r,
-  'NER_ULN_EL' =>     :nerve_ulcer_enlarged_l,
-  'NER_ULN_TR' =>     :nerve_ulcer_tender_r,
-  'NER_ULN_TL' =>     :nerve_ulcer_tender_l,
+  'NER_ULN_ER' =>      :nerve_ulnar_enlarged_r,
+  'NER_ULN_EL' =>     :nerve_ulnar_enlarged_l,
+  'NER_ULN_TR' =>     :nerve_ulnar_tender_r,
+  'NER_ULN_TL' =>     :nerve_ulnar_tender_l,
   'NER_MED_ER' =>      :nerve_median_enlarged_r,
   'NER_MED_EL' =>     :nerve_median_enlarged_l,
   'NER_MED_TR' =>     :nerve_median_tender_r,
   'NER_MED_TL' =>     :nerve_median_tender_l,
-  'NER_COM_ER' =>      :nerve_common_enlarged_r,
-  'NER_COM_EL' =>     :nerve_common_enlarged_l,
-  'NER_COM_TR' =>     :nerve_common_tender_r,
-  'NER_COM_TL' =>     :nerve_common_tender_l,
-  'NER_POS_ER' =>      :nerve_posterior_enlarged_r,
-  'NER_POS_EL' =>     :nerve_posterior_enlarged_l,
-  'NER_POS_TR' =>     :nerve_posterior_tender_r,
-  'NER_POS_TL' =>     :nerve_posterior_tender_l,
+  'NER_COM_ER' =>      :nerve_common_peroneal_nerve_enlarged_r,
+  'NER_COM_EL' =>     :nerve_common_peroneal_nerve_enlarged_l,
+  'NER_COM_TR' =>     :nerve_common_peroneal_nerve_tender_r,
+  'NER_COM_TL' =>     :nerve_common_peroneal_nerve_tender_l,
+  'NER_POS_ER' =>      :nerve_posterior_tibial_nerve_enlarged_r,
+  'NER_POS_EL' =>     :nerve_posterior_tibial_nerve_enlarged_l,
+  'NER_POS_TR' =>     :nerve_posterior_tibial_nerve_tender_r,
+  'NER_POS_TL' =>     :nerve_posterior_tibial_nerve_tender_l,
 
 }
 
@@ -377,7 +377,7 @@ ASSESSMENT_LEPRA0_2_BOOL = {
 
 REACTION_LEPRA0_3 = {
   'DATE' =>     :date,   # recorded reaction date
-  'PED_DATE' =>   :prednisolon_date,
+  'PED_DATE' =>   :prednisolone_date,
 }
 
 
@@ -387,18 +387,18 @@ REACTION_LEPRA0_3_INT = {
     'REA_DUR'   => :duration_months,
     'T1R_N'       =>   :type1_grade,
     'T2R'       =>   :type2_grade,
-    'RNER_FAC_R'=>   :nerve_pain_score_facila_r,
-    'RNER_FAC_L'=>    :nerve_pain_score_facila_l,
+    'RNER_FAC_R'=>   :nerve_pain_score_facial_r,
+    'RNER_FAC_L'=>    :nerve_pain_score_facial_l,
     'RNER_RAD_R'=>   :nerve_pain_score_radial_r,
     'RNER_RAD_L'=>    :nerve_pain_score_radial_l,
     'RNER_ULN_R'=>   :nerve_pain_score_ulnar_r,
     'RNER_ULN_L'=>    :nerve_pain_score_ulnar_l,
     'RNER_MED_R'=>   :nerve_pain_score_median_r,
     'RNER_MED_L'=>    :nerve_pain_score_median_l,
-    'RNER_COM_R'=>   :nerve_pain_score_common_r,
-    'RNER_COM_L'=>    :nerve_pain_score_common_l,
-    'RNER_POS_R'=>   :nerve_pain_score_posterior_r,
-    'RNER_POS_L'=>    :nerve_pain_score_posterior_l,
+    'RNER_COM_R'=>   :nerve_pain_score_common_peroneal_nerve_r,
+    'RNER_COM_L'=>    :nerve_pain_score_common_peroneal_nerve_l,
+    'RNER_POS_R'=>   :nerve_pain_score_posterior_tibial_nerve_r,
+    'RNER_POS_L'=>    :nerve_pain_score_posterior_tibial_nerve_l,
 }              
     
 REACTION_LEPRA0_3_BOOL = {
