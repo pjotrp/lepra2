@@ -25,7 +25,7 @@ class CreateContacts < ActiveRecord::Migration
       t.date       :rft_date
     
       # medication
-      t.boolean    :prednisolon   # low dose
+      t.boolean    :prednisolone   # low dose
       t.boolean    :diy
       t.string     :diy_specify   # new field
       t.boolean    :hospital_admission

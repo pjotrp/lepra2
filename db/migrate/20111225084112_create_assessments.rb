@@ -67,10 +67,10 @@ class CreateAssessments < ActiveRecord::Migration
       t.integer :sensory_score_eye_l
 
       # deformity
-      t.boolean :deformity_hag_r     # Lagophtalmos
-      t.boolean :deformity_hag_l
-      t.boolean :deformity_facial_r  # Facialpalsy 
-      t.boolean :deformity_facial_l  # Facialpalsy 
+      t.boolean :deformity_lagophtalmos_r    
+      t.boolean :deformity_lagophtalmos_l
+      t.boolean :deformity_facialpalsy_r  
+      t.boolean :deformity_facialpalsy_l  
       t.boolean :deformity_claw_hand_r 
       t.boolean :deformity_claw_hand_l 
       t.boolean :deformity_ape_thumb_r
@@ -87,8 +87,8 @@ class CreateAssessments < ActiveRecord::Migration
       t.boolean :deformity_absent_toes_l
       t.boolean :deformity_palmar_r # Palmar Anaesthetic
       t.boolean :deformity_palmar_l
-      t.boolean :deformity_planter_r # Planter Anaesthetic
-      t.boolean :deformity_planter_l
+      t.boolean :deformity_plantar_r # Plantar Anaesthetic
+      t.boolean :deformity_plantar_l
 
       # Nerve damage
       t.integer :num_nerve_damage_prev
@@ -112,14 +112,14 @@ class CreateAssessments < ActiveRecord::Migration
       t.boolean :nerve_median_enlarged_l
       t.boolean :nerve_median_tender_r
       t.boolean :nerve_median_tender_l
-      t.boolean :nerve_common_enlarged_r
-      t.boolean :nerve_common_enlarged_l
-      t.boolean :nerve_common_tender_r
-      t.boolean :nerve_common_tender_l
-      t.boolean :nerve_posterior_enlarged_r
-      t.boolean :nerve_posterior_enlarged_l
-      t.boolean :nerve_posterior_tender_r
-      t.boolean :nerve_posterior_tender_l
+      t.boolean :nerve_common_peroneal_nerve_enlarged_r
+      t.boolean :nerve_common_peroneal_nerve_enlarged_l
+      t.boolean :nerve_common_peroneal_nerve_tender_r
+      t.boolean :nerve_common_peroneal_nerve_tender_l
+      t.boolean :nerve_posterior_tibial_nerve_enlarged_r
+      t.boolean :nerve_posterior_tibial_nerve_enlarged_l
+      t.boolean :nerve_posterior_tibial_nerve_tender_r
+      t.boolean :nerve_posterior_tibial_nerve_tender_l
 
       # quick muscle testing
       t.integer :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
