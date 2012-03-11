@@ -104,10 +104,6 @@ class CreateAssessments < ActiveRecord::Migration
       t.boolean :nerve_radial_enlarged_l
       t.boolean :nerve_radial_tender_r  # Tender/pain radia 
       t.boolean :nerve_radial_tender_l
-      t.boolean :nerve_ulcer_enlarged_r
-      t.boolean :nerve_ulcer_enlarged_l
-      t.boolean :nerve_ulcer_tender_r
-      t.boolean :nerve_ulcer_tender_l
       t.boolean :nerve_median_enlarged_r
       t.boolean :nerve_median_enlarged_l
       t.boolean :nerve_median_tender_r
