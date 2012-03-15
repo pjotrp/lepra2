@@ -26,7 +26,7 @@
         %td
           = f.hidden_field :registration
       != tr_date(f,:date, :readonly => true)
-      != tr_date f,    :prednisolon_date
+      != tr_date f,    :prednisolone_date
       != tr_number f, :bands_study
       != tr_number f, :mdt_dose
       != tr_check_box f, :treatment
@@ -38,18 +38,20 @@
       != tr_number f, :type1_grade
       != tr_number f, :type2_grade
 
-      != tr_number f, :nerve_pain_score_facila_r
-      != tr_number f, :nerve_pain_score_facila_l
+      != tr_number f, :nerve_pain_score_facial_r
+      != tr_number f, :nerve_pain_score_facial_l
       != tr_number f, :nerve_pain_score_radial_r
       != tr_number f, :nerve_pain_score_radial_l
       != tr_number f, :nerve_pain_score_ulnar_r
       != tr_number f, :nerve_pain_score_ulnar_l
       != tr_number f, :nerve_pain_score_median_r
       != tr_number f, :nerve_pain_score_median_l
-      != tr_number f, :nerve_pain_score_common_r
-      != tr_number f, :nerve_pain_score_common_l
-      != tr_number f, :nerve_pain_score_posterior_r
-      != tr_number f, :nerve_pain_score_posterior_l
+
+      != tr_number f, :nerve_pain_score_common_peroneal_nerve_r
+      != tr_number f, :nerve_pain_score_common_peroneal_nerve_l
+      != tr_number f, :nerve_pain_score_posterior_tibial_nerve_r
+      != tr_number f, :nerve_pain_score_posterior_tibial_nerve_l
+
 
     %tr
       %td{ :colspan => "2" }

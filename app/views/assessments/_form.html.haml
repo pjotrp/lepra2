@@ -85,10 +85,11 @@
       != tr_number f, :sensory_score_eye_r
       != tr_number f, :sensory_score_eye_l
 
-      != tr_check_box f, :deformity_hag_r     # Lagophtalmos
-      != tr_check_box f, :deformity_hag_l
-      != tr_check_box f, :deformity_facial_r  # Facialpalsy 
-      != tr_check_box f, :deformity_facial_l  # Facialpalsy 
+      != tr_check_box f, :deformity_lagophtalmos_r
+      != tr_check_box f, :deformity_lagophtalmos_l
+      != tr_check_box f, :deformity_facialpalsy_r
+      != tr_check_box f, :deformity_facialpalsy_l
+
       != tr_check_box f, :deformity_claw_hand_r 
       != tr_check_box f, :deformity_claw_hand_l 
       != tr_check_box f, :deformity_ape_thumb_r
@@ -105,34 +106,56 @@
       != tr_check_box f, :deformity_absent_toes_l
       != tr_check_box f, :deformity_palmar_r # Palmar Anaesthetic
       != tr_check_box f, :deformity_palmar_l
-      != tr_check_box f, :deformity_planter_r # Planter Anaesthetic
-      != tr_check_box f, :deformity_planter_l
+      != tr_check_box f, :deformity_plantar_r
+      != tr_check_box f, :deformity_plantar_l
 
       != tr_number f, :num_nerve_damage_prev
+
+      != tr_check_box f, :nerve_ulnar_enlarged_r
+      != tr_check_box f, :nerve_ulnar_enlarged_l
+      != tr_check_box f, :nerve_ulnar_tender_r
+      != tr_check_box f, :nerve_ulnar_tender_l
+      != tr_check_box f, :nerve_ulnar_normal_r
+      != tr_check_box f, :nerve_ulnar_normal_l
+
       != tr_check_box f, :nerve_facial_enlarged_r
       != tr_check_box f, :nerve_facial_enlarged_l
       != tr_check_box f, :nerve_facial_tender_r
       != tr_check_box f, :nerve_facial_tender_l
+      != tr_check_box f, :nerve_facial_normal_r
+      != tr_check_box f, :nerve_facial_normal_l
+
       != tr_check_box f, :nerve_radial_enlarged_r # Enlarged radial
       != tr_check_box f, :nerve_radial_enlarged_l
       != tr_check_box f, :nerve_radial_tender_r  # Tender/pain radia 
       != tr_check_box f, :nerve_radial_tender_l
-      != tr_check_box f, :nerve_ulcer_enlarged_r
-      != tr_check_box f, :nerve_ulcer_enlarged_l
-      != tr_check_box f, :nerve_ulcer_tender_r
-      != tr_check_box f, :nerve_ulcer_tender_l
+      != tr_check_box f, :nerve_radial_normal_r
+      != tr_check_box f, :nerve_radial_normal_l
+
       != tr_check_box f, :nerve_median_enlarged_r
       != tr_check_box f, :nerve_median_enlarged_l
       != tr_check_box f, :nerve_median_tender_r
       != tr_check_box f, :nerve_median_tender_l
-      != tr_check_box f, :nerve_common_enlarged_r
-      != tr_check_box f, :nerve_common_enlarged_l
-      != tr_check_box f, :nerve_common_tender_r
-      != tr_check_box f, :nerve_common_tender_l
-      != tr_check_box f, :nerve_posterior_enlarged_r
-      != tr_check_box f, :nerve_posterior_enlarged_l
-      != tr_check_box f, :nerve_posterior_tender_r
-      != tr_check_box f, :nerve_posterior_tender_l
+      != tr_check_box f, :nerve_median_normal_r
+      != tr_check_box f, :nerve_median_normal_l
+      != tr_check_box f, :nerve_radial_cuteneus_enlarger_r
+      != tr_check_box f, :nerve_radial_cuteneus_enlarger_l
+      != tr_check_box f, :nerve_radial_cuteneus_tender_r
+      != tr_check_box f, :nerve_radial_cuteneus_tender_l
+      != tr_check_box f, :nerve_radial_cuteneus_normal_r
+      != tr_check_box f, :nerve_radial_cuteneus_normal_l
+      != tr_check_box f, :nerve_common_peroneal_nerve_enlarged_r
+      != tr_check_box f, :nerve_common_peroneal_nerve_enlarged_l
+      != tr_check_box f, :nerve_common_peroneal_nerve_tender_r
+      != tr_check_box f, :nerve_common_peroneal_nerve_tender_l
+      != tr_check_box f, :nerve_common_peroneal_nerve_normal_r
+      != tr_check_box f, :nerve_common_peroneal_nerve_normal_l
+      != tr_check_box f, :nerve_posterior_tibial_nerve_enlarged_r
+      != tr_check_box f, :nerve_posterior_tibial_nerve_enlarged_l
+      != tr_check_box f, :nerve_posterior_tibial_nerve_tender_r
+      != tr_check_box f, :nerve_posterior_tibial_nerve_tender_l
+      != tr_check_box f, :nerve_posterior_tibial_nerve_normal_r
+      != tr_check_box f, :nerve_posterior_tibial_nerve_normal_l
 
       != tr_number f, :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
       != tr_number f, :qmt_eye_closure_strength_l   # QMT Light eye closure (strength) Left
