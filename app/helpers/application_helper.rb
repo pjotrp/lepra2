@@ -63,7 +63,6 @@ EOP
 %tr
   %td
     #{f.label field}
-    #{opts}
   %td
     #{radio_button_tag(field, "nil", :checked => true)}
     #{label_tag(field.to_s+'_', "unused")}
