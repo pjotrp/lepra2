@@ -1,6 +1,6 @@
 %tr
   %td
-    = attribute.gsub(/_/,' ').sub(/^symbol /,'').capitalize
+    = render_label(attribute)
   %td
     = render_value(rec[attribute])
    

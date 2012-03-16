@@ -4,6 +4,13 @@ module ApplicationHelper
     @_lepra_version ||= File.read('VERSION')
   end
 
+  def render_label s
+    s1 = s.gsub(/_/,' ').sub(/^symbol /,'').capitalize
+    s2 = s1.sub(/ r$/,' right')
+    s3 = s2.sub(/ l$/,' left')
+    s3
+  end
+
   def render_value value
     if value.class == TrueClass
       "Yes"
