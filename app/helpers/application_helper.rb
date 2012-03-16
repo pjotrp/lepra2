@@ -81,11 +81,11 @@ EOP
     #{f.label field}
   %td
     #{f.radio_button field, ""}
-    #{f.label field, "unused"}
-    #{f.radio_button field, true}
-    #{f.label field, "Yes"}
+    #{f.label field, "na"}
     #{f.radio_button field, false}
     #{f.label field, "No"}
+    #{f.radio_button field, true}
+    #{f.label field, "Yes"}
 EOP
     Haml::Engine.new(haml).render
   end
