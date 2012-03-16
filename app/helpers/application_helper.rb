@@ -82,6 +82,12 @@ EOP
   %td
     #{f.radio_button field, ""}
     #{f.label field, "na"}
+    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
     #{f.radio_button field, false}
     #{f.label field, "No"}
     #{f.radio_button field, true}
