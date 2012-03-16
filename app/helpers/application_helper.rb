@@ -65,7 +65,7 @@ EOP
     #{f.label field}
     #{opts}
   %td
-    #{radio_button_tag(field, "nil")}
+    #{radio_button_tag(field, "nil", :checked => true)}
     #{label_tag(field.to_s+'_', "unused")}
     #{radio_button_tag(field, true)}
     #{label_tag(field.to_s+'_true', "yes")}
