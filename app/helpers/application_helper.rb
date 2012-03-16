@@ -1,10 +1,19 @@
-
 module ApplicationHelper
 
   def lepra_version
     @_lepra_version ||= File.read('VERSION')
   end
 
+  def render_value value
+    if value.class == TrueClass
+      "Yes"
+    elsif value.class == FalseClass
+      "No"
+    else
+      value.to_s
+    end
+  end
+ 
   def tr_text f, field, *opts
     haml = <<EOP
 %tr
