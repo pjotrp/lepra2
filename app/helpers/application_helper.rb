@@ -57,6 +57,24 @@ EOP
 EOP
     html
   end
+
+  def tr_boolean f, field, *opts
+    haml = <<EOP
+%tr
+  %td
+    #{f.label field}
+    #{opts}
+  %td
+    #{radio_button_tag(field, "nil")}
+    #{label_tag(field.to_s+'_', "unused")}
+    #{radio_button_tag(field, true)}
+    #{label_tag(field.to_s+'_true', "yes")}
+    #{radio_button_tag(field, false)}
+    #{label_tag(field.to_s+'_false', "no")}
+EOP
+    Haml::Engine.new(haml).render
+  end
+
   def tr_date f, field, *opts
     html = <<EOP
       <tr>
