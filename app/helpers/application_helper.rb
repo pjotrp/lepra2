@@ -64,12 +64,12 @@ EOP
   %td
     #{f.label field}
   %td
-    #{radio_button_tag(field, "nil", :checked => true)}
-    #{label_tag(field.to_s+'_', "unused")}
-    #{radio_button_tag(field, true)}
-    #{label_tag(field.to_s+'_true', "yes")}
-    #{radio_button_tag(field, false)}
-    #{label_tag(field.to_s+'_false', "no")}
+    #{f.radio_button field, ""}
+    #{f.label field, "unused"}
+    #{f.radio_button field, true}
+    #{f.label field, "Yes"}
+    #{f.radio_button field, false}
+    #{f.label field, "No"}
 EOP
     Haml::Engine.new(haml).render
   end
