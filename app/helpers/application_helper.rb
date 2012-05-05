@@ -37,7 +37,9 @@ EOP
     haml = <<EOP
 %tr
   %td
-    #{f.label label}
+    #{f.label label} 
+    %a{ "href" => "https://github.com/pjotrp/lepra2/issues/8" }
+      (symbol field: not yet standard)
   %td.symbol
     #{f.text_field field, *opts}
 EOP
