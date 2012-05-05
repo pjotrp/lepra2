@@ -33,17 +33,15 @@ EOP
   end
 
   def tr_symbol f, field, *opts
-    label = field.to_s.sub(/symbol_/,'').to_sym
-    html = <<EOP
-      <tr>
-        <td>
-          #{f.label label}
-        </td>
-        <td>
-          #{f.text_field field, *opts}
-        </td>
-      </tr>
+    label = field.to_s.sub(/[Ss]ymbol_/,'').to_sym
+    haml = <<EOP
+%tr
+  %td
+    #{f.label label}
+  %td.symbol
+    #{f.text_field field, *opts}
 EOP
+    Haml::Engine.new(haml).render
   end
 
   # Show a number. The default size of the field is 8
@@ -52,9 +50,8 @@ EOP
 %tr
   %td
     #{f.label field}
-  %td
-    .number
-      #{f.number_field field, opts  }
+  %td.number
+    #{f.number_field field, opts  }
 EOP
     Haml::Engine.new(haml).render
   end
