@@ -34,33 +34,13 @@
         %td
           = f.text_field :date, :readonly => 'true'
           - [ :staff_id, :finder_lca, :members, :income ].each do |field|
-            %tr
-              %td
-                = f.label field
-              %td
-                = f.number_field field
+            != tr_number f,field
           - [ :symbol_occupation, :symbol_education, :symbol_guardian ].each do |field|
-            %tr
-              %td
-                = f.label field
-              %td
-                = f.text_field field
-            %tr
-              %td
-                = f.label :guardian_name
-              %td
-                = f.text_field :guardian_name
+            != tr_symbol f, field
+            != tr_text f,:guardian_name
           - [ :latrine_access, :rft, :died ].each do |field|
-            %tr
-              %td
-                = f.label field
-              %td
-                = f.check_box field
-      %tr
-        %td
-          = f.label :date_died
-        %td
-          = f.text_field :date_died
+            != tr_boolean3 f,field
+      != tr_date f,:date_died
     %tr
       %td{ :colspan => "2" }
         %div
