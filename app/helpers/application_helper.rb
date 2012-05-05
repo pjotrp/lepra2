@@ -74,7 +74,7 @@ EOP
     html
   end
 
-  def tr_boolean f, field, *opts
+  def tr_boolean3 f, field, *opts
     haml = <<EOP
 %tr
   %td

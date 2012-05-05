@@ -37,13 +37,13 @@
       != tr_date f,        :smearf_date
       != tr_number f,    :symbol_smear         # last time smear (0= smear negative,1,2,3,4,5,6 = smear positive, 9=no smear) 
       != tr_date f,        :smear_date
-      != tr_boolean f, :relapse
+      != tr_boolean3 f, :relapse
 
-      != tr_boolean      f, :skin_redness
-      != tr_boolean    f, :skin_raised
-      != tr_boolean    f, :patch_border_clear
-      != tr_boolean    f, :patch_itch
-      != tr_boolean    f, :patch_skin_thick
+      != tr_boolean3      f, :skin_redness
+      != tr_boolean3    f, :skin_raised
+      != tr_boolean3    f, :patch_border_clear
+      != tr_boolean3    f, :patch_itch
+      != tr_boolean3    f, :patch_skin_thick
       != tr_check_box    f, :nodule
       != tr_number    f, :num_patches
       != tr_text    f, :symbol_patch_sensation   # present/partial/complete loss
