@@ -46,18 +46,17 @@ EOP
 EOP
   end
 
-  def tr_number f, field, *opts
-    html = <<EOP
-      <tr>
-        <td>
-          #{f.label field}
-        </td>
-        <td>
-          #{f.number_field field, *opts}
-        </td>
-      </tr>
+  # Show a number. The default size of the field is 8
+  def tr_number f, field, opts = { :size => '8' }
+    haml = <<EOP
+%tr
+  %td
+    #{f.label field}
+  %td
+    .number
+      #{f.number_field field, opts  }
 EOP
-    html
+    Haml::Engine.new(haml).render
   end
 
   def tr_check_box f, field, *opts
