@@ -50,15 +50,21 @@
       != tr_symbol    f, :symbol_patch_pain        # present/partial/complete loss
 
       != tr_number f, :lesions
-      != tr_boolean3 f, :lesions_inflam
-      != tr_boolean3 f, :lesions_face
-      != tr_boolean3 f, :lesions_arm_r
-      != tr_boolean3 f, :lesions_arm_l
-      != tr_boolean3 f, :lesions_trunk
-      != tr_boolean3 f, :lesions_leg_r
-      != tr_boolean3 f, :lesions_leg_l
-      != tr_boolean3 f, :oed_hands
-      != tr_boolean3 f, :oed_feet
+      %tr
+        %td
+          %a{ :name => "lesions" }
+          %a{ :href => "#lesions", :onclick => "return toggleTbody('section_lesions');" }
+            toggle
+      %tbody{ :id => "section_lesions" }
+        != tr_boolean3 f, :lesions_inflam
+        != tr_boolean3 f, :lesions_face
+        != tr_boolean3 f, :lesions_arm_r
+        != tr_boolean3 f, :lesions_arm_l
+        != tr_boolean3 f, :lesions_trunk
+        != tr_boolean3 f, :lesions_leg_r
+        != tr_boolean3 f, :lesions_leg_l
+        != tr_boolean3 f, :oed_hands
+        != tr_boolean3 f, :oed_feet
 
       != tr_number f, :ulcers  
       != tr_boolean3 f, :ulcers_palm_simple_r
