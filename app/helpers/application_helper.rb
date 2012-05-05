@@ -110,6 +110,18 @@ EOP
     html
   end
 
+  def tr_remark f, field, *opts 
+    haml = <<EOP
+%tr
+  %td{ :colspan => "2" }
+    %div
+      #{f.label field}
+    %div
+      #{f.text_area(field, :size => "80x4") }
+EOP
+    Haml::Engine.new(haml).render
+  end
+
   # require 'bluecloth'
   require 'maruku'
 

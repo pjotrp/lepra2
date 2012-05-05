@@ -41,12 +41,7 @@
           - [ :latrine_access, :rft, :died ].each do |field|
             != tr_boolean3 f,field
       != tr_date f,:date_died
-    %tr
-      %td{ :colspan => "2" }
-        %div
-          = f.label :remark
-        %div
-          = f.text_area :remark, :size => "80x4"
+    != tr_remark f,:remark
     %div
     = f.submit "Update"
     %hr
