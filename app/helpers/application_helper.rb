@@ -74,6 +74,8 @@ EOP
     html
   end
 
+  alias tr_boolean tr_check_box
+
   def tr_boolean3 f, field, *opts
     haml = <<EOP
 %tr
