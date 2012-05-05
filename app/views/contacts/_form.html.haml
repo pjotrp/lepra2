@@ -32,41 +32,41 @@
       - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
         != tr_symbol(f,field)
       - [ :final_assessment ].each do |field|
-        != tr_check_box f,field
+        != tr_boolean3 f,field
       != tr_number f, :mdt_dose
       != tr_date f,        :mdt_date      # start date
       != tr_date f,        :rft_date
-      != tr_check_box f,    :prednisolone   # low dose
-      != tr_check_box f,    :diy
+      != tr_boolean3 f,    :prednisolone   # low dose
+      != tr_boolean3 f,    :diy
       != tr_text f,     :diy_specify   # new field
-      != tr_check_box f,    :hospital_admission
+      != tr_boolean3 f,    :hospital_admission
       != tr_text f,     :hospital_name # if not DBLM
-      != tr_check_box f,    :hospital_neuritis
-      != tr_check_box f,    :hospital_plantar_alcer    
-      != tr_check_box f,    :hospital_eye_complication 
-      != tr_check_box f,    :hospital_other            
+      != tr_boolean3 f,    :hospital_neuritis
+      != tr_boolean3 f,    :hospital_plantar_alcer    
+      != tr_boolean3 f,    :hospital_eye_complication 
+      != tr_boolean3 f,    :hospital_other            
       != tr_text f,     :hospital_specify          
       != tr_date f,        :contact_planned  # next contact
-      != tr_text f,     :symbol_detection     # V=Volunteer, S= Survey, R=Referred, C=Contact
-      != tr_text f,     :symbol_referred      # detect==R than choices are doctor, village doctor, HealthWorker, local leader, other
+      != tr_symbol f,     :symbol_detection     # V=Volunteer, S= Survey, R=Referred, C=Contact
+      != tr_symbol f,     :symbol_referred      # detect==R than choices are doctor, village doctor, HealthWorker, local leader, other
       != tr_number f,    :health_worker # need to convert to staff
-      != tr_number f,    :symbol_who_disability    # WHO disability grade (0..2)
-      != tr_text f,     :symbol_chronic_disability # DI=Diabetes,TB,Other (specify)
+      != tr_symbol f,    :symbol_who_disability    # WHO disability grade (0..2)
+      != tr_symbol f,     :symbol_chronic_disability # DI=Diabetes,TB,Other (specify)
       != tr_number f,    :duration_years     # duration of Leprosy
       != tr_number f,    :duration_months    # duration of Leprosy
       != tr_number f,    :young_years   
       != tr_number f,    :young_months 
-      != tr_check_box f,    :bcg_scar
-      != tr_check_box f,    :trauma_operation  
-      != tr_check_box f,    :disease
-      != tr_text f,     :symbol_disease_descr    
+      != tr_boolean3 f,    :bcg_scar
+      != tr_boolean3 f,    :trauma_operation  
+      != tr_boolean3 f,    :disease
+      != tr_symbol f,     :symbol_disease_descr    
       != tr_number f,    :lesions           # number of skin lesions
-      != tr_check_box f,    :pregnant
+      != tr_boolean3 f,    :pregnant
       != tr_date f,        :pregnancy_date
-      != tr_check_box f,    :breast_feeding   
-      != tr_check_box f,    :surgical_rehab
-      != tr_check_box f,    :social_rehab
-      != tr_number f,    :symbol_final_who_disability    # WHO disability grade (0..2)
+      != tr_boolean3 f,    :breast_feeding   
+      != tr_boolean3 f,    :surgical_rehab
+      != tr_boolean3 f,    :social_rehab
+      != tr_symbol f,    :symbol_final_who_disability    # WHO disability grade (0..2)
       != tr_number f,    :final_disability
       != tr_date f,        :final_date
 
