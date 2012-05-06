@@ -53,7 +53,7 @@
       %tr
         %td
           %a{ :name => "lesions" }
-          %a{ :href => "#lesions", :onclick => "return toggleTbody('lesions');" }
+          %a.toggle{ :href => "#lesions", :onclick => "return toggleTbody('lesions');" }
             [toggle lesions]
       %tbody.off{ :id => "lesions" }
         != tr_boolean3 f, :lesions_inflam
@@ -70,7 +70,7 @@
       %tr
         %td
           %a{ :name => "ulcers" }
-          %a{ :href => "#ulcers", :onclick => "return toggleTbody('ulcers');" }
+          %a.toggle{ :href => "#ulcers", :onclick => "return toggleTbody('ulcers');" }
             [toggle ulcers]
       %tbody.off{ :id => "ulcers" }
         != tr_boolean3 f, :ulcers_palm_simple_r
@@ -93,7 +93,7 @@
       %tr
         %td
           %a{ :name => "sensory" }
-          %a{ :href => "#sensory", :onclick => "return toggleTbody('sensory');" }
+          %a.toggle{ :href => "#sensory", :onclick => "return toggleTbody('sensory');" }
             [toggle sensory scores]
       %tbody.off{ :id => "sensory" }
         != tr_number f, :sensory_score_hand_r
@@ -106,7 +106,7 @@
       %tr
         %td
           %a{ :name => "deformity" }
-          %a{ :href => "#deformity", :onclick => "return toggleTbody('deformity');" }
+          %a.toggle{ :href => "#deformity", :onclick => "return toggleTbody('deformity');" }
             [toggle deformity]
       %tbody.off{ :id => "deformity" }
         != tr_boolean3 f, :deformity_lagophtalmos_r
@@ -136,7 +136,7 @@
       %tr
         %td
           %a{ :name => "nerve" }
-          %a{ :href => "#nerve", :onclick => "return toggleTbody('nerve');" }
+          %a.toggle{ :href => "#nerve", :onclick => "return toggleTbody('nerve');" }
             [toggle nerve damage]
       %tbody.off{ :id => "nerve" }
         != tr_number f, :num_nerve_damage_prev
@@ -190,7 +190,7 @@
       %tr
         %td
           %a{ :name => "qmt" }
-          %a{ :href => "#qmt", :onclick => "return toggleTbody('qmt');" }
+          %a.toggle{ :href => "#qmt", :onclick => "return toggleTbody('qmt');" }
             [toggle QMT]
       %tbody.off{ :id => "qmt" }
         != tr_number f, :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
@@ -209,7 +209,7 @@
       %tr
         %td
           %a{ :name => "sensitivity" }
-          %a{ :href => "#qmt", :onclick => "return toggleTbody('sensitivity');" }
+          %a.toggle{ :href => "#qmt", :onclick => "return toggleTbody('sensitivity');" }
             [toggle sensitivity]
       %tbody.off{ :id => "sensitivity" }
         != tr_boolean3 f, :sensitivity_hand_r01
