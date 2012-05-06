@@ -7,3 +7,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function toggleTbody(id) {
+  if (document.getElementById) {
+    var tbody = document.getElementById(id);
+    if (tbody && typeof tbody.className == 'string') {
+      if (tbody.className == 'off') {
+        tbody.className = 'on';
+      } else {
+        tbody.className = 'off';
+      }
+    } 
+  }
+  return false;  // prevents jumping to section
+}
+
+
