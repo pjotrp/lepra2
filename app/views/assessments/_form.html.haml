@@ -54,43 +54,54 @@
         %td
           %a{ :name => "lesions" }
           %a{ :href => "#lesions", :onclick => "return toggleTbody('lesions');" }
-            #on
-              toggle me!
-        %tbody.on{ :id => "lesions" }
-          != tr_boolean3 f, :lesions_inflam
-          != tr_boolean3 f, :lesions_face
-          != tr_boolean3 f, :lesions_arm_r
-          != tr_boolean3 f, :lesions_arm_l
-          != tr_boolean3 f, :lesions_trunk
-          != tr_boolean3 f, :lesions_leg_r
-          != tr_boolean3 f, :lesions_leg_l
-          != tr_boolean3 f, :oed_hands
-          != tr_boolean3 f, :oed_feet
+            toggle lesions!
+      %tbody.off{ :id => "lesions" }
+        != tr_boolean3 f, :lesions_inflam
+        != tr_boolean3 f, :lesions_face
+        != tr_boolean3 f, :lesions_arm_r
+        != tr_boolean3 f, :lesions_arm_l
+        != tr_boolean3 f, :lesions_trunk
+        != tr_boolean3 f, :lesions_leg_r
+        != tr_boolean3 f, :lesions_leg_l
+        != tr_boolean3 f, :oed_hands
+        != tr_boolean3 f, :oed_feet
 
       != tr_number f, :ulcers  
-      != tr_boolean3 f, :ulcers_palm_simple_r
-      != tr_boolean3 f, :ulcers_palm_simple_l
-      != tr_boolean3 f, :ulcers_sole_simple_r
-      != tr_boolean3 f, :ulcers_sole_simple_l
-      != tr_boolean3 f, :ulcers_palm_complicated_r
-      != tr_boolean3 f, :ulcers_palm_complicated_l
-      != tr_boolean3 f, :ulcers_sole_complicated_r
-      != tr_boolean3 f, :ulcers_sole_complicated_l
-      != tr_boolean3 f, :ulcers_palm_malignant_r
-      != tr_boolean3 f, :ulcers_palm_malignant_l
-      != tr_boolean3 f, :ulcers_sole_malignant_r
-      != tr_boolean3 f, :ulcers_sole_malignant_l
-      != tr_boolean3 f, :ulcers_palm_infected_r
-      != tr_boolean3 f, :ulcers_palm_infected_l
-      != tr_boolean3 f, :ulcers_sole_infected_r
-      != tr_boolean3 f, :ulcers_sole_infected_l
+      %tr
+        %td
+          %a{ :name => "ulcers" }
+          %a{ :href => "#ulcers", :onclick => "return toggleTbody('ulcers');" }
+            toggle ulcers!
+      %tbody.off{ :id => "ulcers" }
+        != tr_boolean3 f, :ulcers_palm_simple_r
+        != tr_boolean3 f, :ulcers_palm_simple_l
+        != tr_boolean3 f, :ulcers_sole_simple_r
+        != tr_boolean3 f, :ulcers_sole_simple_l
+        != tr_boolean3 f, :ulcers_palm_complicated_r
+        != tr_boolean3 f, :ulcers_palm_complicated_l
+        != tr_boolean3 f, :ulcers_sole_complicated_r
+        != tr_boolean3 f, :ulcers_sole_complicated_l
+        != tr_boolean3 f, :ulcers_palm_malignant_r
+        != tr_boolean3 f, :ulcers_palm_malignant_l
+        != tr_boolean3 f, :ulcers_sole_malignant_r
+        != tr_boolean3 f, :ulcers_sole_malignant_l
+        != tr_boolean3 f, :ulcers_palm_infected_r
+        != tr_boolean3 f, :ulcers_palm_infected_l
+        != tr_boolean3 f, :ulcers_sole_infected_r
+        != tr_boolean3 f, :ulcers_sole_infected_l
 
-      != tr_number f, :sensory_score_hand_r
-      != tr_number f, :sensory_score_hand_l
-      != tr_number f, :sensory_score_foot_r
-      != tr_number f, :sensory_score_foot_l
-      != tr_number f, :sensory_score_eye_r
-      != tr_number f, :sensory_score_eye_l
+      %tr
+        %td
+          %a{ :name => "sensory" }
+          %a{ :href => "#sensory", :onclick => "return toggleTbody('sensory');" }
+            toggle sensory scores
+      %tbody.off{ :id => "sensory" }
+        != tr_number f, :sensory_score_hand_r
+        != tr_number f, :sensory_score_hand_l
+        != tr_number f, :sensory_score_foot_r
+        != tr_number f, :sensory_score_foot_l
+        != tr_number f, :sensory_score_eye_r
+        != tr_number f, :sensory_score_eye_l
 
       != tr_boolean3 f, :deformity_lagophtalmos_r
       != tr_boolean3 f, :deformity_lagophtalmos_l
