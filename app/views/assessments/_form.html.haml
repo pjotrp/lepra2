@@ -54,7 +54,7 @@
         %td
           %a{ :name => "lesions" }
           %a{ :href => "#lesions", :onclick => "return toggleTbody('lesions');" }
-            toggle lesions!
+            [toggle lesions]
       %tbody.off{ :id => "lesions" }
         != tr_boolean3 f, :lesions_inflam
         != tr_boolean3 f, :lesions_face
@@ -71,7 +71,7 @@
         %td
           %a{ :name => "ulcers" }
           %a{ :href => "#ulcers", :onclick => "return toggleTbody('ulcers');" }
-            toggle ulcers!
+            [toggle ulcers]
       %tbody.off{ :id => "ulcers" }
         != tr_boolean3 f, :ulcers_palm_simple_r
         != tr_boolean3 f, :ulcers_palm_simple_l
@@ -94,7 +94,7 @@
         %td
           %a{ :name => "sensory" }
           %a{ :href => "#sensory", :onclick => "return toggleTbody('sensory');" }
-            toggle sensory scores
+            [toggle sensory scores]
       %tbody.off{ :id => "sensory" }
         != tr_number f, :sensory_score_hand_r
         != tr_number f, :sensory_score_hand_l
@@ -103,143 +103,167 @@
         != tr_number f, :sensory_score_eye_r
         != tr_number f, :sensory_score_eye_l
 
-      != tr_boolean3 f, :deformity_lagophtalmos_r
-      != tr_boolean3 f, :deformity_lagophtalmos_l
-      != tr_boolean3 f, :deformity_facialpalsy_r
-      != tr_boolean3 f, :deformity_facialpalsy_l
+      %tr
+        %td
+          %a{ :name => "deformity" }
+          %a{ :href => "#deformity", :onclick => "return toggleTbody('deformity');" }
+            [toggle deformity]
+      %tbody.off{ :id => "deformity" }
+        != tr_boolean3 f, :deformity_lagophtalmos_r
+        != tr_boolean3 f, :deformity_lagophtalmos_l
+        != tr_boolean3 f, :deformity_facialpalsy_r
+        != tr_boolean3 f, :deformity_facialpalsy_l
 
-      != tr_boolean3 f, :deformity_claw_hand_r 
-      != tr_boolean3 f, :deformity_claw_hand_l 
-      != tr_boolean3 f, :deformity_ape_thumb_r
-      != tr_boolean3 f, :deformity_ape_thumb_l
-      != tr_boolean3 f, :deformity_wrist_drop_r
-      != tr_boolean3 f, :deformity_wrist_drop_l
-      != tr_boolean3 f, :deformity_foot_drop_r
-      != tr_boolean3 f, :deformity_foot_drop_l
-      != tr_boolean3 f, :deformity_claw_toes_r
-      != tr_boolean3 f, :deformity_claw_toes_l
-      != tr_boolean3 f, :deformity_absent_finger_r
-      != tr_boolean3 f, :deformity_absent_finger_l
-      != tr_boolean3 f, :deformity_absent_toes_r
-      != tr_boolean3 f, :deformity_absent_toes_l
-      != tr_boolean3 f, :deformity_palmar_r # Palmar Anaesthetic
-      != tr_boolean3 f, :deformity_palmar_l
-      != tr_boolean3 f, :deformity_plantar_r
-      != tr_boolean3 f, :deformity_plantar_l
+        != tr_boolean3 f, :deformity_claw_hand_r 
+        != tr_boolean3 f, :deformity_claw_hand_l 
+        != tr_boolean3 f, :deformity_ape_thumb_r
+        != tr_boolean3 f, :deformity_ape_thumb_l
+        != tr_boolean3 f, :deformity_wrist_drop_r
+        != tr_boolean3 f, :deformity_wrist_drop_l
+        != tr_boolean3 f, :deformity_foot_drop_r
+        != tr_boolean3 f, :deformity_foot_drop_l
+        != tr_boolean3 f, :deformity_claw_toes_r
+        != tr_boolean3 f, :deformity_claw_toes_l
+        != tr_boolean3 f, :deformity_absent_finger_r
+        != tr_boolean3 f, :deformity_absent_finger_l
+        != tr_boolean3 f, :deformity_absent_toes_r
+        != tr_boolean3 f, :deformity_absent_toes_l
+        != tr_boolean3 f, :deformity_palmar_r # Palmar Anaesthetic
+        != tr_boolean3 f, :deformity_palmar_l
+        != tr_boolean3 f, :deformity_plantar_r
+        != tr_boolean3 f, :deformity_plantar_l
 
-      != tr_number f, :num_nerve_damage_prev
+      %tr
+        %td
+          %a{ :name => "nerve" }
+          %a{ :href => "#nerve", :onclick => "return toggleTbody('nerve');" }
+            [toggle nerve damage]
+      %tbody.off{ :id => "nerve" }
+        != tr_number f, :num_nerve_damage_prev
 
-      != tr_boolean3 f, :nerve_ulnar_enlarged_r
-      != tr_boolean3 f, :nerve_ulnar_enlarged_l
-      != tr_boolean3 f, :nerve_ulnar_tender_r
-      != tr_boolean3 f, :nerve_ulnar_tender_l
-      != tr_boolean3 f, :nerve_ulnar_normal_r
-      != tr_boolean3 f, :nerve_ulnar_normal_l
+        != tr_boolean3 f, :nerve_ulnar_enlarged_r
+        != tr_boolean3 f, :nerve_ulnar_enlarged_l
+        != tr_boolean3 f, :nerve_ulnar_tender_r
+        != tr_boolean3 f, :nerve_ulnar_tender_l
+        != tr_boolean3 f, :nerve_ulnar_normal_r
+        != tr_boolean3 f, :nerve_ulnar_normal_l
 
-      != tr_boolean3 f, :nerve_facial_enlarged_r
-      != tr_boolean3 f, :nerve_facial_enlarged_l
-      != tr_boolean3 f, :nerve_facial_tender_r
-      != tr_boolean3 f, :nerve_facial_tender_l
-      != tr_boolean3 f, :nerve_facial_normal_r
-      != tr_boolean3 f, :nerve_facial_normal_l
+        != tr_boolean3 f, :nerve_facial_enlarged_r
+        != tr_boolean3 f, :nerve_facial_enlarged_l
+        != tr_boolean3 f, :nerve_facial_tender_r
+        != tr_boolean3 f, :nerve_facial_tender_l
+        != tr_boolean3 f, :nerve_facial_normal_r
+        != tr_boolean3 f, :nerve_facial_normal_l
 
-      != tr_boolean3 f, :nerve_radial_enlarged_r # Enlarged radial
-      != tr_boolean3 f, :nerve_radial_enlarged_l
-      != tr_boolean3 f, :nerve_radial_tender_r  # Tender/pain radia 
-      != tr_boolean3 f, :nerve_radial_tender_l
-      != tr_boolean3 f, :nerve_radial_normal_r
-      != tr_boolean3 f, :nerve_radial_normal_l
+        != tr_boolean3 f, :nerve_radial_enlarged_r # Enlarged radial
+        != tr_boolean3 f, :nerve_radial_enlarged_l
+        != tr_boolean3 f, :nerve_radial_tender_r  # Tender/pain radia 
+        != tr_boolean3 f, :nerve_radial_tender_l
+        != tr_boolean3 f, :nerve_radial_normal_r
+        != tr_boolean3 f, :nerve_radial_normal_l
 
-      != tr_boolean3 f, :nerve_median_enlarged_r
-      != tr_boolean3 f, :nerve_median_enlarged_l
-      != tr_boolean3 f, :nerve_median_tender_r
-      != tr_boolean3 f, :nerve_median_tender_l
-      != tr_boolean3 f, :nerve_median_normal_r
-      != tr_boolean3 f, :nerve_median_normal_l
-      != tr_boolean3 f, :nerve_radial_cuteneus_enlarger_r
-      != tr_boolean3 f, :nerve_radial_cuteneus_enlarger_l
-      != tr_boolean3 f, :nerve_radial_cuteneus_tender_r
-      != tr_boolean3 f, :nerve_radial_cuteneus_tender_l
-      != tr_boolean3 f, :nerve_radial_cuteneus_normal_r
-      != tr_boolean3 f, :nerve_radial_cuteneus_normal_l
-      != tr_boolean3 f, :nerve_common_peroneal_nerve_enlarged_r
-      != tr_boolean3 f, :nerve_common_peroneal_nerve_enlarged_l
-      != tr_boolean3 f, :nerve_common_peroneal_nerve_tender_r
-      != tr_boolean3 f, :nerve_common_peroneal_nerve_tender_l
-      != tr_boolean3 f, :nerve_common_peroneal_nerve_normal_r
-      != tr_boolean3 f, :nerve_common_peroneal_nerve_normal_l
-      != tr_boolean3 f, :nerve_posterior_tibial_nerve_enlarged_r
-      != tr_boolean3 f, :nerve_posterior_tibial_nerve_enlarged_l
-      != tr_boolean3 f, :nerve_posterior_tibial_nerve_tender_r
-      != tr_boolean3 f, :nerve_posterior_tibial_nerve_tender_l
-      != tr_boolean3 f, :nerve_posterior_tibial_nerve_normal_r
-      != tr_boolean3 f, :nerve_posterior_tibial_nerve_normal_l
+        != tr_boolean3 f, :nerve_median_enlarged_r
+        != tr_boolean3 f, :nerve_median_enlarged_l
+        != tr_boolean3 f, :nerve_median_tender_r
+        != tr_boolean3 f, :nerve_median_tender_l
+        != tr_boolean3 f, :nerve_median_normal_r
+        != tr_boolean3 f, :nerve_median_normal_l
+        != tr_boolean3 f, :nerve_radial_cuteneus_enlarger_r
+        != tr_boolean3 f, :nerve_radial_cuteneus_enlarger_l
+        != tr_boolean3 f, :nerve_radial_cuteneus_tender_r
+        != tr_boolean3 f, :nerve_radial_cuteneus_tender_l
+        != tr_boolean3 f, :nerve_radial_cuteneus_normal_r
+        != tr_boolean3 f, :nerve_radial_cuteneus_normal_l
+        != tr_boolean3 f, :nerve_common_peroneal_nerve_enlarged_r
+        != tr_boolean3 f, :nerve_common_peroneal_nerve_enlarged_l
+        != tr_boolean3 f, :nerve_common_peroneal_nerve_tender_r
+        != tr_boolean3 f, :nerve_common_peroneal_nerve_tender_l
+        != tr_boolean3 f, :nerve_common_peroneal_nerve_normal_r
+        != tr_boolean3 f, :nerve_common_peroneal_nerve_normal_l
+        != tr_boolean3 f, :nerve_posterior_tibial_nerve_enlarged_r
+        != tr_boolean3 f, :nerve_posterior_tibial_nerve_enlarged_l
+        != tr_boolean3 f, :nerve_posterior_tibial_nerve_tender_r
+        != tr_boolean3 f, :nerve_posterior_tibial_nerve_tender_l
+        != tr_boolean3 f, :nerve_posterior_tibial_nerve_normal_r
+        != tr_boolean3 f, :nerve_posterior_tibial_nerve_normal_l
 
-      != tr_number f, :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
-      != tr_number f, :qmt_eye_closure_strength_l   # QMT Light eye closure (strength) Left
-      != tr_number f, :qmt_eye_closure_gap_r        # QMT Light eye closure (gap) Right
-      != tr_number f, :qmt_eye_closure_gap_l        # QMT Light eye closure (gap) Left
-      != tr_number f, :qmt_little_finger_r          # QMT Little finger abd(ADM) Right
-      != tr_number f, :qmt_little_finger_l          # QMT Little finger abd(ADM) Left
-      != tr_number f, :qmt_thumb_r                  # QMT Thumb abd(APB) Right
-      != tr_number f, :qmt_thumb_l                  # QMT Thumb abd(APB) Left
-      != tr_number f, :qmt_wrist_r                  # QMT Wrist extension Right
-      != tr_number f, :qmt_wrist_l                  # QMT Wrist extension Left
-      != tr_number f, :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
-      != tr_number f, :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
+      %tr
+        %td
+          %a{ :name => "qmt" }
+          %a{ :href => "#qmt", :onclick => "return toggleTbody('qmt');" }
+            [toggle QMT]
+      %tbody.off{ :id => "qmt" }
+        != tr_number f, :qmt_eye_closure_strength_r   # QMT Light eye closure (strength) Right
+        != tr_number f, :qmt_eye_closure_strength_l   # QMT Light eye closure (strength) Left
+        != tr_number f, :qmt_eye_closure_gap_r        # QMT Light eye closure (gap) Right
+        != tr_number f, :qmt_eye_closure_gap_l        # QMT Light eye closure (gap) Left
+        != tr_number f, :qmt_little_finger_r          # QMT Little finger abd(ADM) Right
+        != tr_number f, :qmt_little_finger_l          # QMT Little finger abd(ADM) Left
+        != tr_number f, :qmt_thumb_r                  # QMT Thumb abd(APB) Right
+        != tr_number f, :qmt_thumb_l                  # QMT Thumb abd(APB) Left
+        != tr_number f, :qmt_wrist_r                  # QMT Wrist extension Right
+        != tr_number f, :qmt_wrist_l                  # QMT Wrist extension Left
+        != tr_number f, :qmt_dorsiflexion_foot_r      # QMT Dorsiflexion Right foot
+        != tr_number f, :qmt_dorsiflexion_foot_l      # QMT Dorsiflexion Left foot
 
-      != tr_boolean3 f, :sensitivity_hand_r01
-      != tr_boolean3 f, :sensitivity_hand_r01
-      != tr_boolean3 f, :sensitivity_hand_r02
-      != tr_boolean3 f, :sensitivity_hand_r03
-      != tr_boolean3 f, :sensitivity_hand_r04
-      != tr_boolean3 f, :sensitivity_hand_r05
-      != tr_boolean3 f, :sensitivity_hand_r06
-      != tr_boolean3 f, :sensitivity_hand_r07
-      != tr_boolean3 f, :sensitivity_hand_r08
-      != tr_boolean3 f, :sensitivity_hand_r09
-      != tr_boolean3 f, :sensitivity_hand_r10
-      != tr_boolean3 f, :sensitivity_hand_r11
-      != tr_boolean3 f, :sensitivity_hand_r12
-      != tr_boolean3 f, :sensitivity_hand_l01
-      != tr_boolean3 f, :sensitivity_hand_l01
-      != tr_boolean3 f, :sensitivity_hand_l02
-      != tr_boolean3 f, :sensitivity_hand_l03
-      != tr_boolean3 f, :sensitivity_hand_l04
-      != tr_boolean3 f, :sensitivity_hand_l05
-      != tr_boolean3 f, :sensitivity_hand_l06
-      != tr_boolean3 f, :sensitivity_hand_l07
-      != tr_boolean3 f, :sensitivity_hand_l08
-      != tr_boolean3 f, :sensitivity_hand_l09
-      != tr_boolean3 f, :sensitivity_hand_l10
-      != tr_boolean3 f, :sensitivity_hand_l11
-      != tr_boolean3 f, :sensitivity_hand_l12
+      %tr
+        %td
+          %a{ :name => "sensitivity" }
+          %a{ :href => "#qmt", :onclick => "return toggleTbody('sensitivity');" }
+            [toggle sensitivity]
+      %tbody.off{ :id => "sensitivity" }
+        != tr_boolean3 f, :sensitivity_hand_r01
+        != tr_boolean3 f, :sensitivity_hand_r01
+        != tr_boolean3 f, :sensitivity_hand_r02
+        != tr_boolean3 f, :sensitivity_hand_r03
+        != tr_boolean3 f, :sensitivity_hand_r04
+        != tr_boolean3 f, :sensitivity_hand_r05
+        != tr_boolean3 f, :sensitivity_hand_r06
+        != tr_boolean3 f, :sensitivity_hand_r07
+        != tr_boolean3 f, :sensitivity_hand_r08
+        != tr_boolean3 f, :sensitivity_hand_r09
+        != tr_boolean3 f, :sensitivity_hand_r10
+        != tr_boolean3 f, :sensitivity_hand_r11
+        != tr_boolean3 f, :sensitivity_hand_r12
+        != tr_boolean3 f, :sensitivity_hand_l01
+        != tr_boolean3 f, :sensitivity_hand_l01
+        != tr_boolean3 f, :sensitivity_hand_l02
+        != tr_boolean3 f, :sensitivity_hand_l03
+        != tr_boolean3 f, :sensitivity_hand_l04
+        != tr_boolean3 f, :sensitivity_hand_l05
+        != tr_boolean3 f, :sensitivity_hand_l06
+        != tr_boolean3 f, :sensitivity_hand_l07
+        != tr_boolean3 f, :sensitivity_hand_l08
+        != tr_boolean3 f, :sensitivity_hand_l09
+        != tr_boolean3 f, :sensitivity_hand_l10
+        != tr_boolean3 f, :sensitivity_hand_l11
+        != tr_boolean3 f, :sensitivity_hand_l12
 
-      != tr_boolean3 f, :sensitivity_foot_r01
-      != tr_boolean3 f, :sensitivity_foot_r01
-      != tr_boolean3 f, :sensitivity_foot_r02
-      != tr_boolean3 f, :sensitivity_foot_r03
-      != tr_boolean3 f, :sensitivity_foot_r04
-      != tr_boolean3 f, :sensitivity_foot_r05
-      != tr_boolean3 f, :sensitivity_foot_r06
-      != tr_boolean3 f, :sensitivity_foot_r07
-      != tr_boolean3 f, :sensitivity_foot_r08
-      != tr_boolean3 f, :sensitivity_foot_r09
-      != tr_boolean3 f, :sensitivity_foot_r10
-      != tr_boolean3 f, :sensitivity_foot_r11
+        != tr_boolean3 f, :sensitivity_foot_r01
+        != tr_boolean3 f, :sensitivity_foot_r01
+        != tr_boolean3 f, :sensitivity_foot_r02
+        != tr_boolean3 f, :sensitivity_foot_r03
+        != tr_boolean3 f, :sensitivity_foot_r04
+        != tr_boolean3 f, :sensitivity_foot_r05
+        != tr_boolean3 f, :sensitivity_foot_r06
+        != tr_boolean3 f, :sensitivity_foot_r07
+        != tr_boolean3 f, :sensitivity_foot_r08
+        != tr_boolean3 f, :sensitivity_foot_r09
+        != tr_boolean3 f, :sensitivity_foot_r10
+        != tr_boolean3 f, :sensitivity_foot_r11
 
-      != tr_boolean3 f, :sensitivity_foot_l01
-      != tr_boolean3 f, :sensitivity_foot_l01
-      != tr_boolean3 f, :sensitivity_foot_l02
-      != tr_boolean3 f, :sensitivity_foot_l03
-      != tr_boolean3 f, :sensitivity_foot_l04
-      != tr_boolean3 f, :sensitivity_foot_l05
-      != tr_boolean3 f, :sensitivity_foot_l06
-      != tr_boolean3 f, :sensitivity_foot_l07
-      != tr_boolean3 f, :sensitivity_foot_l08
-      != tr_boolean3 f, :sensitivity_foot_l09
-      != tr_boolean3 f, :sensitivity_foot_l10
-      != tr_boolean3 f, :sensitivity_foot_l11
+        != tr_boolean3 f, :sensitivity_foot_l01
+        != tr_boolean3 f, :sensitivity_foot_l01
+        != tr_boolean3 f, :sensitivity_foot_l02
+        != tr_boolean3 f, :sensitivity_foot_l03
+        != tr_boolean3 f, :sensitivity_foot_l04
+        != tr_boolean3 f, :sensitivity_foot_l05
+        != tr_boolean3 f, :sensitivity_foot_l06
+        != tr_boolean3 f, :sensitivity_foot_l07
+        != tr_boolean3 f, :sensitivity_foot_l08
+        != tr_boolean3 f, :sensitivity_foot_l09
+        != tr_boolean3 f, :sensitivity_foot_l10
+        != tr_boolean3 f, :sensitivity_foot_l11
 
     %tr
       %td{ :colspan => "2" }
