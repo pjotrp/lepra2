@@ -24,22 +24,20 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   # GET /contacts/new.json
   def new
-    @contact = Contact.create
-
     if params[:copy_id]
-      new_id = @contact.id
-
-      last = Contact.find(params[:copy_id])
-      if last
-        @contact = last.clone
-        @contact.id = new_id
+      prev = Contact.find(params[:copy_id])
+      if prev
+        @contact = prev.clone
+        rec = Contact.create(registration: prev.registration)
+        @contact.id = rec.id
 
         @contact.date = Time.now
         @contact.remark = 'copied from previous form'
       end
+    else
+      person = Person.find(params[:person_id])
+      @contact = Contact.create(person_id: person.id)
     end
-
-
 
     respond_to do |format|
       format.html # new.html.erb

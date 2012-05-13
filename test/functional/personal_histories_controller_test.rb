@@ -1,3 +1,5 @@
+# rake test, or
+#
 # ruby -I test test/functional/personal_histories_controller_test.rb 
 
 require 'test_helper'

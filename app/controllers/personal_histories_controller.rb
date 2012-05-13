@@ -24,7 +24,6 @@ class PersonalHistoriesController < ApplicationController
   # GET /personal_histories/new
   # GET /personal_histories/new.json
   def new
-    @personal_history = PersonalHistory.new
     if params[:copy_id]
       # find the previous history
       hist = PersonalHistory.find(params[:copy_id])
@@ -42,6 +41,11 @@ class PersonalHistoriesController < ApplicationController
         @personal_history.date = Time.now
         @personal_history.remark = 'copied from previous form'
       end
+    else
+      person = Person.find(params[:person_id])
+      @personal_history = PersonalHistory.create(person_id: person.id, 
+        date: Time.now.to_s, registration: person.registration,
+        registration_date: Time.now.to_s, staff_id: 0 )
     end
 
     respond_to do |format|
