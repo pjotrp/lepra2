@@ -515,6 +515,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     hist.created_at = rec.REG_DATE
     hist.updated_at = rec.CONTACTLST
     hist.date = rec.REG_DATE
+    hist.address_id = address.id
     hist.registration_date = rec.REG_DATE
     hist.staff_id = rec.HW_NUM  # staff who registered
     # hist.finder_id = rec.FINDER_LCA if rec.FINDER_LCA and rec.FINDER_LCA > 0
@@ -537,6 +538,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     contact.created_at = rec.REG_DATE
     contact.updated_at = rec.CONTACTLST
     contact.person_id = person.id
+    contact.address_id = address.id
     contact.registration = person.registration
     contact.symbol_medication = rec.STATUS.to_i.to_s if rec.STATUS
     walk(CONTACT_LEPRA0_1,contact,rec)

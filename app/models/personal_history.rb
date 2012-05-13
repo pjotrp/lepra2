@@ -7,6 +7,7 @@ details use the Contact and Assessment tables
 
 class PersonalHistory < ActiveRecord::Base
   belongs_to :person
+  has_one :address
   # has_many :addresses, :as => :addressable
 
   def fields

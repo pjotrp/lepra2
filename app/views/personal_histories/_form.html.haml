@@ -19,6 +19,10 @@
           - if @personal_history.person
             = @personal_history.person.show_name
             = @personal_history.person_id
+            - if @personal_history.person.addresses
+              = @personal_history.person.addresses.last.village
+            - else
+              unknown location
           = f.hidden_field :person_id
         %td
           reg 
@@ -33,7 +37,7 @@
           = f.label :date
         %td
           = f.text_field :date, :readonly => 'true'
-          - [ :staff_id, :finder_lca, :members, :income ].each do |field|
+          - [ :staff_id, :finder_lca, :address_id, :members, :income ].each do |field|
             != tr_number f,field
           - [ :symbol_occupation, :symbol_education, :symbol_guardian ].each do |field|
             != tr_symbol f, field
