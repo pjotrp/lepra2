@@ -3,6 +3,7 @@
 * Addresses do not load the id into contact properly on migration
 * Insert person header info (as a partial) on forms
 * Rename 'Back' to 'Person', and use partials
+* Add first address + clinic through patient card
 * Define a development testing procedure (check list)
 
 address.person_id

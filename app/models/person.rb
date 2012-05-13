@@ -20,6 +20,7 @@ class Person < ActiveRecord::Base
     ret
   end
 
+  # return Clinic object (FIXME)
   def clinic
     if contacts.size > 0
       return contacts.last.clinic_id
@@ -27,6 +28,7 @@ class Person < ActiveRecord::Base
     '?'
   end
 
+  # return Address object, or nil
   def address
     if addresses.size > 0
       return addresses.last
@@ -34,15 +36,17 @@ class Person < ActiveRecord::Base
     nil
   end
 
+  # return genders as M/F letter
   def gender
     (male ? 'M' : 'F')
   end
 
+  # return village name
   def village
     if addresses.size > 0
       return addresses.last.village
     end
-    '-'
+    'unknown location'
   end
  
   def self.search(search, is_anywhere = true, clinic_id)
