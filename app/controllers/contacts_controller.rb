@@ -38,6 +38,8 @@ class ContactsController < ApplicationController
       person = Person.find(params[:person_id])
       @contact = Contact.create(person_id: person.id)
     end
+    # copy address id field
+    @contact.address_id = @contact.person.address.id
 
     respond_to do |format|
       format.html # new.html.erb

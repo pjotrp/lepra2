@@ -27,6 +27,13 @@ class Person < ActiveRecord::Base
     '?'
   end
 
+  def address
+    if addresses.size > 0
+      return addresses.last
+    end
+    nil
+  end
+
   def gender
     (male ? 'M' : 'F')
   end

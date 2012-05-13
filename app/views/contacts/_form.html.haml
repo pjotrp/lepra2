@@ -19,6 +19,10 @@
           - if @contact.person
             = @contact.person.show_name
             = @contact.person_id
+            - if @contact.person.addresses
+              = @contact.person.addresses.last.village
+            - else
+              unknown location
           = f.hidden_field :person_id
         %td
           reg 
@@ -27,7 +31,7 @@
         %td
           = f.hidden_field :registration
       != tr_date(f,:date, :readonly => true)
-      - [ :clinic_id, :staff_id ].each do |field| 
+      - [ :clinic_id, :staff_id, :address_id ].each do |field| 
         != tr_number(f,field) 
       - [ :symbol_patient_type, :symbol_patient_status, :symbol_medication, :symbol_treatment ].each do |field|
         != tr_symbol(f,field)
