@@ -19,8 +19,8 @@
           - if @personal_history.person
             = @personal_history.person.show_name
             = @personal_history.person_id
-            - if @personal_history.person.addresses
-              = @personal_history.person.addresses.last.village
+            - if @personal_history.person.address
+              = @personal_history.person.address.village
             - else
               unknown location
           = f.hidden_field :person_id

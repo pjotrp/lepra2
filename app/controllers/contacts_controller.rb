@@ -39,7 +39,7 @@ class ContactsController < ApplicationController
       @contact = Contact.create(person_id: person.id)
     end
     # copy address id field
-    @contact.address_id = @contact.person.address.id
+    @contact.address_id = @contact.person.address.id if @contact.person.address
 
     respond_to do |format|
       format.html # new.html.erb

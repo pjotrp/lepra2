@@ -19,8 +19,8 @@
           - if @contact.person
             = @contact.person.show_name
             = @contact.person_id
-            - if @contact.person.addresses
-              = @contact.person.addresses.last.village
+            - if @contact.person.address
+              = @contact.person.address.village
             - else
               unknown location
           = f.hidden_field :person_id

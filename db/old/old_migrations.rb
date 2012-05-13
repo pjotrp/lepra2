@@ -8,7 +8,7 @@
 # Some tables are migrated from the LEPRA1 database. (e.g. the lookup 
 # table, now named the symbol table).
 #
-# Copyright (C) 2011 Pjotr Prins <pjotr.prins@thebird.nl>
+# Copyright (C) 2011,2012 Pjotr Prins <pjotr.prins@thebird.nl>
 
 CREATE=false
 if ARGV.size == 1
@@ -472,20 +472,16 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     person.year_of_birth = rec['BIRTH']
     person.male = rec['SEX'] != "F"
     person.fathers_name = nil
-    # address
+    # add a new address for every person
     address = 
-      if not Address.exists?(:village => rec.VILLAGE, :clinic_id => rec.CLINIC_NUM)
-        addr = Address.new
-        village = rec.VILLAGE
-        village = 'unknown' if village == nil
-        addr.village = village
-        addr.clinic_id = rec.CLINIC_NUM
-        addr.road = ''
-        addr.save
-        addr
-      else
-        Address.find_by_village_and_clinic_id(rec.VILLAGE,rec.CLINIC_NUM)
-      end  
+      addr = Address.new
+      village = rec.VILLAGE
+      village = 'unknown village' if village == nil
+      addr.village = village
+      addr.clinic_id = rec.CLINIC_NUM
+      addr.road = ''
+      addr.save
+      addr
     # location
     location = 
       if not Location.exists?(:village => rec.VILLAGE, :district => rec.DIST, 
@@ -506,6 +502,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
       end  
     address.location_id = location.id
     address.save
+    person.address_id = address.id
 
     # personal history
     hist = PersonalHistory.find_or_initialize_by_id(person.id)
@@ -527,6 +524,7 @@ Lepra0_1.find(:all, :limit=>LIMIT).each do | rec |
     walk(PERSONALHISTORY_LEPRA0_1,hist,rec)
     print "Updating ",person.id," ",person.name," to PersonalHistory\n"
     hist.save
+    # update address with person_id (always linked)
     address2 = Address.find(address.id)
     address2.person_id = person.id
     address2.save

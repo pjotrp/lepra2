@@ -47,8 +47,7 @@ class PersonalHistoriesController < ApplicationController
         date: Time.now.to_s, registration: person.registration,
         registration_date: Time.now.to_s, staff_id: 0 )
     end
-    @personal_history.address_id = @personal_history.person.address.id
-    
+    @personal_history.address_id = @personal_history.person.address.id if @personal_history.person.address
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,5 +1,18 @@
 ## TODO
 
+* Addresses do not load the id into contact properly on migration
+* Insert person header info (as a partial) on forms
+* Rename 'Back' to 'Person', and use partials
+* Define a development testing procedure (check list)
+
+address.person_id
+  Address :belongs_to person
+  Person :has_many addresses
+
+contact.address_id
+  Contact :belongs_to address
+  Address :has_many contacts
+
 Important: LEPRA is under development. Your testing and commenting is critical
 to development. Please test LEPRA by modifying records.  Note that changes to
 the database will be discarded later.
