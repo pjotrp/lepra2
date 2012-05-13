@@ -1,44 +1,49 @@
 
-#form
-  = form_for(@person) do |f|
-    .error
-      - if @person.errors.any?
-        %h2 ERROR!
-        %ul
-          - @person.errors.full_messages.each do |msg|
-            %li
-              = msg
+%div.info
+  The patient card contains unique information about a person that exists once only in the database
 
-    .required
-      = f.label :name
-      = f.text_field :name
-      = f.label :nickname
-      = f.text_field :nickname, size: 16
-      = f.label :reg
-      = f.text_field :registration
-    .readonly
-      = 'Clinic: '+@person.clinic.to_s
-    %div
-      = f.label :year_of_birth
-      = f.number_field :year_of_birth, :size => 4
-    = f.label :male
-    = f.check_box :male
-    = f.label :fathers_name
-    = f.text_field :fathers_name
-    = f.label :reg_study
-    = f.text_field :reg_study
-    %div
-      = f.label :remark
-    %div
-      = f.text_area :remark, :size => "80x4"
-    %div
-    .info
-      The patient card contains unique information about a person that exists once only in the database
-    = f.submit "Update"
-    %hr
-    .readonly
-      - if @person.created_at
-        = @person.created_at.strftime("Created on %Y/%m/%d")
-        = @person.updated_at.strftime(" and updated on %Y/%m/%d")
+%div
+  #form
+    = form_for(@person) do |f|
+      .error
+        - if @person.errors.any?
+          %h2 ERROR!
+          %ul
+            - @person.errors.full_messages.each do |msg|
+              %li
+                = msg
+
+      .required
+        = f.label :name
+        = f.text_field :name
+        = f.label :nickname
+        = f.text_field :nickname, size: 16
+        = f.label :reg
+        = f.text_field :registration
+      .readonly
+        = 'Clinic: '+@person.clinic.to_s
+      %div
+        = f.label :year_of_birth
+        = f.number_field :year_of_birth, :size => 4
+      = f.label :male
+      = f.check_box :male
+      = f.label :fathers_name
+      = f.text_field :fathers_name
+      = f.label :reg_study
+      = f.text_field :reg_study
+      %div
+        = f.label :remark
+      %div
+        = f.text_area :remark, :size => "80x4"
+      - if not @person.name or @person.name == ''
+        = f.label :village
+        = f.text_field :village
+      %div
+        = f.submit "Update"
+      %hr
+      .readonly
+        - if @person.created_at
+          = @person.created_at.strftime("Created on %Y/%m/%d")
+          = @person.updated_at.strftime(" and updated on %Y/%m/%d")
 
 

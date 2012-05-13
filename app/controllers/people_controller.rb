@@ -28,6 +28,8 @@ class PeopleController < ApplicationController
   # GET /people/new
   # GET /people/new.json
   def new
+    # update village, if there
+    # params['village'] = nil
     @person = Person.new
 
     respond_to do |format|
@@ -44,6 +46,8 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
+    rec = params['person']
+    rec.delete('village')
     @person = Person.new(params[:person])
 
     respond_to do |format|
